@@ -447,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      excalibur__0: 5570841819123970152
+      excalibur__1: -3493950202910444640
+      excalibur__10: -222697183180971975
+      excalibur__11: 8022245676558061191
+      excalibur__12: -7829873152373813672
+      excalibur__2: -7523248091710268870
+      excalibur__3: -753892749515567841
+      excalibur__4: -4456404926868414724
+      excalibur__5: 5129537561636507499
+      excalibur__6: 2146773001016452415
+      excalibur__7: -2568139448003338929
+      excalibur__8: 9019619319665554254
+      excalibur__9: -2549625925068379220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
