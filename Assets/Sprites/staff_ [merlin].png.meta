@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      staff_ [merlin]_0: 4797802350714877977
+      staff_ [merlin]_1: 8855270373091934284
+      staff_ [merlin]_2: -6203713844297146065
+      staff_ [merlin]_3: 426852480613076659
+      staff_ [merlin]_4: -484162539908529075
+      staff_ [merlin]_5: -1366302213366385929
+      staff_ [merlin]_6: 7470412078216846893
+      staff_ [merlin]_7: -8495485720573892910
+      staff_ [merlin]_8: -6868789628138989348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
