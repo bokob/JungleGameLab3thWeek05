@@ -121,18 +121,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4244702098061513987, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.898182
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244702098061513987, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.67288
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244702098061513987, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.2943668
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244702098061513987, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -162,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5443347626602419429, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: m_Name
-      value: acting  proj
+      value: acting  Dash
       objectReference: {fileID: 0}
     - target: {fileID: 5443347626602419429, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: m_Layer
@@ -203,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  push: 0
   OnHit:
     m_PersistentCalls:
       m_Calls: []
@@ -219,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  innacuracy: 0
+  accel: 0
 --- !u!135 &5277487387560692145
 SphereCollider:
   m_ObjectHideFlags: 0

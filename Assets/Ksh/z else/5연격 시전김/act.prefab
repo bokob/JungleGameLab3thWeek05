@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 5004237744103755788, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: next
       value: 
-      objectReference: {fileID: 1566080976463295845, guid: 132f9ad56e6624c45a9fdde20f8fea8a, type: 3}
+      objectReference: {fileID: 1566080976463295845, guid: 9f750578af7994447a2e72014fb4b651, type: 3}
     - target: {fileID: 5004237744103755788, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: range
       value: 20

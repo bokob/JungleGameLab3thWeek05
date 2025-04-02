@@ -9,13 +9,14 @@ public class Acting : MonoBehaviour
 {
     public GameObject next;
     public float next_time;
-    public Vector2 next_multi;// x °³¼ö y °¢µµ
+    public Vector2 next_multi;// x ê°œìˆ˜ y ê°ë„
     public int channel;
 
     [Header("Start")]
     public bool this_pos_to;
     public float this_pos_fwd;
     public float rotate_Rnd;
+    public string ani;
 
 
     [Header("Update")]
@@ -25,32 +26,29 @@ public class Acting : MonoBehaviour
     public bool this_Potision_to_owner;
     public float owner_Dash;
 
-
-    [Header("Ani")]
-    public string ani;
-
-    //public UnityEvent onStr;
+    [Header("End")]
     public float destroy_time;
     Info info;
     Vector3 bef;
     Rigidbody2D rb;
+    //public UnityEvent onStr;
 
 
     void Start()
     {
         if (destroy_time > 0) Destroy(gameObject, destroy_time);
         info = GetComponent<Info>();
-        if(info.owner)rb = info.owner.GetComponent<Rigidbody2D>();
+        if (info.owner) rb = info.owner.GetComponent<Rigidbody2D>();
 
-        if (channel>0) info.owner.GetComponent<ActManager>().now[channel]= gameObject;
+        if (channel > 0) info.owner.GetComponent<ActManager>().now[channel] = gameObject;
         if (this_pos_to) transform.position = info.to;
         if (this_pos_fwd > 0) transform.position += transform.up * this_pos_fwd;
 
-        if(rotate_Rnd>0) transform.Rotate(transform.forward, Random.Range(-rotate_Rnd, rotate_Rnd)); //·£´ý YÃà È¸Àü   
+        if (rotate_Rnd > 0) transform.Rotate(transform.forward, Random.Range(-rotate_Rnd, rotate_Rnd)); //ëžœë¤ Yì¶• íšŒì „   
 
         Invoke("Next", next_time);
     }
-    void Next()
+    public void Next()
     {
         if (next == null) return;
 
@@ -58,14 +56,14 @@ public class Acting : MonoBehaviour
         if (next_multi.x > 0)
         {
             transform.Rotate(transform.forward, -next_multi.x * next_multi.y / 2);
-            transform.Rotate(transform.forward, -next_multi.y/2);
-            for (int i=0;i< next_multi.x;i++)
+            transform.Rotate(transform.forward, -next_multi.y / 2);
+            for (int i = 0; i < next_multi.x; i++)
             {
                 transform.Rotate(transform.forward, next_multi.y);
                 var o = Instantiate(next, transform.position, transform.rotation);
                 o.GetComponent<Info>().Init(info.owner, info.to, info.target, info.act);
-            }       
-        
+            }
+
         }
         else
         {
@@ -92,7 +90,7 @@ public class Acting : MonoBehaviour
         {
             Vector2 to = info.target.transform.position;
             Vector2 now = transform.position;
-            Vector3 dir = to - now; dir.z= 0;
+            Vector3 dir = to - now; dir.z = 0;
 
             Quaternion q = Quaternion.LookRotation(dir);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * this_looking_target);
@@ -102,11 +100,11 @@ public class Acting : MonoBehaviour
         if (owner_pos_to_this)
             info.owner.transform.position = transform.position;
 
-        
-        if(this_Potision_to_owner)        
+
+        if (this_Potision_to_owner)
             transform.position = info.owner.transform.position;
 
-        if (owner_Dash > 0) 
+        if (owner_Dash > 0)
             rb.linearVelocity = transform.up * owner_Dash;
 
 
@@ -115,22 +113,29 @@ public class Acting : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (channel > 0) info.owner.GetComponent<ActManager>().now[channel]= null;
+        if (channel > 0) info.owner.GetComponent<ActManager>().now[channel] = null;
     }
 
     public void FindPosRnd(float f)
     {
         Vector3 to = info.target.transform.position;
         to.x += Random.Range(-f, f);
-        to.z += Random.Range(-f, f);
+        to.y += Random.Range(-f, f);
 
-        transform.rotation = Quaternion.LookRotation(to-transform.position);
+
+        transform.transform.up = (to - transform.position).normalized;
     }
+    public void Set_owner_velocity(float v)
+    {
+        rb.linearVelocity = rb.linearVelocity.normalized*v;
+
+    }
+
 }
 
 
 
-/*
+/*transform.rotation = Quaternion.LookRotation(to-transform.position);
  if (owner_position_to_target)
 {
     var nav = owner.GetComponent<NavMeshAgent>();

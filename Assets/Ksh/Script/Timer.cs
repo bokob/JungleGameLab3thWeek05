@@ -5,10 +5,12 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public float time;
+    public int num;
     public bool isRepeat;
     public float isRnd=0;
     public UnityEngine.Events.UnityEvent OnTime;
 
+int    num_count;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,9 @@ public class Timer : MonoBehaviour
                 if (isRnd!=0) f = Random.RandomRange(isRnd, time);
 
                 yield return new WaitForSeconds(f);
+                
+                num_count++;
+                if (num_count >= num) break;
                 OnTime.Invoke();
             }
         }
