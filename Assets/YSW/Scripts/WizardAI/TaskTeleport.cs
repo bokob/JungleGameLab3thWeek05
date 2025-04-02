@@ -4,7 +4,9 @@ using BehaviorTree;
 public class TaskTeleport : Node
 {
     private Transform _transform;
-    private float _teleportDistance = 5f; // 5미터 멀리 도망가
+    private float _teleportDistance = 15f; // 텔레포트 거리
+    private float _cooldownTime = 5f;    // 쿨타임 5초
+    private float _cooldownCounter = 0f; // 쿨타임 카운터
 
     public TaskTeleport(Transform transform)
     {
@@ -13,10 +15,21 @@ public class TaskTeleport : Node
 
     public override NodeState Evaluate()
     {
-        // 랜덤한 방향으로 5미터 이동
+        // 쿨타임이 남아 있으면 실패
+        if (_cooldownCounter > 0)
+        {
+            _cooldownCounter -= Time.deltaTime; // 시간 줄이기
+            state = NodeState.FAILURE;
+            return state;
+        }
+
+        // 텔레포트 실행
         Vector2 randomDirection = Random.insideUnitCircle.normalized; // 2D 기준
         Vector3 teleportPosition = _transform.position + new Vector3(randomDirection.x, randomDirection.y, 0) * _teleportDistance;
         _transform.position = teleportPosition;
+
+        // 쿨타임 시작
+        _cooldownCounter = _cooldownTime;
 
         state = NodeState.SUCCESS; // 텔레포트 성공
         return state;
