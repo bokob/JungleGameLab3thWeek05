@@ -2,19 +2,22 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    private int _healthpoints;
+    public int health = 20;
 
     private void Awake()
     {
-        _healthpoints = 30;
+        health = 30;
     }
 
-    public bool TakeHit()
+    public bool TakeHit(int damage)
     {
-        _healthpoints -= 10;
-        bool isDead = _healthpoints <= 0;
-        if (isDead) _Die();
-        return isDead;
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            return true; // 죽음
+        }
+        return false; // 안 죽음
     }
 
     private void _Die()
