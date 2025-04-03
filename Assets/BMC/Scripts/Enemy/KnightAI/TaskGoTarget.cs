@@ -8,18 +8,24 @@ public class TaskGoToTarget : Node
 {
     Transform _transform;
     Animator _anim;
-    Enemy _enemy;
+    Status _enemy;
 
     public TaskGoToTarget(Transform transform)
     {
         _transform = transform;
         _anim = transform.GetComponent<Animator>();
-        _enemy = transform.GetComponent<Enemy>();
+        _enemy = transform.GetComponent<Status>();
     }
 
     public override NodeState Evaluate()
     {
         Transform target = (Transform)GetData("target");
+        if(target == null)
+        {
+            _anim.SetBool("IsMove", false);
+            nodeState = NodeState.Failure;
+            return nodeState;
+        }
 
         if (Vector3.Distance(_transform.position, target.position) > KnightBT.AttackRange)
         {

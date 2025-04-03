@@ -76,4 +76,9 @@ public class Silhouette : MonoBehaviour
                 _silhouetteList[i].color -= new Color(0, 0, 0, 1f / _silhouetteList.Count);
         }
     }
+    public void Clear()
+    {
+        _silhouetteList.Clear();
+        Destroy(_silhouetteParent);
+    }
 }

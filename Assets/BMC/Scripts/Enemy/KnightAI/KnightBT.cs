@@ -12,9 +12,16 @@ public class KnightBT : Tree
 
     [SerializeField] Transform _target;
 
+    Status _status;
+
+    void Start()
+    {
+        _status = GetComponent<Status>();
+    }
+
     void Update()
     {
-        if (_root != null)
+        if (_root != null && !_status.IsDead)
         {
             _root.Evaluate();
             _target = (Transform)_root.GetData("target");
@@ -27,8 +34,7 @@ public class KnightBT : Tree
         {
             new Sequence(new List<Node>
             {
-                new CheckEnemyInAttackRange(transform),
-                new TaskAttack(transform),
+                new TaskDash(transform),
             }),
             new Sequence(new List<Node>
             {

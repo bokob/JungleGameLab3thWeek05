@@ -5,39 +5,43 @@ public class TaskDash : Node
 {
     Transform _transform;
     Animator _anim;
-    Enemy _enemy;
+    Status _enemy;
+    Dash _dash;
+    Rigidbody2D _rb;
 
-    float _dashTime = 2f;
+    float _dashTime = 3f;
     float _dashCounter = 0f;
-
 
     public TaskDash(Transform transform)
     {
         _transform = transform;
+        _rb = transform.GetComponent<Rigidbody2D>();
         _anim = transform.GetComponent<Animator>();
-        _enemy = transform.GetComponent<Enemy>();
+        _enemy = transform.GetComponent<Status>();
+        _dash = new Dash();
     }
 
     public override NodeState Evaluate()
     {
+        object targetObject = GetData("target");
+        if(targetObject == null)
+        {
+            nodeState = NodeState.Failure;
+            return nodeState;
+        }
+
         _dashCounter += Time.deltaTime;
 
-        Transform target = (Transform)GetData("target");
-        if (Vector3.Distance(_transform.position, target.position) > KnightBT.AttackRange)
+        if(_dashCounter >= _dashTime)
         {
-            Debug.Log("이동");
-            _anim.SetBool("IsMove", true);
-            Vector2 dir = target.position - _transform.position;
-            _enemy.Flip(_transform, dir.x);
+            _dash.Play(_rb, Vector2.up);
+            _dashCounter = 0f;
         }
         else
         {
-            Debug.Log("멈춤");
-            _anim.StopPlayback();
-            _anim.SetBool("IsMove", false);
-            Debug.Log("이동 불가");
+            nodeState = NodeState.Failure;
+            return nodeState;
         }
-
         nodeState = NodeState.Running;
         return nodeState;
     }

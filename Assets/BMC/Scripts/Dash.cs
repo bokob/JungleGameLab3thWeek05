@@ -1,20 +1,12 @@
 using UnityEngine;
 
-public class Dash : MonoBehaviour
+public class Dash
 {
-    Rigidbody2D _rb;
-    [SerializeField] float _dashSpeed;
+    float _dashSpeed = 3f;
 
-    SpriteRenderer _spriteRenderer;
-    Color _color;
-
-    void Awake()
+    public void Play(Rigidbody2D rb, Vector2 direction)
     {
-        _rb = GetComponent<Rigidbody2D>();
-    }
-
-    public void Play(Vector2 direction)
-    {
-        _rb.linearVelocity = direction * _dashSpeed;
+        rb.linearVelocity = direction * _dashSpeed;
+        Debug.Log("대시");
     }
 }

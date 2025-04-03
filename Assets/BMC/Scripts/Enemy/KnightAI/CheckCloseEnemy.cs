@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using static Define;
 
@@ -34,10 +33,7 @@ public class CheckCloseEnemy : Node
         }
 
         parent.Parent.SetData("target", closeEnemy);
-        //_anim.SetBool("IsMove", true);
         nodeState = NodeState.Success;
         return nodeState;
-        //nodeState = NodeState.Success;
-        //return nodeState;
     }
 }

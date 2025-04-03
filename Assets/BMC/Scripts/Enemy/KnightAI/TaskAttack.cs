@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 using static Define;
 
 public class TaskAttack : Node
@@ -13,13 +10,8 @@ public class TaskAttack : Node
 
     Sword _sword;
 
-    //EnemyManager _enemyManager;
-
     float _attackTime = 1f;
     float _attackCounter = 0f;
-
-    float _strength = 16f;
-    float _delay = 0.15f;
 
     public TaskAttack(Transform transform)
     {
@@ -34,7 +26,6 @@ public class TaskAttack : Node
         Transform target = (Transform)GetData("target");
 
         Debug.Log("공격~");
-
 
         if (target != _lastTarget)
         {
@@ -54,6 +45,7 @@ public class TaskAttack : Node
 
             Vector2 dir = target.position - _transform.position;
             target.GetComponent<Rigidbody2D>().AddForce(dir.normalized, ForceMode2D.Impulse);
+            target.GetComponent<Status>().TakeDamage(10f);
 
             _attackCounter = 0f;
         }
