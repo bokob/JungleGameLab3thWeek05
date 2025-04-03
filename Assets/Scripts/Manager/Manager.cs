@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Manager : MonoBehaviour
@@ -19,6 +20,13 @@ public class Manager : MonoBehaviour
     public static SoundManager Sound => Instance._sound;
     public static UIManager UI => Instance._ui;
     public static ResourceManager Resource => Instance._resource;
+    #endregion
+
+    #region 테스트
+    [Header("테스트")]
+    [SerializeField] List<Transform> _enemyList = new List<Transform>();
+    public List<Transform> EnemyList => _enemyList;
+
     #endregion
 
     void Awake()
