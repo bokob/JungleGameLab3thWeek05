@@ -1,79 +1,58 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class Fireball : MonoBehaviour
 {
-
-    private float speed = 1f; // 파이어볼 속도
-    private int damage = 10;  // 데미지
+    private float speed = 1f;         // 속도 증가
+    private int damage = 10;
     private Vector2 direction;
-    private Vector2 startPosition;  // 발사 시작 위치
-    private float maxDistance = 10f; // 최대 거리 10유닛
+    private Vector2 startPosition;
+    private float maxDistance = 10f;
+    private float knockbackForce = 0.5f;
 
-    private float knockbackForce = 1f; // 넉백 힘 크기
-
-
-    public Sprite[] fireballSprites; // 애니메이션용 스프라이트 배열
-    public float animationSpeed = 0.1f; // 프레임 변경 속도
-
+    public Sprite[] fireballSprites;
+    public float animationSpeed = 0.1f;
     private SpriteRenderer spriteRenderer;
-
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        StartCoroutine(AnimateFireball()); // 애니메이션 시작
+        StartCoroutine(AnimateFireball());
     }
-
 
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
-        startPosition = transform.position; // 시작 위치 저장
-
-        //  방향을 회전시킴 (이제 보이는 방향과 이동 방향이 동일!)
+        startPosition = transform.position;
+        Debug.Log("발사 시작 위치: " + startPosition);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        
-
-
     }
 
     void Update()
     {
-        //  이동 시 월드 기준으로 이동하도록 변경
         transform.position += (Vector3)direction * speed * Time.deltaTime;
-        //transform.Translate(direction * speed * Time.deltaTime);
-
-        // 거리 체크
         float distanceTraveled = Vector2.Distance(startPosition, transform.position);
+        Debug.Log("이동 거리: " + distanceTraveled);
         if (distanceTraveled >= maxDistance)
         {
-            Destroy(gameObject); // 최대 거리 넘으면 삭제
+            Destroy(gameObject);
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        EnemyManager enemy = other.GetComponent<EnemyManager>();
-        if (enemy != null)
+        Status enemy = other.GetComponent<Status>();
+        if (enemy != null && other.gameObject != transform.parent?.gameObject) // 위자드 제외
         {
-            // 데미지 주기
-            enemy.TakeHit(damage);
-
-            // 넉백 힘 추가
+            enemy.TakeDamage(damage);
             Rigidbody2D enemyRb = other.GetComponent<Rigidbody2D>();
             if (enemyRb != null)
             {
                 Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
                 enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-
-                
+                Debug.Log("넉백 적용! 힘: " + knockbackForce);
             }
-
-            
-            // 파이어볼 삭제
             Destroy(gameObject);
         }
     }
@@ -88,6 +67,4 @@ public class Fireball : MonoBehaviour
             yield return new WaitForSeconds(animationSpeed);
         }
     }
-
-
 }

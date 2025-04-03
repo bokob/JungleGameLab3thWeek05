@@ -1,12 +1,10 @@
 using UnityEngine;
-using BehaviorTree;
+using static Define;
 
-public class TaskTeleport_Y : Node_Y
+public class TaskTeleport_Y : Node
 {
-    private Transform _transform;
-    private float _teleportDistance = 6f; // 텔레포트 거리
-    private float _cooldownTime = 5f;    // 쿨타임 5초
-    private float _cooldownCounter = 0f; // 쿨타임 카운터
+    Transform _transform;
+    float _teleportDistance = 2f; // 텔레포트로 이동할 거리
 
     public TaskTeleport_Y(Transform transform)
     {
@@ -15,23 +13,21 @@ public class TaskTeleport_Y : Node_Y
 
     public override NodeState Evaluate()
     {
-        // 쿨타임이 남아 있으면 실패
-        if (_cooldownCounter > 0)
+        Transform target = (Transform)GetData("target");
+        if (target == null)
         {
-            _cooldownCounter -= Time.deltaTime; // 시간 줄이기
-            state = NodeState.FAILURE;
-            return state;
+            nodeState = NodeState.Failure;
+            return nodeState;
         }
 
-        // 텔레포트 실행
-        Vector2 randomDirection = Random.insideUnitCircle.normalized; // 2D 기준
-        Vector3 teleportPosition = _transform.position + new Vector3(randomDirection.x, randomDirection.y, 0) * _teleportDistance;
+        // 적 반대 방향으로 텔레포트
+        Vector2 direction = (_transform.position - target.position).normalized;
+        Vector3 teleportPosition = _transform.position + (Vector3)direction * _teleportDistance;
+
         _transform.position = teleportPosition;
+        Debug.Log("텔레포트! 새 위치: " + teleportPosition);
 
-        // 쿨타임 시작
-        _cooldownCounter = _cooldownTime;
-
-        state = NodeState.SUCCESS; // 텔레포트 성공
-        return state;
+        nodeState = NodeState.Success;
+        return nodeState;
     }
 }

@@ -1,127 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
-using BehaviorTree;
-
-public class TaskAttack_Y : Node_Y
+public class TaskAttack_Y : Node
 {
-    private Animator _animator;
-    private Transform _transform; // 방향 체크용으로 추가
-    private Transform _lastTarget;
-    private SpriteRenderer _spriteRenderer; // 플립용
+    Animator _anim;
+    Transform _transform;
+    Transform _staff;
+    GameObject _fireballPrefab;
 
-    private EnemyManager _enemyManager;
+    Staff_Y _staffY;
 
-    private float _attackTime = 1f;
-    private float _attackCounter = 0f;
-    private Transform _staff; // 지팡이 오브젝트
-
-    private float _castingTime = 3f;     // 캐스팅 시간 0.5초
-    private float _castingCounter = 0f;    // 캐스팅 카운터
-    private bool _isCasting = false;
-
-    private GameObject _fireballPrefab;    // 코드로 로드할 프리팹
-    private Quaternion _originalStaffRotation; // 원래 지팡이 각도 저장
-
+    float _attackCooldown = 5f;
+    float _attackCounter = 0f;
 
     public TaskAttack_Y(Transform transform)
     {
         _transform = transform;
-        _animator = transform.GetComponent<Animator>();
+        _anim = transform.GetComponent<Animator>();
+        _staffY = transform.GetComponentInChildren<Staff_Y>();
+        _staff = _transform.Find("Weapon/Staff");
+        if (_staff == null)
+        {
+            Debug.LogError("Staff 오브젝트를 Wizard > Weapon 아래에 추가해주세요!");
+        }
 
-        // Resources 폴더에서 파이어볼 프리팹 로드
         _fireballPrefab = Resources.Load<GameObject>("Fireball");
-        _spriteRenderer = transform.GetComponent<SpriteRenderer>(); // 플립용
-        _staff = transform.Find("Staff");
-
-
-
+        if (_fireballPrefab == null)
+        {
+            Debug.LogError("Fireball 프리팹을 Resources 폴더에서 찾을 수 없어요!");
+        }
     }
-
 
     public override NodeState Evaluate()
     {
-        
-
-        // 타겟 가져오기 전에 null 체크
-        object targetData = GetData("target");
-        if (targetData == null)
+        Transform target = (Transform)GetData("target");
+        if (target == null)
         {
-            _animator.SetBool("IsIdle", true);
-            
-            state = NodeState.FAILURE;
-            return state;
+            nodeState = NodeState.Failure;
+            return nodeState;
         }
 
-        Transform target = (Transform)targetData;
-        if (target == null || !target.gameObject.activeInHierarchy)
+        _attackCounter += Time.deltaTime;
+        if (_attackCounter >= _attackCooldown)
         {
-            ClearData("target");
-            _animator.SetBool("IsIdle", true);
+            _anim.SetBool("IsMove", false);
+
+
+            _attackCounter = 0f;
+            Vector3 spawnOffset = (target.position - _staff.position).normalized * 0.5f;
+            GameObject fireball = GameObject.Instantiate(_fireballPrefab, _staff.position + spawnOffset, Quaternion.identity);
             
-            state = NodeState.FAILURE;
-            return state;
-        }
-
-
-        // 방향 설정 (플립으로)
-        bool facingLeft = target.position.x < _transform.position.x;
-        _spriteRenderer.flipX = facingLeft; // 왼쪽 보면 플립
-
-        // 쿨타임 체크
-        if (_attackCounter > 0)
-        {
-            _attackCounter -= Time.deltaTime;
-            _animator.SetBool("IsIdle", true); // 쿨타임 중 Idle
-            
-            state = NodeState.RUNNING;
-            return state;
-        }
-
-        // 캐스팅 시작
-        if (!_isCasting)
-        {
-            _isCasting = true;
-            _castingCounter = _castingTime;
-            _animator.SetBool("IsIdle", false);
-            
-            // 나중에 캐스팅 애니메이션 추가 가능
-        }
-
-        // 캐스팅 진행
-        _castingCounter -= Time.deltaTime;
-        if (_castingCounter <= 0 && _isCasting)
-        {
-            // 공격 애니메이션 재생 (오른쪽만)
-            _animator.SetTrigger("Attack");
-
-            // 지팡이 회전
-            if (_staff != null)
-            {
-                _staff.rotation = Quaternion.Euler(0, 0, facingLeft ? 90 : -90);
-            }
-
-            // 파이어볼 발사
-            GameObject fireball = GameObject.Instantiate(_fireballPrefab, _transform.position, Quaternion.identity);
             Fireball fbScript = fireball.GetComponent<Fireball>();
-            Vector2 direction = (target.position - _transform.position).normalized;
-            fbScript.SetDirection(direction);
+            if (fbScript != null)
+            {
+                
+                Vector2 direction = (target.position - _staff.position).normalized;
+                
+                fbScript.SetDirection(direction);
+                Debug.Log("파이어볼 발사!");
+                _staffY.Use();
 
-            // 쿨타임 시작
-            _attackCounter = _attackTime;
-            _isCasting = false;
-           
 
-            // 발사 직후 지팡이 원래 각도로 복귀
-            //if (_staff != null)
-            //{
-            //    _staff.rotation = _originalStaffRotation;
-            //}
+            }
+            
         }
-
-        _animator.SetBool("IsIdle", true); // 공격 후 Idle
-        state = NodeState.RUNNING;
-        return state;
+        _anim.SetBool("IsMove", false);
+        nodeState = NodeState.Running;
+        return nodeState;
     }
 }

@@ -62,7 +62,7 @@ public class Status : MonoBehaviour
 
         _anim.SetTrigger("DieTrigger");
         _spriteRenderer.color = Color.gray;
-        _silhouette.Clear();
+        //_silhouette.Clear();
         transform.Find("Weapon").gameObject.SetActive(false);
     }
 }
