@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace BehaviorTree
 {
-    public class Sequence : Node
+    public class Sequence_Y : Node_Y
     {
-        public Sequence() : base() { }
-        public Sequence(List<Node> children) : base(children) { }
+        public Sequence_Y() : base() { }
+        public Sequence_Y(List<Node_Y> children) : base(children) { }
 
         public override NodeState Evaluate()
         {
             bool anyChildIsRunning = false;
 
-            foreach (Node node in children)
+            foreach (Node_Y node in children)
             {
                 switch (node.Evaluate())
                 {

@@ -1,14 +1,14 @@
 using UnityEngine;
 using BehaviorTree;
 
-public class TaskTeleport : Node
+public class TaskTeleport_Y : Node_Y
 {
     private Transform _transform;
     private float _teleportDistance = 6f; // 텔레포트 거리
     private float _cooldownTime = 5f;    // 쿨타임 5초
     private float _cooldownCounter = 0f; // 쿨타임 카운터
 
-    public TaskTeleport(Transform transform)
+    public TaskTeleport_Y(Transform transform)
     {
         _transform = transform;
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 using BehaviorTree;
 
-public class CheckEnemyInAttackRange : Node
+public class CheckEnemyInAttackRange_Y : Node_Y
 {
     private Transform _transform;
     private Animator _animator;
 
-    public CheckEnemyInAttackRange(Transform transform)
+    public CheckEnemyInAttackRange_Y(Transform transform)
     {
         _transform = transform;
         _animator = transform.GetComponent<Animator>();
@@ -25,7 +25,7 @@ public class CheckEnemyInAttackRange : Node
         }
 
         Transform target = (Transform)t;
-        if (Vector2.Distance(_transform.position, target.position) <= WizardBT.attackRange)
+        if (Vector2.Distance(_transform.position, target.position) <= WizardBT_Y.attackRange)
         {
             //_animator.SetBool("Attacking", true);
             _animator.SetBool("WalkRight", false);

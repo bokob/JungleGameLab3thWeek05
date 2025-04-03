@@ -20,8 +20,5 @@ public class EnemyManager : MonoBehaviour
         return false; // 안 죽음
     }
 
-    private void _Die()
-    {
-        Destroy(gameObject);
-    }
+   
 }

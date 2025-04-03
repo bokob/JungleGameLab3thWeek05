@@ -10,26 +10,26 @@ namespace BehaviorTree
         FAILURE
     }
 
-    public class Node
+    public class Node_Y
     {
         protected NodeState state;
 
-        public Node parent;
-        protected List<Node> children = new List<Node>();
+        public Node_Y parent;
+        protected List<Node_Y> children = new List<Node_Y>();
 
         private Dictionary<string, object> _dataContext = new Dictionary<string, object>();
 
-        public Node()
+        public Node_Y()
         {
             parent = null;
         }
-        public Node(List<Node> children)
+        public Node_Y(List<Node_Y> children)
         {
-            foreach (Node child in children)
+            foreach (Node_Y child in children)
                 _Attach(child);
         }
 
-        private void _Attach(Node node)
+        private void _Attach(Node_Y node)
         {
             node.parent = this;
             children.Add(node);
@@ -48,7 +48,7 @@ namespace BehaviorTree
             if (_dataContext.TryGetValue(key, out value))
                 return value;
 
-            Node node = parent;
+            Node_Y node = parent;
             while (node != null)
             {
                 value = node.GetData(key);
@@ -67,7 +67,7 @@ namespace BehaviorTree
                 return true;
             }
 
-            Node node = parent;
+            Node_Y node = parent;
             while (node != null)
             {
                 bool cleared = node.ClearData(key);

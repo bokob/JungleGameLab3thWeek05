@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Manager1 : MonoBehaviour
+public class Manager_Y : MonoBehaviour
 {
-    static Manager1 _instance;
-    public static Manager1 Instance => _instance;
+    static Manager_Y _instance;
+    public static Manager_Y Instance => _instance;
 
     #region 매니저
     GameManager _game = new GameManager();

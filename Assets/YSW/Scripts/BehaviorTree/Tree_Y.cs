@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace BehaviorTree
 {
-    public abstract class Tree : MonoBehaviour
+    public abstract class Tree_Y : MonoBehaviour
     {
 
-        private Node _root = null;
+        private Node_Y _root = null;
 
         protected void Start()
         {
@@ -20,7 +20,7 @@ namespace BehaviorTree
                 _root.Evaluate();
         }
 
-        protected abstract Node SetupTree();
+        protected abstract Node_Y SetupTree();
 
     }
 

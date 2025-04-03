@@ -1,12 +1,12 @@
 using UnityEngine;
 using BehaviorTree;
 
-public class CheckEnemyInTeleportRange : Node
+public class CheckEnemyInTeleportRange_Y : Node_Y
 {
     private Transform _transform;
     private float _teleportRange = 0.1f; // 적이 1미터 안에 있으면 텔레포트
 
-    public CheckEnemyInTeleportRange(Transform transform)
+    public CheckEnemyInTeleportRange_Y(Transform transform)
     {
         _transform = transform;
     }

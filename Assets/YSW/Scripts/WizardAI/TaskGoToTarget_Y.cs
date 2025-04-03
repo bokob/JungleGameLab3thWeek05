@@ -4,14 +4,14 @@ using UnityEngine;
 
 using BehaviorTree;
 
-public class TaskGoToTarget : Node
+public class TaskGoToTarget_Y : Node_Y
 {
     private Transform _transform;
 
     private Animator _animator;
     private bool _lastFacingLeft;
 
-    public TaskGoToTarget(Transform transform)
+    public TaskGoToTarget_Y(Transform transform)
     {
         _transform = transform;
 
@@ -73,7 +73,7 @@ public class TaskGoToTarget : Node
         if (distance > 0.01f)
         {
             _transform.position = Vector2.MoveTowards(
-                _transform.position, target.position, WizardBT.speed * Time.deltaTime);
+                _transform.position, target.position, WizardBT_Y.speed * Time.deltaTime);
 
             float directionDifference = target.position.x - _transform.position.x;
             if (directionDifference < -0.1f)

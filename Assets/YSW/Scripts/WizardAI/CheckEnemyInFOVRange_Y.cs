@@ -4,14 +4,14 @@ using UnityEngine;
 
 using BehaviorTree;
 
-public class CheckEnemyInFOVRange : Node
+public class CheckEnemyInFOVRange_Y : Node_Y
 {
     private static int _enemyLayerMask = 1 << 6;
 
     private Transform _transform;
     private Animator _animator;
 
-    public CheckEnemyInFOVRange(Transform transform)
+    public CheckEnemyInFOVRange_Y(Transform transform)
     {
         _transform = transform;
         _animator = transform.GetComponent<Animator>();
@@ -65,7 +65,7 @@ public class CheckEnemyInFOVRange : Node
     {
         // 시야 안의 모든 적 확인
         Collider2D[] colliders = Physics2D.OverlapCircleAll(
-            _transform.position, WizardBT.fovRange, _enemyLayerMask);
+            _transform.position, WizardBT_Y.fovRange, _enemyLayerMask);
 
         if (colliders.Length > 0)
         {
