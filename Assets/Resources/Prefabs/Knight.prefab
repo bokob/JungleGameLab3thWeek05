@@ -224,8 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73c901aa3d84214199365ef24e8bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testAttackRange: 0.175
+  _testAttackRange: 0.2
   _target: {fileID: 0}
+  _isReadyDash: 0
 --- !u!114 &2073936670368439651
 MonoBehaviour:
   m_ObjectHideFlags: 0

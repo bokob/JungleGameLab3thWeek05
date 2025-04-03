@@ -30,7 +30,7 @@ public class Status : MonoBehaviour
 
     void Init()
     {
-        _maxHP = 10f;
+        _maxHP = 100f;
         _hp = _maxHP;
     }
 

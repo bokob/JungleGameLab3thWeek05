@@ -12,7 +12,7 @@ public class GameManager
     public List<Transform> EnemyList => _enemyList;
     float _minDistance = 2f;
 
-    int _spawnNormalEnemyCount = 15;    //  소환할 일반 적 수
+    int _spawnNormalEnemyCount = 16;    //  소환할 일반 적 수
 
     public void Init()
     {

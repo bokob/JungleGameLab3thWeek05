@@ -16,27 +16,32 @@ public class CheckDash : Node
 
     public override NodeState Evaluate()
     {
-        object isReadyDash = GetData("isReadyDash");
-        if (isReadyDash == null)
-        {
-            SetData("isReadyDash", false);
-            nodeState = NodeState.Failure;
-            return nodeState;
-        }
-        else
-        {
-            Debug.LogWarning("잘 가져옴");
-        }
+        object targetObject = GetData("target");
+        Transform target = (Transform)targetObject;
 
-        bool isCanDash = (bool)isReadyDash;
-        _dashCounter += Time.deltaTime;
-        if (!isCanDash && _dashCounter >= _dashTime)
+        if(target != null)
         {
-            SetData("isReadyDash", true);
-            _dashCounter = 0f;
-            nodeState = NodeState.Success;
-            Debug.Log("대시 준비 완료");
-            return nodeState;
+            object isReadyDashObject = GetData("isReadyDash");
+            if (isReadyDashObject == null)
+            {
+                SetData("isReadyDash", false);
+                nodeState = NodeState.Failure;
+                return nodeState;
+            }
+           
+            bool isCanDash = (bool)isReadyDashObject;
+            if (isCanDash)
+                SetData("isReadyDash", false);
+
+            _dashCounter += Time.deltaTime;
+            Debug.Log($"{_dashCounter} {isCanDash}");
+            if (!isCanDash && _dashCounter >= _dashTime)
+            {
+                SetData("isReadyDash", true);
+                _dashCounter = 0f;
+                nodeState = NodeState.Success;
+                return nodeState;
+            }
         }
         nodeState = NodeState.Failure;
         return nodeState;
