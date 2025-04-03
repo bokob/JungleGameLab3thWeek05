@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 
 
@@ -14,7 +14,13 @@ public class Rotate : MonoBehaviour
     }
     void Update()
     {
-        transform.position = p.transform.position;
-        transform.Rotate(0, 0, 1 * val * Time.deltaTime); //속도를 늘리면 될듯?
+        if (p == null)
+            Destroy(gameObject);
+        else
+        {
+            transform.position = p.transform.position;
+            transform.Rotate(0, 0, 1 * val * Time.deltaTime); //속도를 늘리면 될듯?
+
+        }
     }
 }

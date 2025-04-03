@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2658431983581083680}
   - component: {fileID: 1457194883718135717}
   - component: {fileID: 3873709434461041300}
+  - component: {fileID: 5310870884671946698}
   m_Layer: 0
   m_Name: Martial Hero
   m_TagString: Untagged
@@ -110,6 +111,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5310870884671946698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011132822255987703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e0ad5e2f2e0054b94eadefbab25933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time_interval: 0.05
+  time_remaining: 0.3
 --- !u!1001 &2135013678804930777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,6 +181,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8292829692943874966, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 050b0d9bc5e3fdf49b25aa2cfc3011ed, type: 2}
     - target: {fileID: 8384377105582679863, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: OnInst.Array.size
       value: 6

@@ -39,16 +39,19 @@ public class AI : MonoBehaviour
     public float sycle_time=0.2f;
 
     public float speed;
-
+    Animator animator;
     NavMeshAgent nav;
     ActManager am;
     Collider c;
+    SpriteRenderer sr;
 
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         am = GetComponent<ActManager>();
         c = GetComponentInChildren<Collider>();
+        animator = GetComponentInChildren<Animator>();
+        sr = GetComponentInChildren<SpriteRenderer>();
 
         StartCoroutine(Sycle());
     }
@@ -59,18 +62,29 @@ public class AI : MonoBehaviour
         target = GetCloseEnemy(gameObject, sight.Radious);
         if (target)
         {
-
+            animator.SetFloat("spd", 0);
             if (am.now[1] == null)
             {
+
+                //ì´ë™
                 if (Vector2.Distance(transform.position, target.transform.position) > navStopDistance)
-                { //ÀÌµ¿
+                {
+
                     Vector2 fr = transform.position;
                     Vector2 to = target.transform.position;
                     Vector3 dir = to - fr; dir.Normalize();
 
                     transform.position += dir * speed * Time.deltaTime;
+
+                    animator.SetFloat("spd", speed);
                 }
+                //ë°©í–¥
+                sr.flipX = false;
+                if (transform.position.x > target.transform.position.x)
+                    sr.flipX = true;
             }
+
+
 
 
             StartPossibleAct();
@@ -82,7 +96,7 @@ public class AI : MonoBehaviour
     {
         for (; ; )
         {
-            yield return new WaitForSeconds(sycle_time); //ÇöÁ¦Àû ¾ø´Ù 
+            yield return new WaitForSeconds(sycle_time); //í˜„ì œì  ì—†ë‹¤ 
 
 
         }
@@ -101,7 +115,7 @@ public class AI : MonoBehaviour
                 temp.Add(i);
         }
 
-        //·£´ı½ÇÇà          
+        //ëœë¤ì‹¤í–‰          
         if (temp.Count > 0)
            temp[Random.Range(0, temp.Count - 1)].Try_Act(gameObject,target.transform.position, target);
     }
@@ -114,15 +128,15 @@ public class AI : MonoBehaviour
     }
     List<GameObject> GetEnemybyRange(GameObject fr, float r)
     {
-        //ÀûÅ½»ö
+        //ì íƒìƒ‰
         Collider2D[] cs = Physics2D.OverlapCircleAll(fr.transform.position, r);
         List<GameObject> o = new List<GameObject>();
         for (int i = 0; i < cs.Length; i++)
         {
             var v = cs[i].GetComponentInParent<Info>();
-            if (v==null) continue;//°ø°İ¤·
+            if (v==null) continue;//ê³µê²©ã…‡
             if (v.gameObject == gameObject) continue;
-            if (Info.isDiffer(fr, v.gameObject)==false) continue;//´Ù¸¥ ÆÀ
+            if (Info.isDiffer(fr, v.gameObject)==false) continue;//ë‹¤ë¥¸ íŒ€
 
             //var v = cs[i].GetComponentInParent<Life>();
 
@@ -145,7 +159,7 @@ public class AI : MonoBehaviour
         for (int i = 0; i < gos.Count; i++)    //Enemy
         {
             float dist = (gos[i].transform.position - now).sqrMagnitude; 
-            if (dist < min)//´õ °¡±î¿î ¾Ö ¹ß°ß
+            if (dist < min)//ë” ê°€ê¹Œìš´ ì•  ë°œê²¬
             {
                 min = dist;
                 close = gos[i];
@@ -162,12 +176,12 @@ public class AI : MonoBehaviour
         float dist = Vector3.Distance(fr, to);
 
 
-        //°Å¸®
+        //ê±°ë¦¬
         if (dist > sight.Radious)
             return false;
 
 
-        //°¢µµ
+        //ê°ë„
         if (Vector3.Angle(transform.forward, dir) > sight.Angle / 2)        
             return false;
 
@@ -190,20 +204,20 @@ public class AI : MonoBehaviour
 /*
  *          if (target == null)
             {
-                //»õ·ÎÅ½»ö
+                //ìƒˆë¡œíƒìƒ‰
                 target = GetCloseEnemy(gameObject, sight.Radious);
 
-                //»õ·Î¿îÀû ¾ø´Ù 
+                //ìƒˆë¡œìš´ì  ì—†ë‹¤ 
                 if (target == null)
                 {              
 
                 }
             }
-            //ÇöÁ¦Àû ÀÖ´Ù 
+            //í˜„ì œì  ìˆë‹¤ 
             else
             {
 
-                //ÀÖ´Ù°¡ ¾ø¾îÁö¸é ±×ÂÊÀ¸·ÎÀÌµ¿
+                //ìˆë‹¤ê°€ ì—†ì–´ì§€ë©´ ê·¸ìª½ìœ¼ë¡œì´ë™
                // if (GetCloseEnemy(gameObject, sight.Radious) == null)
                 if(Vector3.Distance(target.transform.position,transform.position)>sight.Radious)
                 {
@@ -212,7 +226,7 @@ public class AI : MonoBehaviour
 
                     target = null;
                 }
-            }  //ÁÖº¯¼øÂû 
+            }  //ì£¼ë³€ìˆœì°° 
                     if (nav.remainingDistance < nav.stoppingDistance + 0.1f)
                     {
                         Vector3 pos = transform.position;
@@ -227,16 +241,16 @@ public class AI : MonoBehaviour
 
 
 
-        //ÇöÁ¦Àû ¾ø´Ù 
+        //í˜„ì œì  ì—†ë‹¤ 
         if (target == null)
         {
-            //»õ·ÎÅ½»ö
+            //ìƒˆë¡œíƒìƒ‰
             target = GetCloseEnemy(gameObject, sight.Radious);
 
-            //»õ·Î¿îÀû ¾ø´Ù 
+            //ìƒˆë¡œìš´ì  ì—†ë‹¤ 
             if (target == null)
             {
-                //ÁÖº¯¼øÂû 
+                //ì£¼ë³€ìˆœì°° 
                 if (nav.remainingDistance < nav.stoppingDistance + 0.2f)
                 {
                     Vector3 pos = transform.position;
@@ -248,11 +262,11 @@ public class AI : MonoBehaviour
                 }
             }
         }
-        //ÇöÁ¦Àû ÀÖ´Ù 
+        //í˜„ì œì  ìˆë‹¤ 
         else
         {
 
-            //ÀÖ´Ù°¡ ¾ø¾îÁö¸é ±×ÂÊÀ¸·ÎÀÌµ¿
+            //ìˆë‹¤ê°€ ì—†ì–´ì§€ë©´ ê·¸ìª½ìœ¼ë¡œì´ë™
             if (GetCloseEnemy(gameObject, sight.Radious) == null)
             {
                 if (nav.enabled)
