@@ -10,15 +10,13 @@ public class GameManager
     BoxCollider2D _areaCollider;
     List<Transform> _enemyList = new List<Transform>();
     public List<Transform> EnemyList => _enemyList;
-    float _minDistance = 2f;
 
+    float _minDistance = 2f;
     int _spawnNormalEnemyCount = 16;    //  소환할 일반 적 수
 
     public void Init()
     {
-        Debug.Log("Game");
         _areaCollider = GameObject.FindAnyObjectByType<Boundary>().GetComponent<BoxCollider2D>();
-
         SpawnEnemy();
     }
 
@@ -57,6 +55,5 @@ public class GameManager
 
     public void Clear()
     {
-
     }
 }

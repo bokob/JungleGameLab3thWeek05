@@ -5,6 +5,7 @@ public class TaskDash : Node
 {
     Transform _transform;
     Dash _dash;
+    Silhouette _silhouette;
     Rigidbody2D _rb;
     float _dashOffset = 1.2f;
 
@@ -13,6 +14,7 @@ public class TaskDash : Node
         _transform = transform;
         _rb = transform.GetComponent<Rigidbody2D>();
         _dash = new Dash();
+        _silhouette = transform.GetComponent<Silhouette>();
     }
 
     public override NodeState Evaluate()

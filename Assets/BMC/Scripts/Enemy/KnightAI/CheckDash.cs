@@ -34,7 +34,6 @@ public class CheckDash : Node
                 SetData("isReadyDash", false);
 
             _dashCounter += Time.deltaTime;
-            Debug.Log($"{_dashCounter} {isCanDash}");
             if (!isCanDash && _dashCounter >= _dashTime)
             {
                 SetData("isReadyDash", true);

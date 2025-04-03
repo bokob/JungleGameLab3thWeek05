@@ -3,7 +3,6 @@ using UnityEngine;
 public class Status : MonoBehaviour
 {
     Animator _anim;
-    Rigidbody2D _rb;
     Collider2D _collider;
 
     [SerializeField] float _hp;
@@ -21,7 +20,6 @@ public class Status : MonoBehaviour
     void Awake()
     {
         _anim = GetComponent<Animator>();
-        _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _silhouette = GetComponent<Silhouette>();

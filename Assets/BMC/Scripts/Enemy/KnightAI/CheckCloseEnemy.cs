@@ -4,15 +4,11 @@ using static Define;
 // 가까운 적 확인하는 노드
 public class CheckCloseEnemy : Node
 {
-    static int _enemyLayerMask = 1 << 6;
-
     Transform _transform;
-    Animator _anim;
 
     public CheckCloseEnemy(Transform transform)
     {
         _transform = transform;
-        _anim = transform.GetComponent<Animator>();
     }
 
     public override NodeState Evaluate()

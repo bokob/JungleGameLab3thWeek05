@@ -27,7 +27,6 @@ public class TaskAttack : Node
         _attackCounter += Time.deltaTime;
         if (_attackCounter >= _attackTime)
         {
-            _anim.SetBool("IsAttack", false);
             _anim.SetBool("IsMove", true);
             
             _sword.Use();
