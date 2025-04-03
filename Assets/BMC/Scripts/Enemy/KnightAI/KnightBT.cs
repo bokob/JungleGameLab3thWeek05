@@ -34,6 +34,7 @@ public class KnightBT : Tree
         {
             new Sequence(new List<Node>
             {
+                new CheckDash(transform),
                 new TaskDash(transform),
             }),
             new Sequence(new List<Node>

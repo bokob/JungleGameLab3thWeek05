@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 2073936670368439651}
   - component: {fileID: 3884234439723002304}
   m_Layer: 0
-  m_Name: KnightPrefab
+  m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Dash
 {
-    float _dashSpeed = 3f;
+    float _dashSpeed = 2f;
 
     public void Play(Rigidbody2D rb, Vector2 direction)
     {

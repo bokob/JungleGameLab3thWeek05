@@ -20,7 +20,7 @@ public class CheckCloseEnemy : Node
         object targetObject = GetData("target");
         Transform closeEnemy = null;
         float dist = float.MaxValue;
-        foreach (Transform enemy in Manager.Instance.EnemyList)
+        foreach (Transform enemy in Manager.Game.EnemyList)
         {
             if (enemy == _transform)
                 continue;
