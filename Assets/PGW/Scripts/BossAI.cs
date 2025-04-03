@@ -125,10 +125,41 @@ public class BossAI : MonoBehaviour
                 if (act != null && act.Check_Condition(target.transform.position, target))
                 {
                     act.Try_Act(gameObject, target.transform.position, target);
+                    return;
                 }
             }
         }
         Debug.LogWarning($"이름이 '{actName}'인 Act를 찾을 수 없거나 조건을 만족하지 않습니다.");
+    }
+
+    public void StartPossibleAct(List<string> acts)
+    {
+        if (target == null) return;
+
+
+        List<Act> temp = new List<Act>();
+        foreach (var a in _actManager.possess)
+        {
+            foreach (var actName in acts)
+            {
+                if (a != null && a.gameObject.name.Contains(actName))
+                {
+                    Act act = a;
+                    if (act == null)
+                    {
+                        return;
+                    }
+                    if (act != null && act.Check_Condition(target.transform.position, target))
+                    {
+                        temp.Add(act);
+                    }
+                }
+            }
+        }
+
+        //랜덤실행          
+        if (temp.Count > 0)
+            temp[Random.Range(0, temp.Count - 1)].Try_Act(gameObject, target.transform.position, target);
     }
 
     public GameObject GetCloseEnemy(GameObject fr, float r)

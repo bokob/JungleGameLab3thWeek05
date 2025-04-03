@@ -29,13 +29,7 @@ public class AIBehaviorHandler : MonoBehaviour
         // 조건 만족하는 모든 Act 실행
         if (actsToExecute.Count > 0)
         {
-            while(actsToExecute.Count > 0)
-            {
-                int randomIndex = Random.Range(0, actsToExecute.Count);
-                string actName = actsToExecute[randomIndex];
-                actsToExecute.RemoveAt(randomIndex);
-                boss.StartAct(actName);
-            }
+            boss.StartPossibleAct(actsToExecute);
         }
     }
 
