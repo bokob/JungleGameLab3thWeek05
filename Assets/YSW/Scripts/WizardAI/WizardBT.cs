@@ -6,9 +6,9 @@ using BehaviorTree;
 public class WizardBT : Tree
 {
 
-    public static float speed = 2f;
+    public static float speed = 1f;
     public static float fovRange = 20f;
-    public static float attackRange = 5f;
+    public static float attackRange = 2f;
     protected override Node SetupTree()
     {
 

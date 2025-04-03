@@ -21,7 +21,7 @@ public class CheckEnemyInTeleportRange : Node
         }
 
         Transform target = (Transform)t;
-        if (Vector2.Distance(_transform.position, target.position) <= _teleportRange)
+        if (Vector3.Distance(_transform.position, target.position) <= _teleportRange)
         {
             state = NodeState.SUCCESS; // 적이 너무 가까우면 성공
             return state;

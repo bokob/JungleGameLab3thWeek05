@@ -4,8 +4,8 @@ using BehaviorTree;
 public class TaskTeleport : Node
 {
     private Transform _transform;
-    private float _teleportDistance = 15f; // 텔레포트 거리
-    private float _cooldownTime = 5f;    // 쿨타임 5초
+    private float _teleportDistance = 6f; // 텔레포트 거리
+    private float _cooldownTime = 0f;    // 쿨타임 5초
     private float _cooldownCounter = 0f; // 쿨타임 카운터
 
     public TaskTeleport(Transform transform)

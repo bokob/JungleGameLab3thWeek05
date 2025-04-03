@@ -28,7 +28,7 @@ public class CheckEnemyInAttackRange : Node
         if (Vector2.Distance(_transform.position, target.position) <= WizardBT.attackRange)
         {
             //_animator.SetBool("Attacking", true);
-            //_animator.SetBool("Walking", false);
+            _animator.SetBool("WalkRight", false);
 
             state = NodeState.SUCCESS;
             return state;
