@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    Sword _sword;
+    Excalibur _excalibur;
     
     void Start()
     {
-        _sword = GetComponentInChildren<Sword>();
-        Manager.Input.attackAction += _sword.Use;
+        _excalibur = GetComponentInChildren<Excalibur>();
+        Manager.Input.attackAction += _excalibur.Use;
     }
 }
