@@ -133,6 +133,7 @@ public class AI : MonoBehaviour
         List<GameObject> o = new List<GameObject>();
         for (int i = 0; i < cs.Length; i++)
         {
+            if (cs[i] == null) continue;
             var v = cs[i].GetComponentInParent<Status>(); if (v==null) continue;//공격ㅇ         
             if (v.gameObject == gameObject) continue;
             //if (Info.isDiffer(fr, v.gameObject)==false) continue;//다른 팀
