@@ -47,7 +47,7 @@ public class Status : MonoBehaviour
         if(_isDead) return;
 
         _hp = Mathf.Clamp(_hp - damage, 0, _maxHP);
-        //_anim.SetTrigger("HitTrigger");
+        _anim.SetTrigger("HitTrigger");
         if (_hp <=0)
         {
             Die();
@@ -60,7 +60,7 @@ public class Status : MonoBehaviour
         _collider.enabled = false;
         Manager.Instance.EnemyList.Remove(transform);
 
-        //_anim.SetTrigger("DieTrigger");
+        _anim.SetTrigger("DieTrigger");
         _spriteRenderer.color = Color.gray;
         //_silhouette.Clear();
         transform.Find("Weapon").gameObject.SetActive(false);

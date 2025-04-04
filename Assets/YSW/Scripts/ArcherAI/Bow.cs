@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    Animator _anim;
+    void Awake()
     {
-        
+        _anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Use()
     {
-        
+        _anim.SetTrigger("AttackTrigger");
     }
 }
