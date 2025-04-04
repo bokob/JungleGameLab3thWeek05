@@ -64,8 +64,8 @@ public class Status : MonoBehaviour
         Manager.Game.SpawnedList.Remove(transform);
 
         _anim.SetTrigger("DieTrigger");
+        DieAction?.Invoke();
         //_spriteRenderer.color = Color.gray;
         //_silhouette.Clear();
-        transform.Find("Weapon").gameObject.SetActive(false);
     }
 }

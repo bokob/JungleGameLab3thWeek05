@@ -4,7 +4,6 @@ using static Define;
 public class TaskDash : Node
 {
     Transform _transform;
-    Silhouette _silhouette;
     Rigidbody2D _rb;
     float _dashOffset = 1.2f;
     float _dashSpeed = 4f;
@@ -13,7 +12,6 @@ public class TaskDash : Node
     {
         _transform = transform;
         _rb = transform.GetComponent<Rigidbody2D>();
-        _silhouette = transform.GetComponent<Silhouette>();
     }
 
     public override NodeState Evaluate()

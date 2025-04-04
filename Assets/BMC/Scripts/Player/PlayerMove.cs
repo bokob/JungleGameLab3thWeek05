@@ -4,15 +4,17 @@ public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D _rb;
     Animator _anim;
-    [SerializeField] float _moveSpeed = 15f;
+    [SerializeField] float _moveSpeed = 30f;
     [SerializeField] Vector2 _moveDir;
 
+    PlayerDash _playerDash;
     Status _status;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        _playerDash = GetComponent<PlayerDash>();
         _status = GetComponent<Status>();
     }
 
@@ -20,7 +22,7 @@ public class PlayerMove : MonoBehaviour
     {
         _moveDir = Manager.Input.MoveInput.normalized;
 
-        if (!Manager.Input.DashInput)
+        if (!_playerDash.IsDashing)
         {
             Debug.Log(Manager.Input.MoveInput);
             if (_moveDir != Vector2.zero)
@@ -35,6 +37,10 @@ public class PlayerMove : MonoBehaviour
                 Debug.Log("안움직임");
                 _anim.SetBool("IsMove", false);
             }
+        }
+        else
+        {
+            _anim.SetBool("IsMove", false);
         }
     }
 }

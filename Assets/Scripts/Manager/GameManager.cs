@@ -23,7 +23,7 @@ public class GameManager
 
     public void Init()
     {
-        _polygonCollider = GameObject.FindAnyObjectByType<Ground>().GetComponent<PolygonCollider2D>();
+        _polygonCollider = GameObject.FindAnyObjectByType<ArenaGround>().GetComponent<PolygonCollider2D>();
         _cameraController = Camera.main.GetComponent<CameraController>();
         SpwanPlayer();
         _cameraController.Init();
