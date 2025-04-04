@@ -49,7 +49,7 @@ public class CheckEnemyInAttackRange_Y : Node
         Transform target = (Transform)targetObject;
         if (Vector3.Distance(_transform.position, target.position) <= WizardBT_Y.AttackRange)
         {
-            Debug.Log("공격준비");
+           // Debug.Log("공격준비");
 
             nodeState = NodeState.Success;
             return nodeState;

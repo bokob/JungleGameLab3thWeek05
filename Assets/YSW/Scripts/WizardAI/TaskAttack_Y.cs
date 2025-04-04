@@ -23,13 +23,13 @@ public class TaskAttack_Y : Node
         _staff = _transform.Find("Weapon/Staff");
         if (_staff == null)
         {
-            Debug.LogError("Staff 오브젝트를 Wizard > Weapon 아래에 추가해주세요!");
+            //Debug.LogError("Staff 오브젝트를 Wizard > Weapon 아래에 추가해주세요!");
         }
 
         _fireballPrefab = Resources.Load<GameObject>("Fireball");
         if (_fireballPrefab == null)
         {
-            Debug.LogError("Fireball 프리팹을 Resources 폴더에서 찾을 수 없어요!");
+            //Debug.LogError("Fireball 프리팹을 Resources 폴더에서 찾을 수 없어요!");
         }
     }
 
@@ -49,7 +49,7 @@ public class TaskAttack_Y : Node
         {
             ClearData("target"); // 죽은 타겟 지우기
             ResetCasting();      // 캐스팅 취소
-            Debug.Log("타겟이 죽었어요! 캐스팅 취소!");
+            //Debug.Log("타겟이 죽었어요! 캐스팅 취소!");
             nodeState = NodeState.Failure;
             return nodeState;
         }
@@ -69,14 +69,14 @@ public class TaskAttack_Y : Node
             _isCasting = true;           // 캐스팅 시작
             _castingCounter = _castingTime;
             
-            Debug.Log("캐스팅 시작!");
+            //Debug.Log("캐스팅 시작!");
         }
 
         _castingCounter -= Time.deltaTime;
         if (_castingCounter > 0)
         {
             _anim.SetBool("IsMove", false); // 캐스팅 중 Idle
-            Debug.Log("캐스팅 중... 남은 시간: " + _castingCounter);
+            //Debug.Log("캐스팅 중... 남은 시간: " + _castingCounter);
             nodeState = NodeState.Running;
             return nodeState;
         }
@@ -91,7 +91,7 @@ public class TaskAttack_Y : Node
             Vector2 direction = (target.position - _staff.position).normalized;
             fbScript.SetDirection(direction);
             _staffY.Use();               // 지팡이 애니메이션 시작
-            Debug.Log("파이어볼 발사!");
+            //Debug.Log("파이어볼 발사!");
         }
 
         _attackCounter = _attackCooldown; // 쿨타임 시작

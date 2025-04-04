@@ -22,12 +22,12 @@ public class CheckEnemyInTeleportRange_Y : Node
 
         // 적과의 거리 계산
         float distance = Vector3.Distance(_transform.position, target.position);
-        Debug.Log("적과의 거리: " + distance);
+       // Debug.Log("적과의 거리: " + distance);
 
         // 적이 너무 가까우면 텔레포트 필요
         if (distance <= _teleportRange)
         {
-            Debug.Log("적이 너무 가까워요! 텔레포트 준비!");
+            //Debug.Log("적이 너무 가까워요! 텔레포트 준비!");
             nodeState = NodeState.Success;
             return nodeState;
         }
