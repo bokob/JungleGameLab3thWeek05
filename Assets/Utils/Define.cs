@@ -8,4 +8,13 @@ public class Define
         Success,
         Failure
     }
+
+    public enum NormalMonsterType
+    {
+        Knight,
+        //Archer,
+        //Wizard,
+        //Necromancer,
+        //Orc
+    }
 }

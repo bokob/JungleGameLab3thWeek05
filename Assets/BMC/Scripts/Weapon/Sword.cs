@@ -10,6 +10,6 @@ public class Sword : MonoBehaviour
 
     public void Use()
     {
-        _anim.SetTrigger("Attack");
+        _anim.SetTrigger("AttackTrigger");
     }
 }

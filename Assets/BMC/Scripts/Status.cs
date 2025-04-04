@@ -3,7 +3,6 @@ using UnityEngine;
 public class Status : MonoBehaviour
 {
     Animator _anim;
-    Rigidbody2D _rb;
     Collider2D _collider;
 
     [SerializeField] float _hp;
@@ -21,7 +20,6 @@ public class Status : MonoBehaviour
     void Awake()
     {
         _anim = GetComponent<Animator>();
-        _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _silhouette = GetComponent<Silhouette>();
@@ -30,7 +28,7 @@ public class Status : MonoBehaviour
 
     void Init()
     {
-        _maxHP = 10f;
+        _maxHP = 100f;
         _hp = _maxHP;
     }
 
@@ -58,7 +56,7 @@ public class Status : MonoBehaviour
     {
         _isDead = true;
         _collider.enabled = false;
-        Manager.Instance.EnemyList.Remove(transform);
+        Manager.Game.EnemyList.Remove(transform);
 
         _anim.SetTrigger("DieTrigger");
         _spriteRenderer.color = Color.gray;

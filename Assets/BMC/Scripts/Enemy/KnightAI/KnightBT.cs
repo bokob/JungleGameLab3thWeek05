@@ -8,9 +8,11 @@ public class KnightBT : Tree
     static public float MoveSpeed => _moveSpeed;
     static public float AttackRange => _attackRange;
 
-    [SerializeField] float _testAttackRange = 0.175f;
+    [SerializeField] float _testAttackRange = 0.2f;
 
     [SerializeField] Transform _target;
+
+    [SerializeField] bool _isReadyDash;
 
     Status _status;
 
@@ -34,18 +36,19 @@ public class KnightBT : Tree
         {
             new Sequence(new List<Node>
             {
-                new TaskDash(transform),
+                new CheckEnemyInAttackRange(transform),
+                new TaskAttack(transform),
             }),
             new Sequence(new List<Node>
             {
-                new CheckEnemyInAttackRange(transform),
-                new TaskAttack(transform),
+                new CheckDash(transform),
+                new TaskDash(transform),
             }),
             new Sequence(new List<Node> 
             {
                 new CheckCloseEnemy(transform),
                 new TaskGoToTarget(transform),
-            }),
+            })
         });
         return root;
     }
