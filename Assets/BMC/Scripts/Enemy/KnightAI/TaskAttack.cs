@@ -10,6 +10,7 @@ public class TaskAttack : Node
 
     float _attackTime = 1f;
     float _attackCounter = 0f;
+    float _knockbackForce = 5f;
 
     public TaskAttack(Transform transform)
     {
@@ -33,7 +34,7 @@ public class TaskAttack : Node
             Debug.Log("공격?");
 
             Vector2 dir = target.position - _transform.position;
-            target.GetComponent<Rigidbody2D>().AddForce(dir.normalized, ForceMode2D.Impulse);
+            target.GetComponent<Rigidbody2D>().AddForce(dir.normalized * _knockbackForce, ForceMode2D.Impulse);
             target.GetComponent<Status>().TakeDamage(10f);
 
             _attackCounter = 0f;

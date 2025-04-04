@@ -3,7 +3,7 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     Animator _anim;
-    void Awake()
+    void Start()
     {
         _anim = GetComponent<Animator>();
     }

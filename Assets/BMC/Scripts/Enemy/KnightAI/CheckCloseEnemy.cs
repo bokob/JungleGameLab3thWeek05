@@ -16,7 +16,7 @@ public class CheckCloseEnemy : Node
         object targetObject = GetData("target");
         Transform closeEnemy = null;
         float dist = float.MaxValue;
-        foreach (Transform enemy in Manager.Game.EnemyList)
+        foreach (Transform enemy in Manager.Game.SpawnedList)
         {
             if (enemy == _transform)
                 continue;

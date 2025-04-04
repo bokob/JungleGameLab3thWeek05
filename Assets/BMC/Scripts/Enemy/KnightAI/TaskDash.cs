@@ -4,16 +4,15 @@ using static Define;
 public class TaskDash : Node
 {
     Transform _transform;
-    Dash _dash;
     Silhouette _silhouette;
     Rigidbody2D _rb;
     float _dashOffset = 1.2f;
+    float _dashSpeed = 4f;
 
     public TaskDash(Transform transform)
     {
         _transform = transform;
         _rb = transform.GetComponent<Rigidbody2D>();
-        _dash = new Dash();
         _silhouette = transform.GetComponent<Silhouette>();
     }
 
@@ -33,7 +32,7 @@ public class TaskDash : Node
         // 공격 사거리 x 보정값 보다 가까우면, 랜덤 방향으로 대시
         Vector2 dir = Vector2.zero;
         dir = (KnightBT.AttackRange * _dashOffset < dist) ? (target.position - _transform.position).normalized : Random.insideUnitCircle.normalized;
-        _dash.Play(_rb, dir);
+        _rb.linearVelocity = dir * _dashSpeed;
         SetData("isReadyDash", false);
         Debug.Log("대시 사용");
 
