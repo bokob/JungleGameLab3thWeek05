@@ -8,11 +8,11 @@ public class WizardBT_Y : Tree
 {
 
     static float _moveSpeed = 0.25f;        // 이동 속도
-    static float _attackRange = 1.5f;  // 공격 사거리
+    static float _attackRange = 5f;  // 공격 사거리
     static public float MoveSpeed => _moveSpeed;
     static public float AttackRange => _attackRange;
 
-    [SerializeField] float _testAttackRange = 1.5f;
+    [SerializeField] float _testAttackRange = 5f;
 
 
 
