@@ -20,8 +20,8 @@ public class Define
     public enum NormalMonsterType
     {
         Knight,
-        //Archer,
-        //Wizard,
+        Archer,
+        Wizard,
         //Necromancer,
         //Orc
     }

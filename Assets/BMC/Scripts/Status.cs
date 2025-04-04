@@ -61,10 +61,10 @@ public class Status : MonoBehaviour
     {
         _isDead = true;
         _collider.enabled = false;
-        Manager.Instance.EnemyList.Remove(transform);
+        Manager.Game.SpawnedList.Remove(transform);
 
         _anim.SetTrigger("DieTrigger");
-        _spriteRenderer.color = Color.gray;
+        //_spriteRenderer.color = Color.gray;
         //_silhouette.Clear();
         transform.Find("Weapon").gameObject.SetActive(false);
     }
