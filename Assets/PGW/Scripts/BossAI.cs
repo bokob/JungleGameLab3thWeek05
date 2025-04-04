@@ -132,7 +132,7 @@ public class BossAI : MonoBehaviour
         Debug.LogWarning($"이름이 '{actName}'인 Act를 찾을 수 없거나 조건을 만족하지 않습니다.");
     }
 
-    public void StartPossibleAct(List<string> acts)
+    public void StartPossibleAct(List<Act> acts)
     {
         if (target == null) return;
 
@@ -142,7 +142,7 @@ public class BossAI : MonoBehaviour
         {
             foreach (var actName in acts)
             {
-                if (a != null && a.gameObject.name.Contains(actName))
+                if (a != null && a.gameObject.name.Contains(actName.gameObject.name))
                 {
                     Act act = a;
                     if (act == null)

@@ -4,14 +4,14 @@ using static UnityEngine.GraphicsBuffer;
 
 public class AIBehaviorHandler : MonoBehaviour
 {
-    [SerializeField] private List<string> _approachActs = new List<string>(); // 접근 중 실행할 Act 이름들
-    [SerializeField] private List<string> _notApproachActs = new List<string>(); // 접근 중이 아닐 때 실행할 Act 이름들
+    [SerializeField] private List<Act> _approachActs = new List<Act>(); // 접근 중 실행할 Act 이름들
+    [SerializeField] private List<Act> _notApproachActs = new List<Act>(); // 접근 중이 아닐 때 실행할 Act 이름들
 
     public virtual void ExecuteBehavior(BossAI boss)
     {
         if (boss.target == null) return;
 
-        List<string> actsToExecute = new List<string>();
+        List<Act> actsToExecute = new List<Act>();
 
         if (boss.IsTargetApproaching)
         {
@@ -34,6 +34,6 @@ public class AIBehaviorHandler : MonoBehaviour
     }
 
     // Inspector에서 접근 가능 (선택 사항)
-    public List<string> ApproachActs => _approachActs;
-    public List<string> NotApproachActs => _notApproachActs;
+    public List<Act> ApproachActs => _approachActs;
+    public List<Act> NotApproachActs => _notApproachActs;
 }
