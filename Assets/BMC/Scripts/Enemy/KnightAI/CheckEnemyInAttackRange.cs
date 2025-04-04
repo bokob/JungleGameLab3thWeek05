@@ -29,10 +29,7 @@ public class CheckEnemyInAttackRange : Node
         if (Vector3.Distance(_transform.position, target.position) <= KnightBT.AttackRange)
         {
             Debug.Log("공격준비");
-
             _anim.SetBool("IsMove", false);
-            _anim.SetBool("IsAttack", true);
-            //_animator.SetBool("Walking", false);
 
             nodeState = NodeState.Success;
             return nodeState;

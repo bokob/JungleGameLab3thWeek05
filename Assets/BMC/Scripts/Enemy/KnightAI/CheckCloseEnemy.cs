@@ -4,15 +4,11 @@ using static Define;
 // 가까운 적 확인하는 노드
 public class CheckCloseEnemy : Node
 {
-    static int _enemyLayerMask = 1 << 6;
-
     Transform _transform;
-    Animator _anim;
 
     public CheckCloseEnemy(Transform transform)
     {
         _transform = transform;
-        _anim = transform.GetComponent<Animator>();
     }
 
     public override NodeState Evaluate()
@@ -20,7 +16,7 @@ public class CheckCloseEnemy : Node
         object targetObject = GetData("target");
         Transform closeEnemy = null;
         float dist = float.MaxValue;
-        foreach (Transform enemy in Manager.Instance.EnemyList)
+        foreach (Transform enemy in Manager.Game.SpawnedList)
         {
             if (enemy == _transform)
                 continue;
