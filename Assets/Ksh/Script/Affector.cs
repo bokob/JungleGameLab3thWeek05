@@ -34,7 +34,7 @@ public class Affector : MonoBehaviour
         if (hitted.Contains(v.gameObject) == true) return;
 
         var infoTarget = go.GetComponentInParent<Info>();//ai는 항상info가짐 / 적이 가지면
-        if (info.owner && infoTarget != null)
+        if (info!=null && info.owner && infoTarget != null)
             if (Info.isDiffer(info.owner, v.gameObject) == false)
                 return;//다른 팀
 
