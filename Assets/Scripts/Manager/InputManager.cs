@@ -83,18 +83,14 @@ public class InputManager
 
     void OnDash(InputAction.CallbackContext context)
     {
-        Debug.Log("입력이 왜 안들어올까?");
-
         if(context.performed)
         {
             _dashInput = true;
             dashAction.Invoke(_moveInput);
-            Debug.LogError("플레이어 대시");
         }
         else if(context.canceled)
         {
             _dashInput = false;
-            Debug.LogError("대시 취소");
         }
     }
 
