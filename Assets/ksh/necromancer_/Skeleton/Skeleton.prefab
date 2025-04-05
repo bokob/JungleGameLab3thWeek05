@@ -226,7 +226,7 @@ MonoBehaviour:
   owner_Dash: 0
   this_looking_target: 0
   this_Potision_to_owner: 0
-  destroy_time: 0
+  destroy_time: 10
   onEnd:
     m_PersistentCalls:
       m_Calls: []

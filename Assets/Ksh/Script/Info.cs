@@ -16,7 +16,19 @@ public class Info : MonoBehaviour
     public Vector3 to;
     public Act act;
 
-    public void Init(GameObject _owner, Vector3 _to, GameObject _target, Act _act ) 
+    static int team_count = 0;
+
+
+
+    private void Start()
+    {
+        if (owner == null)
+        {
+            team = team_count;
+            team_count++;
+        }
+    }
+    public void Init(GameObject _owner, Vector3 _to, GameObject _target, Act _act)
     {
         if (_owner)
         {
@@ -24,7 +36,6 @@ public class Info : MonoBehaviour
             team = v.team;
             multiply = v.multiply;
         }
-
 
 
         owner = _owner;
