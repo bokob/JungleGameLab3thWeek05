@@ -24,6 +24,7 @@ public class PlayerDash : MonoBehaviour
         _isDashing = true;
         _silhouette.IsActive = true;                        // 대시 중 실루엣 활성화
         _rb.linearVelocity = direction * _dashSpeed;
+        Camera.main.GetComponentInChildren<ParticleSystem>().Play();
         yield return new WaitForSeconds(_dashCoolTime);     // 대시 쿨타임
         _isDashing = false;
         _silhouette.IsActive = false;                        // 대시 중 실루엣 비활성화
