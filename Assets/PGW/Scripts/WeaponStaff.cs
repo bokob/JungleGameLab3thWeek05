@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class WeaponStaff : MonoBehaviour
 {
-    GameObject _fireballPrefab;
 
-    void Start()
-    {
-        _fireballPrefab = Resources.Load<GameObject>("Fireball");
-    }
+    private int staffLevelMax = 5;
 
     public void Use()
     {
-        Instantiate(_fireballPrefab, transform.position, transform.rotation);
+        var to = Camera.main.ScreenToWorldPoint(Input.mousePosition); to.z = 0;
+        int stafflevel = GetComponentInParent<PlayerTransform>().staffLevel;
+        if (stafflevel > staffLevelMax)
+            stafflevel = staffLevelMax;
+        transform.GetChild(stafflevel - 1).gameObject.GetComponent<Act>().Try_Act(transform.GetComponentInParent<Status>().gameObject, to);
     }
 }

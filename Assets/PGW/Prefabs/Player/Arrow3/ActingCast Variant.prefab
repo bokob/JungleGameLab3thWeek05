@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
+      propertyPath: next
+      value: 
+      objectReference: {fileID: 8787154227182339690, guid: ab2c3d9adb28c2947a10627b337c962d, type: 3}
+    - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
+      propertyPath: destroy_time
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7909999447083184456, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: m_Name
       value: ActingCast Variant

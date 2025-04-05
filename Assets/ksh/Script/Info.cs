@@ -8,7 +8,7 @@ public class Info : MonoBehaviour
     public int team;
 
 
-    //1Â÷ 2Â÷ »ı¼º¹°
+    //1ì°¨ 2ì°¨ ìƒì„±ë¬¼
 
     [Space(30)]
     public GameObject owner;
@@ -16,13 +16,19 @@ public class Info : MonoBehaviour
     public Vector3 to;
     public Act act;
 
-    public void Init(GameObject _owner, Vector3 _to, GameObject _target, Act _act ) 
+    public void Init(GameObject _owner, Vector3 _to, GameObject _target, Act _act)
     {
         owner = _owner;
         to = _to;
         target = _target;
         act = _act;
-        if (_owner) team = _owner.GetComponent<Info>().team;
+  
+         if (_owner)
+        {
+            var v = _owner.GetComponent<Info>();
+
+            team = v.team;
+        }
     }
 
     public static bool isDiffer(GameObject t1, GameObject t2)

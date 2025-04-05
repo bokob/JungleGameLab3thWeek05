@@ -1,10 +1,12 @@
 using System.Collections;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 // 플레이어 전용 검
 public class Excalibur : MonoBehaviour
 {
     Animator _anim;
+    private int swordLevelMax = 1;
     bool isAttacking = false;
     void Start()
     {
@@ -13,20 +15,41 @@ public class Excalibur : MonoBehaviour
     public void Use()
     {
         _anim.SetTrigger("AttackTrigger");
+        var to = Camera.main.ScreenToWorldPoint(Input.mousePosition); to.z = 0;
+        int swordlevel = GetComponentInParent<PlayerTransform>().excaliburLevel;
+        if (swordlevel > swordLevelMax)
+            swordlevel = swordLevelMax;
+        transform.GetChild(swordlevel - 1).gameObject.GetComponent<Act>().Try_Act(transform.GetComponentInParent<Status>().gameObject, to);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {   
-        // 플레이어면 종료
-        if (transform.root == collision.transform)
-            return;
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{   
+    //    // 플레이어면 종료
+    //    if (transform.root == collision.transform)
+    //        return;
 
-        if (collision.gameObject.TryGetComponent<Status>(out Status status))
-        {
-            Vector2 dir = (collision.transform.position - transform.position).normalized;
-            collision.transform.GetComponent<Rigidbody2D>().AddForce(dir * 10f, ForceMode2D.Impulse);
-            // 적에게 데미지 주기
-            status.TakeDamage(10f);
-        }
-    }
+    //    if (collision.gameObject.TryGetComponent<Status>(out Status status))
+    //    {
+    //        Vector2 dir = (collision.transform.position - transform.position).normalized;
+    //        collision.transform.GetComponent<Rigidbody2D>().AddForce(dir * 10f, ForceMode2D.Impulse);
+    //        // 적에게 데미지 주기
+    //        status.TakeDamage(10f);
+    //        if (status.IsDead == true)
+    //        {
+    //            if (status.gameObject.name.Contains("Knight"))
+    //            {
+    //                transform.GetComponentInParent<PlayerTransform>().excaliburLevel++;
+    //            }
+    //            else if (status.gameObject.name.Contains("Archer"))
+    //            {
+    //                transform.GetComponentInParent<PlayerTransform>().bowLevel++;
+    //                Debug.Log("Bow Level Up");
+    //            }
+    //            else if (status.gameObject.name.Contains("Wizard"))
+    //            {
+    //                transform.GetComponentInParent<PlayerTransform>().staffLevel++;
+    //            }
+    //        }
+    //    }
+    //}
 }

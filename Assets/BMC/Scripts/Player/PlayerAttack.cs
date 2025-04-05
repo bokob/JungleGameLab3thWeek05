@@ -10,10 +10,10 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        _excalibur = GetComponentInChildren<Excalibur>();
-        _bow = GetComponentInChildren<WeaponBow>();
-        _staff = GetComponentInChildren<WeaponStaff>();
-        Manager.Input.attackAction += _excalibur.Use;
+        _excalibur = GetComponentInChildren<Excalibur>(true);
+        _bow = GetComponentInChildren<WeaponBow>(true);
+        _staff = GetComponentInChildren<WeaponStaff>(true);
+        Manager.Input.attackAction += Attack;
     }
 
     public void Attack()

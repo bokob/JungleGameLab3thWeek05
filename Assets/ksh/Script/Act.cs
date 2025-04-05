@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static Unity.Cinemachine.CinemachineTargetGroup;
 using static UnityEngine.GraphicsBuffer;
 
 public class Act : MonoBehaviour
@@ -88,6 +89,11 @@ public class Act : MonoBehaviour
         info.Init(owner, to, target, this);
     } 
     
+    public void TryActPlayer()
+    {
+        
+    }
+
     private void OnDrawGizmos()
     {
         UnityEditor.Handles.color = Color.green;
