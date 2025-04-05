@@ -6,9 +6,9 @@ public enum Filter { Unit, ActObj }
 public class Info : MonoBehaviour
 {
     public int team;
+    public float multiply=1;
 
-
-    //1Â÷ 2Â÷ »ı¼º¹°
+    //1ì°¨ 2ì°¨ ìƒì„±ë¬¼
 
     [Space(30)]
     public GameObject owner;
@@ -18,11 +18,19 @@ public class Info : MonoBehaviour
 
     public void Init(GameObject _owner, Vector3 _to, GameObject _target, Act _act ) 
     {
+        if (_owner)
+        {
+            var v = _owner.GetComponent<Info>();
+            team = v.team;
+            multiply = v.multiply;
+        }
+
+
+
         owner = _owner;
         to = _to;
         target = _target;
         act = _act;
-        if (_owner) team = _owner.GetComponent<Info>().team;
     }
 
     public static bool isDiffer(GameObject t1, GameObject t2)

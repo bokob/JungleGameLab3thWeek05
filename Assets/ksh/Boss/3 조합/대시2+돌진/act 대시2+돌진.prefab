@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004237744103755788, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: charge_max
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5004237744103755788, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: charge_str
