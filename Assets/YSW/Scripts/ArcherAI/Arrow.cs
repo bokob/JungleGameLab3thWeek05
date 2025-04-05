@@ -17,7 +17,7 @@ public class Arrow : MonoBehaviour
     {
         direction = dir.normalized;
         startPosition = transform.position;
-        Debug.Log("발사 시작 위치: " + startPosition);
+        //Debug.Log("발사 시작 위치: " + startPosition);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
@@ -49,7 +49,7 @@ public class Arrow : MonoBehaviour
             {
                 Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
                 enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-                Debug.Log("넉백 적용! 힘: " + knockbackForce);
+                //Debug.Log("넉백 적용! 힘: " + knockbackForce);
             }
             Destroy(gameObject);
         }
