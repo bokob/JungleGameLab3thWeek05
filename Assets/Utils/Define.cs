@@ -22,7 +22,7 @@ public class Define
         Knight,
         Archer,
         Wizard,
-        Necromancer,
+        //Necromancer,
         Orc
     }
 
