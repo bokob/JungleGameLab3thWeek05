@@ -50,7 +50,7 @@ public class Affector : MonoBehaviour
         OnHit.Invoke();
 
 
-        if (info.owner !=null)
+        if (info.owner !=null && info.owner.GetComponent<PlayerController>() != null)
         {
             if (v.IsDead == true)
             {
@@ -61,9 +61,16 @@ public class Affector : MonoBehaviour
                 else if (v.gameObject.name.Contains("Archer"))
                 {
                     info.owner.GetComponentInChildren<PlayerTransform>().bowLevel++;
-                    Debug.Log("Bow Level Up");
                 }
                 else if (v.gameObject.name.Contains("Wizard"))
+                {
+                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                }
+                else if (v.gameObject.name.Contains("Orc"))
+                {
+                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                }
+                else if (v.gameObject.name.Contains("Necromancer"))
                 {
                     info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
                 }
