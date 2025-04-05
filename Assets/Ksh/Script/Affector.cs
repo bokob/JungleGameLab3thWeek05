@@ -10,7 +10,7 @@ public class Affector : MonoBehaviour
 
     public UnityEngine.Events.UnityEvent OnHit;
     Info info;
-    List<GameObject> hitted = new List<GameObject>();//�ߺ�����start
+    List<GameObject> hitted = new List<GameObject>();//중복방지start
 
     private void Start()
     {
@@ -21,32 +21,53 @@ public class Affector : MonoBehaviour
     {
         Common(collision.gameObject);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Common(collision.gameObject);
     }
-    public void Common(GameObject go) 
+
+
+
+    public void Common(GameObject go)
     {
-        var l = go.gameObject.GetComponentInParent<Info>();
-        if (l == null) return;
+        var v = go.GetComponentInParent<Status>();  if (v == null) return;
+        if (hitted.Contains(v.gameObject) == true) return;
 
-        if (hitted.Contains(l.gameObject) == true) return;
-
-
-
-        if (Info.isDiffer(info.owner, go.gameObject))
-        {
-            hitted.Add(l.gameObject);
-
-            l.GetComponent<Rigidbody2D>().linearVelocity =
-                (l.gameObject.transform.position - info.owner.transform.position).normalized * push;
+        var infoTarget = go.GetComponentInParent<Info>();//ai는 항상info가짐 / 적이 가지면
+        if (infoTarget != null)
+            if (Info.isDiffer(info.owner, v.gameObject) == false)
+                return;//다른 팀
 
 
-            OnHit.Invoke();
-        }
+
+
+        hitted.Add(v.gameObject);
+
+
+        v.TakeDamage(damage);
+        v.GetComponent<Rigidbody2D>().linearVelocity =
+            (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
+
+        OnHit.Invoke();
+
     }
 
     public void Dest() { Destroy(gameObject); }
 
 }
+
+/*
+ * 
+            if (Info.isDiffer(info.owner, go.gameObject) == false
+        if (info.owner == go.gameObject)  return;//소유자 방지 
+
+ 
+ 
+        var l = go.GetComponentInParent<Info>();  if (l == null) return;
+        if (hitted.Contains(l.gameObject) == true) return;
+        if (Info.isDiffer(info.owner, go.gameObject) == false) return;
+
+
+ 
+ 
+ */

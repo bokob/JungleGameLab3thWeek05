@@ -31,7 +31,7 @@ int    num_count;
                 yield return new WaitForSeconds(f);
                 
                 num_count++;
-                if (num_count >= num) break;
+                if (num_count > num) break;
                 OnTime.Invoke();
             }
         }
