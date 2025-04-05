@@ -8,6 +8,8 @@ public class HealthBar : MonoBehaviour
 
     private Status _status; // Status 컴포넌트 참조
 
+    private Canvas _canvas; // 부모 캔버스 참조
+
     void Start()
     {
         // Status 컴포넌트 찾기
@@ -16,6 +18,9 @@ public class HealthBar : MonoBehaviour
 
         // 초기 HP 바 설정
         UpdateHealthBar();
+
+        // 부모 캔버스 찾기
+        _canvas = GetComponentInParent<Canvas>();
     }
 
     void Update()
@@ -23,6 +28,14 @@ public class HealthBar : MonoBehaviour
         if (_status != null)
         {
             UpdateHealthBar();
+        }
+
+        // 체력이 0 이하일 때 슬라이더 비활성화
+        if (_status.HP <= 0)
+        {
+            _canvas.enabled = false;
+
+
         }
     }
 
