@@ -20,12 +20,12 @@ public class CastingBar : MonoBehaviour
         if (_slider != null)
         {
             _slider.value = progress;
-            Debug.Log($"슬라이더 값 업데이트: {_slider.value}");
+            //Debug.Log($"슬라이더 값 업데이트: {_slider.value}");
             Show();
         }
         else
         {
-            Debug.LogWarning("Slider가 null입니다!");
+            //Debug.LogWarning("Slider가 null입니다!");
         }
     }
 

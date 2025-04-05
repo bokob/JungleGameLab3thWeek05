@@ -15,7 +15,8 @@ public class WizardBT_Y : Tree
     [SerializeField] float _testAttackRange = 5f;
     SpriteRenderer _spriteRenderer;
 
-
+    Canvas canvas1;
+    Transform canvasTransform;
 
     [SerializeField] Transform _target;
 
@@ -53,6 +54,13 @@ public class WizardBT_Y : Tree
         _status = GetComponent<Status>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _status.DieAction += Die;
+
+        canvas1 = GetComponentInChildren<Canvas>();
+
+
+
+
+
     }
 
     void Update()
@@ -90,6 +98,13 @@ public class WizardBT_Y : Tree
         _spriteRenderer.color = Color.gray;                     // 회색 처리
         transform.Find("Weapon").gameObject.SetActive(false);   // 무기 비활성화
         Manager.Game.NormalEnemyList.Remove(transform);         // 일반 적 리스트에서 제거
+
+        // 캐스팅 바 숨기기
+        if (canvas1 != null)
+        {
+            canvas1.enabled = false;
+            Debug.Log("위자드 사망: 캐스팅 바 숨김");
+        }
     }
     void OnDrawGizmos()
     {

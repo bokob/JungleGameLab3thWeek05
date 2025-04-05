@@ -9,7 +9,7 @@ public class TaskAttack_Y : Node
     GameObject _fireballPrefab;
     Staff_Y _staffY;
 
-    float _attackCooldown = 5f;     // 공격 후 쿨타임
+    float _attackCooldown = 0f;     // 공격 후 쿨타임
     float _attackCounter = 0f;      // 쿨타임 카운터
     float _castingTime = 2f;        // 캐스팅 시간 (2초)
     float _castingCounter = 0f;     // 캐스팅 진행 카운터
@@ -91,7 +91,7 @@ public class TaskAttack_Y : Node
             if (_castingBar != null)
             {
                 _castingBar.Show();
-                Debug.Log("캐스팅 시작 - CastingBar 표시");
+               // Debug.Log("캐스팅 시작 - CastingBar 표시");
             }
             //Debug.Log("캐스팅 시작!");
         }
@@ -105,7 +105,7 @@ public class TaskAttack_Y : Node
             if (_castingBar != null)
             {
                 float progress = 1f - (_castingCounter / _castingTime); // 0에서 1로 증가
-                Debug.Log($"캐스팅 진행률: {progress} (남은 시간: {_castingCounter})");
+               // Debug.Log($"캐스팅 진행률: {progress} (남은 시간: {_castingCounter})");
                 _castingBar.UpdateCastingBar(progress);
             }
             else
