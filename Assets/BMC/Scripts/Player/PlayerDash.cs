@@ -11,11 +11,12 @@ public class PlayerDash : MonoBehaviour
 
     Silhouette _silhouette;
     Coroutine _dashCoroutine;
-
+    ParticleSystem _particlesysetem;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _silhouette = GetComponent<Silhouette>();
+        _particlesysetem= Camera.main. GetComponent<ParticleSystem>();
         Manager.Input.dashAction += Dash;
     }
 
@@ -24,7 +25,7 @@ public class PlayerDash : MonoBehaviour
         _isDashing = true;
         _silhouette.IsActive = true;                        // 대시 중 실루엣 활성화
         _rb.linearVelocity = direction * _dashSpeed;
-        Camera.main.GetComponentInChildren<ParticleSystem>().Play();
+        if(_particlesysetem) _particlesysetem.Play();
         yield return new WaitForSeconds(_dashCoolTime);     // 대시 쿨타임
         _isDashing = false;
         _silhouette.IsActive = false;                        // 대시 중 실루엣 비활성화
