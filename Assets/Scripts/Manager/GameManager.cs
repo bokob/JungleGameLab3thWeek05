@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static Define;
 using Random = UnityEngine.Random;
@@ -83,7 +84,32 @@ public class GameManager
     // 보스 소환
     public void SpawnBoss()
     {
+        BossMonsterType bossEnemyType = Util.IntToEnum<BossMonsterType>(_currentRound - 1);
+        string enemyName = bossEnemyType.ToString();
+        Bounds bounds = _polygonCollider.bounds;
 
+        int attempts = 0;
+        Vector2 spawnPosition;
+        do
+        {
+            float x = Random.Range(bounds.min.x, bounds.max.x);
+            float y = Random.Range(bounds.min.y, bounds.max.y);
+            spawnPosition = new Vector2(x, y);
+
+            if (_polygonCollider.OverlapPoint(spawnPosition))
+            {
+                GameObject enemy = Manager.Resource.Instantiate(enemyName);
+                enemy.transform.position = spawnPosition;
+                if (enemy != null)
+                {
+                    _spawnedList.Add(enemy.transform);
+                    _normalEnemyList.Add(enemy.transform);
+                    Debug.Log("보스 생성");
+                }
+                break;
+            }
+            attempts++;
+        } while (Physics2D.OverlapCircle(spawnPosition, _minDistance) && attempts < 100);
     }
 
     // 다음 라운드
