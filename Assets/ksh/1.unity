@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2125799408534692072, guid: 96782cdf3d59fdb48b1e80477a663e8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2923146613847096402, guid: 96782cdf3d59fdb48b1e80477a663e8b, type: 3}
       propertyPath: list.Array.size
@@ -4131,7 +4131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2125799408534692072, guid: 96782cdf3d59fdb48b1e80477a663e8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2923146613847096402, guid: 96782cdf3d59fdb48b1e80477a663e8b, type: 3}
       propertyPath: list.Array.size
@@ -6596,6 +6596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: speed line
       objectReference: {fileID: 0}
+    - target: {fileID: 5710510363722535488, guid: 61ba7d4c5c59175458cff2f4ffa0830a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 922478a010d313f439122438c04e8c03, type: 2}
     - target: {fileID: 8401765537964263652, guid: 61ba7d4c5c59175458cff2f4ffa0830a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
