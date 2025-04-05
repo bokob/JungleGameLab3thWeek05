@@ -32,7 +32,11 @@ public class Affector : MonoBehaviour
     {
         var v = go.GetComponentInParent<Status>();  if (v == null) return;
         if (hitted.Contains(v.gameObject) == true) return;
-        if (info.owner == go.gameObject)  return;
+
+        var infoTarget = go.GetComponentInParent<Info>();//ai는 항상info가짐 / 적이 가지면
+        if (info.owner && infoTarget != null)
+            if (Info.isDiffer(info.owner, v.gameObject) == false)
+                return;//다른 팀
 
 
 
@@ -40,24 +44,7 @@ public class Affector : MonoBehaviour
         hitted.Add(v.gameObject);
 
 
-        v.TakeDamage(damage);
-        if(v.IsDead == true)
-        {
-            if (v.gameObject.name.Contains("Knight"))
-            {
-                info.owner.GetComponentInChildren<PlayerTransform>().excaliburLevel++;
-            }
-            else if (v.gameObject.name.Contains("Archer"))
-            {
-                info.owner.GetComponentInChildren<PlayerTransform>().bowLevel++;
-                Debug.Log("Bow Level Up");
-            }
-            else if (v.gameObject.name.Contains("Wizard"))
-            {
-                info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
-            }
-        }
-
+        v.TakeDamage(damage * info.multiply);
         v.GetComponent<Rigidbody2D>().linearVelocity =
             (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
 
@@ -70,6 +57,10 @@ public class Affector : MonoBehaviour
 }
 
 /*
+ * 
+            if (Info.isDiffer(info.owner, go.gameObject) == false
+        if (info.owner == go.gameObject)  return;//소유자 방지 
+
  
  
         var l = go.GetComponentInParent<Info>();  if (l == null) return;

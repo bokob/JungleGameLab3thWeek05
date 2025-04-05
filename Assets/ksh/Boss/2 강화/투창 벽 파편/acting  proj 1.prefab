@@ -108,6 +108,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3715979066629101069, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715979066629101069, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}

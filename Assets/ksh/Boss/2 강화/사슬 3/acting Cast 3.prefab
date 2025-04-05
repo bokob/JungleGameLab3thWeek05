@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next
       value: 
-      objectReference: {fileID: 2125799408534692072, guid: c294d64225597d24598316fcc0c4517d, type: 3}
+      objectReference: {fileID: 1838083026313583278, guid: dd6e2a38f67fc78449a93bc5bd8f4337, type: 3}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: multi.x
       value: 3
@@ -29,16 +29,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
+      propertyPath: this_pos_to
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: destroy_time
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next_multi.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next_multi.y
-      value: 60
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
+      propertyPath: this_Potision_to_owner
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266918208395998339, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: m_LocalPosition.x
