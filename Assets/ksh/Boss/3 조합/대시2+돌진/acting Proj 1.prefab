@@ -16,10 +16,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3715979066629101069, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4556206123679559763, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -100,8 +96,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3715979066629101069, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
