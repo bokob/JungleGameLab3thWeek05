@@ -5,55 +5,24 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.PlayerLoop;
 
-[System.Serializable]
-public class Sight {
-        public float Radious;
-        public float Angle;
-
-        public Sight(int Radious, int Angle) 
-        {
-            this.Radious = Radious;
-            this.Angle = Angle;
-        }
-    public static void DrawFieldOfView(Vector3 position, Vector3 forward, Sight view)
-    {
-#if UNITY_EDITOR
-        UnityEditor.Handles.color = Color.green;
-        UnityEditor.Handles.DrawWireDisc(position, Vector3.forward, view.Radious);
-
-      // UnityEditor.Handles.color = Color.red;
-      // UnityEditor.Handles.DrawWireArc(position, Vector3.forward, forward, view.Angle / 2, view.Radious - 0.1f);
-      // UnityEditor.Handles.DrawWireArc(position, Vector3.forward, forward, -view.Angle / 2, view.Radious - 0.1f);
-      //
-      // UnityEditor.Handles.color = new Color(1, 0, 0, 0.1f);
-      // UnityEditor.Handles.DrawSolidArc(position, Vector3.forward, forward, view.Angle / 2, view.Radious - 0.2f);
-      // UnityEditor.Handles.DrawSolidArc(position, Vector3.forward, forward, -view.Angle / 2, view.Radious - 0.2f);
-#endif
-    }
-}
-public class AI : MonoBehaviour
+public class AITree : MonoBehaviour
 {
     public GameObject target;
     public Sight sight = new Sight(20, 100);
     public float navStopDistance;
-    public float sycle_time=0.2f;
+    public float sycle_time = 0.2f;
 
     public float speed;
-    Animator animator;
+
     NavMeshAgent nav;
     ActManager am;
     Collider c;
-    SpriteRenderer sr;
-    Status status;
+
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         am = GetComponent<ActManager>();
         c = GetComponentInChildren<Collider>();
-        animator = GetComponentInChildren<Animator>();
-        sr = GetComponentInChildren<SpriteRenderer>();
-        status =GetComponentInChildren<Status>();
-       if (Manager.Game!=null) Manager.Game.SpawnedList.Add(transform);
 
         StartCoroutine(Sycle());
     }
@@ -61,43 +30,21 @@ public class AI : MonoBehaviour
 
     void Update()
     {
-        if (status != null&&status.IsDead ==true)
-        {
-            sr.color = Color.grey;
-
-            animator.SetFloat("spd", 0);
-            //  animator.SetTrigger("DieTrigger");
-
-
-            return;    
-        }
-
         target = GetCloseEnemy(gameObject, sight.Radious);
         if (target)
         {
-            animator.SetFloat("spd", 0);
+
             if (am.now[1] == null)
             {
-
-                //이동
                 if (Vector2.Distance(transform.position, target.transform.position) > navStopDistance)
-                {
-
+                { //이동
                     Vector2 fr = transform.position;
                     Vector2 to = target.transform.position;
                     Vector3 dir = to - fr; dir.Normalize();
 
                     transform.position += dir * speed * Time.deltaTime;
-
-                    animator.SetFloat("spd", speed);
                 }
-                //방향
-                sr.flipX = false;
-                if (transform.position.x > target.transform.position.x)
-                    sr.flipX = true;
             }
-
-
 
 
             StartPossibleAct();
@@ -130,10 +77,10 @@ public class AI : MonoBehaviour
 
         //랜덤실행          
         if (temp.Count > 0)
-           temp[Random.Range(0, temp.Count - 1)].Try_Act(gameObject,target.transform.position, target);
+            temp[Random.Range(0, temp.Count - 1)].Try_Act(gameObject, target.transform.position, target);
     }
 
-   
+
 
     public GameObject GetCloseEnemy(GameObject fr, float r)
     {
@@ -146,18 +93,17 @@ public class AI : MonoBehaviour
         List<GameObject> o = new List<GameObject>();
         for (int i = 0; i < cs.Length; i++)
         {
-            if (cs[i] == null) continue;
-            var v = cs[i].GetComponentInParent<Status>(); if (v==null) continue;//공격ㅇ     
+            var v = cs[i].GetComponentInParent<Info>();
+            if (v == null) continue;//공격ㅇ
             if (v.gameObject == gameObject) continue;
+            if (Info.isDiffer(fr, v.gameObject) == false) continue;//다른 팀
 
+            //var v = cs[i].GetComponentInParent<Life>();
 
-            var info = v.GetComponent<Info>();//ai는 항상info가짐 / 적이 가지면
-            if (info != null) 
-                if (Info.isDiffer(fr, v.gameObject) == false) 
-                    continue;//다른 팀
+            //
+            //if (IsVisible(v.gameObject) == false) continue;
 
-
-            if (o.Contains(v.gameObject)==false)
+            if (o.Contains(v.gameObject) == false)
                 o.Add(v.gameObject);
         }
 
@@ -165,14 +111,14 @@ public class AI : MonoBehaviour
     }
     GameObject GetClosestByList(GameObject fr, List<GameObject> list)
     {
-        List<GameObject> gos = list; 
-        float min = Mathf.Infinity; 
-        GameObject close = null; 
+        List<GameObject> gos = list;
+        float min = Mathf.Infinity;
+        GameObject close = null;
         Vector3 now = fr.transform.position;
 
         for (int i = 0; i < gos.Count; i++)    //Enemy
         {
-            float dist = (gos[i].transform.position - now).sqrMagnitude; 
+            float dist = (gos[i].transform.position - now).sqrMagnitude;
             if (dist < min)//더 가까운 애 발견
             {
                 min = dist;
@@ -196,7 +142,7 @@ public class AI : MonoBehaviour
 
 
         //각도
-        if (Vector3.Angle(transform.forward, dir) > sight.Angle / 2)        
+        if (Vector3.Angle(transform.forward, dir) > sight.Angle / 2)
             return false;
 
 
@@ -206,35 +152,16 @@ public class AI : MonoBehaviour
         {
             if (hit[i].transform.gameObject != gameObject)
                 if (hit[i].transform.gameObject.layer == 0) //defalt
-                { return false;  }
+                { return false; }
         }
 
 
         return true;
     }
- 
+
 }
 
 /*
- * 
-
-
-            //if (Info.isDiffer(fr, v.gameObject)==false) continue;//다른 팀
-            //var v = cs[i].GetComponentInParent<Life>();
-            //if (IsVisible(v.gameObject) == false) continue;
-            var info = v.GetComponent<Info>();
-            var info_target = v.GetComponent<Info>();
-            if (info != null)
-            {
-                if (info.owner != null)//2차생성된 유닛 (소환수)
-                {
-                    if (v.gameObject == info.owner) continue;
-                    if (info_target != null)  //소환수끼리 싸움방지
-                    {
-                        if (Info.isDiffer(fr, v.gameObject) == false) continue;//다른 팀
-                    }
-                }
-            } 
  *          if (target == null)
             {
                 //새로탐색

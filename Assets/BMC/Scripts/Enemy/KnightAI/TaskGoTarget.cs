@@ -38,10 +38,10 @@ public class TaskGoToTarget : Node
         }
         else
         {
-            Debug.Log("멈춤");
+            //Debug.Log("멈춤");
             _anim.StopPlayback();
             _anim.SetBool("IsMove", false);
-            Debug.Log("이동 불가");
+            //Debug.Log("이동 불가");
         }
 
         nodeState = NodeState.Running;
