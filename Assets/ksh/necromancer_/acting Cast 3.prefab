@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next_multi.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next_multi.y
