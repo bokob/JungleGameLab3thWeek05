@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1ea12a2b8a56dc1428c14bb74e7b3d52, type: 2}
+  m_Sprite: {fileID: -7439784866826468313, guid: f45b124054fb2ad44ac5c635dea81623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.15, y: 0.21}
+  m_Size: {x: 0.75, y: 1.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 1290443356314207471}
   - component: {fileID: 5040515002112334730}
   - component: {fileID: 2073936670368439651}
-  - component: {fileID: 3884234439723002304}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -210,7 +209,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.12, y: 0.2}
+  m_Size: {x: 0.5, y: 1}
   m_Direction: 0
 --- !u!114 &5040515002112334730
 MonoBehaviour:
@@ -224,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73c901aa3d84214199365ef24e8bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testAttackRange: 0.2
+  _testAttackRange: 1
   _target: {fileID: 0}
   _isReadyDash: 0
 --- !u!114 &2073936670368439651
@@ -240,25 +239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 0
---- !u!114 &3884234439723002304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868055453094236910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e4df4908b85abd4a81488dc7bb0955f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isActive: 0
-  _silhouetteCount: 10
-  _silhouetteTime: 0.1
-  _delta: 0
-  _idx: 0
-  _silhouetteParent: {fileID: 0}
-  _silhouetteList: []
+  _maxHP: 0
+  _isDead: 0
+  _moveSpeed: 0
 --- !u!1 &6005492689828567001
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 6005492689828567001}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -337,7 +320,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb7177ededfbe7a42815948fedf39dfb, type: 2}
+  m_Sprite: {fileID: 5570841819123970152, guid: ecaaede17e0379148802d14a36e2f86f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

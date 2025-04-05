@@ -25,11 +25,11 @@ public class Silhouette : MonoBehaviour
 
     void Start()
     {
-        SlideCreate();
+        CreateSilhouette();
     }
 
     // 실루엣 생성
-    void SlideCreate()
+    void CreateSilhouette()
     {
         _delta = 0;
         _idx = 0;
@@ -59,23 +59,33 @@ public class Silhouette : MonoBehaviour
             _delta = 0;
             if (_isActive)
             {
-                if (_silhouetteList.Count > 0)
-                {
-                    _silhouetteList[_idx].transform.position = transform.position + Vector3.forward;    // 실루엣을 실루엣 주인 위치에 깊이 +1로 위치
-                    _silhouetteList[_idx].sprite = _spriteRenderer.sprite;                              // 지금 주인의 스프라이트를 받아서 실루엣에게 적용.
-                    _silhouetteList[_idx].transform.localScale = transform.localScale;                  // 크기 적용
-                    _silhouetteList[_idx].color = Color.gray;                                           // 회색
-
-                    _idx++;
-                    if (_idx > _silhouetteList.Count - 1)
-                        _idx = 0;
-                }
+                UpdateSilhouette(); // 실루엣 업데이트
             }
-
-            // 모든 실루엣 투명하게 하기
-            for (int i = 0; _silhouetteList.Count > i; i++)
-                _silhouetteList[i].color -= new Color(0, 0, 0, 1f / _silhouetteList.Count);
+            FadeOutSilhouette();    // 실루엣 페이드 아웃
         }
+    }
+
+    void UpdateSilhouette()
+    {
+        if (_silhouetteList.Count > 0)
+        {
+            _silhouetteList[_idx].sprite = _spriteRenderer.sprite;                              // 지금 주인의 스프라이트를 받아서 실루엣에게 적용.
+            _silhouetteList[_idx].transform.position = transform.position + Vector3.forward;    // 실루엣을 실루엣 주인 위치에 깊이 +1로 위치
+            _silhouetteList[_idx].transform.rotation = transform.rotation;                      // 회전 적용
+            _silhouetteList[_idx].transform.localScale = transform.localScale;                  // 크기 적용
+            _silhouetteList[_idx].color = Color.gray;                                           // 회색
+
+            _idx++;
+            if (_idx > _silhouetteList.Count - 1)
+                _idx = 0;
+        }
+    }
+
+    void FadeOutSilhouette()
+    {
+        // 모든 실루엣 투명하게 하기
+        for (int i = 0; _silhouetteList.Count > i; i++)
+            _silhouetteList[i].color -= new Color(0, 0, 0, 1f / _silhouetteList.Count);
     }
 
     public void Clear()
