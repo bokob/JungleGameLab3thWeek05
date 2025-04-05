@@ -9,7 +9,7 @@ public class HealthBar : MonoBehaviour
     private Status _status; // Status 컴포넌트 참조
 
     private Canvas _canvas; // 부모 캔버스 참조
-
+    GameObject target;
     void Start()
     {
         // Status 컴포넌트 찾기
@@ -21,6 +21,9 @@ public class HealthBar : MonoBehaviour
 
         // 부모 캔버스 찾기
         _canvas = GetComponentInParent<Canvas>();
+
+        target = transform.parent.gameObject;
+        transform.parent = null;
     }
 
     void Update()
@@ -37,6 +40,8 @@ public class HealthBar : MonoBehaviour
 
 
         }
+
+        transform.position = target.transform.position;
     }
 
     private void UpdateHealthBar()
