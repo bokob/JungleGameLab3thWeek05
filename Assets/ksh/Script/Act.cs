@@ -89,10 +89,6 @@ public class Act : MonoBehaviour
         info.Init(owner, to, target, this);
     } 
     
-    public void TryActPlayer()
-    {
-        
-    }
 
     private void OnDrawGizmos()
     {

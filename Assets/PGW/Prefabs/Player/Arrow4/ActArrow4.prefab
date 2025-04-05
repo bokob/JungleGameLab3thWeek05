@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 7986333621456417764, guid: 3a8f18e34129fc34ca0a4f1ff6a59802, type: 3}
     - target: {fileID: 2943398709723662121, guid: b3540951a452b864b9fa96abea0b449f, type: 3}
       propertyPath: range_max
-      value: 10
+      value: 9999
       objectReference: {fileID: 0}
     - target: {fileID: 2943398709723662121, guid: b3540951a452b864b9fa96abea0b449f, type: 3}
       propertyPath: charge_max

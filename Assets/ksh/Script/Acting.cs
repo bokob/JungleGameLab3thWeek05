@@ -29,6 +29,8 @@ public class Acting : MonoBehaviour
     public float owner_Dash;
     public float this_looking_target;
     public bool this_Potision_to_owner;
+    public bool this_Potision_to_offset;
+
 
 
     [Header("End")]
@@ -39,7 +41,7 @@ public class Acting : MonoBehaviour
     Animator animator;
     public UnityEvent onEnd;
     int rnd; //-1 or 1 
-
+    Vector3 offset;
 
 
     void Start()
@@ -65,7 +67,11 @@ public class Acting : MonoBehaviour
         if (this_rot_up)
         {
             transform.up = Vector3.up;
-            if (info.owner.transform.position.x > info.target.transform.position.x)
+            Vector3 to = info.to;
+            if(info.target != null) to = info.target.transform.position;
+
+
+            if (info.owner.transform.position.x > to.x)
                 transform.right = -transform.right;
         }
         if (this_parent_to_owner) transform.parent = info.owner.transform;
@@ -73,7 +79,13 @@ public class Acting : MonoBehaviour
 
 
 
+        if (this_Potision_to_offset)
+        {
+            Vector3 fr = transform.position;
+            Vector3 to = info.owner.transform.position;             
 
+            offset = fr-to;
+        }
 
 
 
@@ -145,9 +157,10 @@ public class Acting : MonoBehaviour
         if (owner_Dash != 0)
             rb.linearVelocity = transform.up * owner_Dash;
 
+        if(this_Potision_to_offset)
+            transform.position = info.owner.transform.position + offset;
 
-
-        if(owner_SideWalk !=0)
+        if (owner_SideWalk !=0)
         {
             transform.up = (info.target.transform.position -info.owner.transform.position ).normalized;         
 

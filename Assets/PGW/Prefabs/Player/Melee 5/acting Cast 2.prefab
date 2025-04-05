@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next
       value: 
-      objectReference: {fileID: 7248084983578011575, guid: 1b4bc0c37f9228f45ad9ac1f1a566363, type: 3}
+      objectReference: {fileID: 7248084983578011575, guid: f6a8076d10ea9b34f8baec0916f785b4, type: 3}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: channel
       value: 0

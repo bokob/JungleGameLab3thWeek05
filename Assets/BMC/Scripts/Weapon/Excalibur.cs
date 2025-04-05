@@ -6,7 +6,7 @@ using UnityEngine;
 public class Excalibur : MonoBehaviour
 {
     Animator _anim;
-    private int swordLevelMax = 1;
+    private int swordLevelMax = 5;
     bool isAttacking = false;
     void Start()
     {
@@ -14,12 +14,16 @@ public class Excalibur : MonoBehaviour
     }
     public void Use()
     {
-        _anim.SetTrigger("AttackTrigger");
         var to = Camera.main.ScreenToWorldPoint(Input.mousePosition); to.z = 0;
         int swordlevel = GetComponentInParent<PlayerTransform>().excaliburLevel;
         if (swordlevel > swordLevelMax)
             swordlevel = swordLevelMax;
-        transform.GetChild(swordlevel - 1).gameObject.GetComponent<Act>().Try_Act(transform.GetComponentInParent<Status>().gameObject, to);
+        Act act = transform.GetChild(swordlevel - 1).gameObject.GetComponent<Act>();
+        if (act != null && act.Check_Condition(to, null))
+        {
+            act.Try_Act(transform.GetComponentInParent<Status>().gameObject, to);
+            _anim.SetTrigger("AttackTrigger");
+        }
     }
 
     //void OnCollisionEnter2D(Collision2D collision)
