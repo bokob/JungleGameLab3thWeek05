@@ -38,6 +38,14 @@ public class Manager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (UnityEngine.Input.GetKeyDown(KeyCode.T))
+        {
+            Game.SpawnBoss();
+        }
+    }
+
     // 각 매니저 초기화
     public void Init()
     {
