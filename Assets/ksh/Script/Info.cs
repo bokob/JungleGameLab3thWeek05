@@ -6,7 +6,7 @@ public enum Filter { Unit, ActObj }
 public class Info : MonoBehaviour
 {
     public int team;
-
+    public float multiply=1;
 
     //1차 2차 생성물
 
@@ -16,19 +16,32 @@ public class Info : MonoBehaviour
     public Vector3 to;
     public Act act;
 
+    static int team_count = 0;
+
+
+
+    private void Start()
+    {
+        if (owner == null)
+        {
+            team = team_count;
+            team_count++;
+        }
+    }
     public void Init(GameObject _owner, Vector3 _to, GameObject _target, Act _act)
     {
+        if (_owner)
+        {
+            var v = _owner.GetComponent<Info>();
+            team = v.team;
+            multiply = v.multiply;
+        }
+
+
         owner = _owner;
         to = _to;
         target = _target;
         act = _act;
-  
-         if (_owner)
-        {
-            var v = _owner.GetComponent<Info>();
-
-            team = v.team;
-        }
     }
 
     public static bool isDiffer(GameObject t1, GameObject t2)

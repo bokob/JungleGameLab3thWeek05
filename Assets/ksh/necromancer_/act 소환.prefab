@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 542186146131246120, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: m_Name
-      value: "act \uC0AC\uC2AC"
+      value: "act \uC18C\uD658"
       objectReference: {fileID: 0}
     - target: {fileID: 5004237744103755788, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: next
@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004237744103755788, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: charge_max
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5004237744103755788, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: charge_str
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6419660571705708523, guid: df2aad0e8fbdb3a49a2b240c0d2bb115, type: 3}
       propertyPath: m_LocalPosition.x

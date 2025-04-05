@@ -449,7 +449,7 @@ MonoBehaviour:
   ani: 
   Char_trail: 0
   this_pos_to: 0
-  this_pos_fwd: 1
+  this_pos_fwd: 10
   this_rotate_Rnd: 0
   this_rot_up: 0
   this_parent_to_owner: 0

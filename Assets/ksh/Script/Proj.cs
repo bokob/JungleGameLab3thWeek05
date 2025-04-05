@@ -98,8 +98,14 @@ public class Proj : MonoBehaviour
         for (int i = 0; i < cs.Length; i++)
         {
             if (cs[i] == null) continue;
-            var v = cs[i].GetComponentInParent<Status>(); if (v==null) continue;//           
+            var v = cs[i].GetComponentInParent<Status>(); if (v == null) continue;//           
             if (v.gameObject == gameObject) continue;
+
+
+            if (v.GetComponent<Info>() != null)  //이거사슬 vs 그림자소환수
+           if (Info.isDiffer(fr, v.gameObject) == false) continue;//다른 팀
+                continue;
+
 
             //var v = cs[i].GetComponentInParent<Life>();
             //if (Info.isDiffer(fr, v.gameObject) == false) continue;//다른 팀
