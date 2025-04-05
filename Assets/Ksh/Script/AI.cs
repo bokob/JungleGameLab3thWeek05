@@ -133,7 +133,11 @@ public class AI : MonoBehaviour
            temp[Random.Range(0, temp.Count - 1)].Try_Act(gameObject,target.transform.position, target);
     }
 
-   
+    private void OnDisable()
+    {
+        Manager.Game.SpawnedList.Remove(transform);
+        Debug.Log("해골 파괴괴");
+    }
 
     public GameObject GetCloseEnemy(GameObject fr, float r)
     {
