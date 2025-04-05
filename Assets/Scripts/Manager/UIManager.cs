@@ -8,6 +8,10 @@ public class UIManager
     public Action toggleHelpPanel;
     #endregion
 
+    #region InGame 씬
+    public Action<float> setHealthBarAction;
+    #endregion
+
     public void Init()
     {
         Debug.Log("UI");

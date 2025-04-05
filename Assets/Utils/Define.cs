@@ -22,8 +22,8 @@ public class Define
         Knight,
         Archer,
         Wizard,
-        //Necromancer,
-        //Orc
+        Necromancer,
+        Orc
     }
 
     public enum  SceneType
