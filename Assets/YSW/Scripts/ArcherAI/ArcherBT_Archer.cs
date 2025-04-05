@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ArcherBT_Archer : Tree
 {
-    static float _moveSpeed = 0.3f;        // 이동 속도 (아처는 조금 빠르게 설정)
+    static float _moveSpeed = 1f;        // 이동 속도 (아처는 조금 빠르게 설정)
     static float _attackRange = 7f;        // 공격 사거리 (아처는 더 긴 사거리)
     static public float MoveSpeed => _moveSpeed;
     static public float AttackRange => _attackRange;

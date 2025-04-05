@@ -11,7 +11,7 @@ public class TaskAttack_Y : Node
 
     float _attackCooldown = 5f;     // 공격 후 쿨타임
     float _attackCounter = 0f;      // 쿨타임 카운터
-    float _castingTime = 10f;        // 캐스팅 시간 (2초)
+    float _castingTime = 0f;        // 캐스팅 시간 (2초)
     float _castingCounter = 0f;     // 캐스팅 진행 카운터
     bool _isCasting = false;        // 캐스팅 중인지 여부
 
