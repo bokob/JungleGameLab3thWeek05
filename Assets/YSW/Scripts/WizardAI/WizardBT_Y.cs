@@ -13,6 +13,7 @@ public class WizardBT_Y : Tree
     static public float AttackRange => _attackRange;
 
     [SerializeField] float _testAttackRange = 5f;
+    SpriteRenderer _spriteRenderer;
 
 
 
@@ -50,6 +51,8 @@ public class WizardBT_Y : Tree
     void Start()
     {
         _status = GetComponent<Status>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _status.DieAction += Die;
     }
 
     void Update()
@@ -82,7 +85,12 @@ public class WizardBT_Y : Tree
         });
         return root;
     }
-
+    public void Die()
+    {
+        _spriteRenderer.color = Color.gray;                     // 회색 처리
+        transform.Find("Weapon").gameObject.SetActive(false);   // 무기 비활성화
+        Manager.Game.NormalEnemyList.Remove(transform);         // 일반 적 리스트에서 제거
+    }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

@@ -16,12 +16,15 @@ public class ArcherBT_Archer : Tree
     [SerializeField] float _testAttackRange = 7f;
 
     [SerializeField] Transform _target;
+    SpriteRenderer _spriteRenderer;
 
     Status _status;
 
     void Start()
     {
         _status = GetComponent<Status>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _status.DieAction += Die;
     }
 
     void Update()
@@ -56,6 +59,12 @@ public class ArcherBT_Archer : Tree
         return root;
     }
 
+    public void Die()
+    {
+        _spriteRenderer.color = Color.gray;                     // 회색 처리
+        transform.Find("Weapon").gameObject.SetActive(false);   // 무기 비활성화
+        Manager.Game.NormalEnemyList.Remove(transform);         // 일반 적 리스트에서 제거
+    }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
