@@ -51,7 +51,7 @@ public class Fireball : MonoBehaviour
             {
                 Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
                 enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-                Debug.Log("넉백 적용! 힘: " + knockbackForce);
+              //  Debug.Log("넉백 적용! 힘: " + knockbackForce);
             }
             Destroy(gameObject);
         }

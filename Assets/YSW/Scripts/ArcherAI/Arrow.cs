@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private float speed = 2f;         // 속도 증가
+    private float speed = 3f;         // 속도 증가
     private int damage = 10;
     private Vector2 direction;
     private Vector2 startPosition;
@@ -49,7 +49,7 @@ public class Arrow : MonoBehaviour
             {
                 Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
                 enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-                Debug.Log("넉백 적용! 힘: " + knockbackForce);
+                //Debug.Log("넉백 적용! 힘: " + knockbackForce);
             }
             Destroy(gameObject);
         }

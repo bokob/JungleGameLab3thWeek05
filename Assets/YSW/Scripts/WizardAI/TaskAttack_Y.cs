@@ -9,11 +9,13 @@ public class TaskAttack_Y : Node
     GameObject _fireballPrefab;
     Staff_Y _staffY;
 
-    float _attackCooldown = 5f;     // 공격 후 쿨타임
+    float _attackCooldown = 0f;     // 공격 후 쿨타임
     float _attackCounter = 0f;      // 쿨타임 카운터
-    float _castingTime = 10f;        // 캐스팅 시간 (2초)
+    float _castingTime = 2f;        // 캐스팅 시간 (2초)
     float _castingCounter = 0f;     // 캐스팅 진행 카운터
     bool _isCasting = false;        // 캐스팅 중인지 여부
+
+    CastingBar _castingBar;           // CastingBar 스크립트 참조
 
     public TaskAttack_Y(Transform transform)
     {
@@ -31,6 +33,23 @@ public class TaskAttack_Y : Node
         {
             //Debug.LogError("Fireball 프리팹을 Resources 폴더에서 찾을 수 없어요!");
         }
+
+
+        // CastingBar 참조 (Slider에 붙은 스크립트)
+        Transform canvasTransform = _transform.Find("CastingCanvas");
+        if (canvasTransform != null)
+        {
+            _castingBar = canvasTransform.GetComponentInChildren<CastingBar>();
+            if (_castingBar == null)
+            {
+                Debug.LogWarning("CastingBar 스크립트를 찾을 수 없습니다!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("CastingCanvas를 찾을 수 없습니다!");
+        }
+
     }
 
     public override NodeState Evaluate()
@@ -68,7 +87,12 @@ public class TaskAttack_Y : Node
         {
             _isCasting = true;           // 캐스팅 시작
             _castingCounter = _castingTime;
-            
+
+            if (_castingBar != null)
+            {
+                _castingBar.Show();
+               // Debug.Log("캐스팅 시작 - CastingBar 표시");
+            }
             //Debug.Log("캐스팅 시작!");
         }
 
@@ -76,6 +100,18 @@ public class TaskAttack_Y : Node
         if (_castingCounter > 0)
         {
             _anim.SetBool("IsMove", false); // 캐스팅 중 Idle
+
+            // 캐스팅 진행률 계산 (0~1) 후 슬라이더 업데이트
+            if (_castingBar != null)
+            {
+                float progress = 1f - (_castingCounter / _castingTime); // 0에서 1로 증가
+               // Debug.Log($"캐스팅 진행률: {progress} (남은 시간: {_castingCounter})");
+                _castingBar.UpdateCastingBar(progress);
+            }
+            else
+            {
+                Debug.LogWarning("CastingBar가 null입니다!");
+            }
             //Debug.Log("캐스팅 중... 남은 시간: " + _castingCounter);
             nodeState = NodeState.Running;
             return nodeState;
@@ -107,5 +143,9 @@ public class TaskAttack_Y : Node
     {
         _isCasting = false;
         _castingCounter = 0f;
+        if (_castingBar != null)
+        {
+            _castingBar.Hide(); // 캐스팅 끝나면 바 숨기기
+        }
     }
 }
