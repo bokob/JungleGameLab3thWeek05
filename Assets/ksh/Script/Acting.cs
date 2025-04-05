@@ -21,7 +21,7 @@ public class Acting : MonoBehaviour
     public bool this_rot_up;
     public bool this_parent_to_owner;
     public bool owner_Set_Trigger;
-
+    public bool this_Potision_to_offset;
 
     [Header("Update")]
     public float owner_looking_target;
@@ -41,6 +41,11 @@ public class Acting : MonoBehaviour
     Animator animator;
     public UnityEvent onEnd;
     int rnd; //-1 or 1 
+
+    Vector3 offset;
+
+
+
 
 
 
@@ -73,6 +78,15 @@ public class Acting : MonoBehaviour
         }
         if (this_parent_to_owner) transform.parent = info.owner.transform;
 
+
+
+        if (this_Potision_to_offset)
+        {
+            Vector3 fr = transform.position;
+            Vector3 to = info.owner.transform.position;
+
+            offset = fr - to;
+        }
 
 
 
@@ -150,6 +164,10 @@ public class Acting : MonoBehaviour
 
         if (owner_Set_Trigger)
             collider.isTrigger = true;
+
+
+        if (this_Potision_to_offset)
+            transform.position = info.owner.transform.position + offset;
 
 
 
