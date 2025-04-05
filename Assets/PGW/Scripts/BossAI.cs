@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 public class BossAI : MonoBehaviour
 {
-    private float _sightRadius = 20f; // 시야 반경
-    private float _sightAngle = 100f; // 시야 각도
+    private float _sightRadius = 2000f; // 시야 반경
+    private float _sightAngle = 360f; // 시야 각도
     private ActManager _actManager;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
     public GameObject target;
     public float navStopDistance = 5f;
     public float speed = 5f;
@@ -27,6 +29,8 @@ public class BossAI : MonoBehaviour
         {
             _behaviorHandler = GetComponent<AIBehaviorHandler>();
         }
+        _animator = GetComponentInChildren<Animator>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -51,7 +55,7 @@ public class BossAI : MonoBehaviour
             {
                 StartCoroutine(CheckTargetMovement());
             }
-
+            _animator.SetFloat("spd", 0);
             if (_actManager.now[1] == null)
             {
                 float distance = Vector2.Distance(transform.position, target.transform.position);
@@ -61,7 +65,13 @@ public class BossAI : MonoBehaviour
                     Vector2 to = target.transform.position;
                     Vector3 dir = to - fr; dir.Normalize();
                     transform.position += dir * speed * Time.deltaTime;
+                    _animator.SetFloat("spd", speed);
                 }
+
+                //방향
+                _spriteRenderer.flipX = false;
+                if (transform.position.x > target.transform.position.x)
+                    _spriteRenderer.flipX = true;
             }
 
             // 행동 핸들러 호출
@@ -169,19 +179,23 @@ public class BossAI : MonoBehaviour
 
     List<GameObject> GetEnemybyRange(GameObject fr, float r)
     {
-        Collider2D[] colider = Physics2D.OverlapCircleAll(fr.transform.position, r);
-        List<GameObject> @object = new List<GameObject>();
-        for (int i = 0; i < colider.Length; i++)
+        //적탐색
+        Collider2D[] cs = Physics2D.OverlapCircleAll(fr.transform.position, r);
+        List<GameObject> o = new List<GameObject>();
+        for (int i = 0; i < cs.Length; i++)
         {
-            var v = colider[i].GetComponentInParent<Info>();
-            if (v == null) continue;
+            if (cs[i] == null) continue;
+            var v = cs[i].GetComponentInParent<Status>(); if (v == null) continue;//공격ㅇ         
             if (v.gameObject == gameObject) continue;
-            if (Info.isDiffer(fr, v.gameObject) == false) continue;
+            //if (Info.isDiffer(fr, v.gameObject)==false) continue;//다른 팀
+            //var v = cs[i].GetComponentInParent<Life>();
+            //if (IsVisible(v.gameObject) == false) continue;
 
-            if (@object.Contains(v.gameObject) == false)
-                @object.Add(v.gameObject);
+            if (o.Contains(v.gameObject) == false)
+                o.Add(v.gameObject);
         }
-        return @object;
+
+        return o;
     }
 
     GameObject GetClosestByList(GameObject fr, List<GameObject> list)

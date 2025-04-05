@@ -61,6 +61,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
+      propertyPath: next
+      value: 
+      objectReference: {fileID: 1983110632133443772}
+    - target: {fileID: 3424553926833007754, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
       propertyPath: destroy_time
       value: 0.2
       objectReference: {fileID: 0}
@@ -70,10 +74,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7909999447083184456, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
       propertyPath: m_Name
-      value: ActingProj Variant 1
+      value: ActingProjSwordWave
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
+--- !u!1 &1983110632133443772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7909999447083184456, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
+  m_PrefabInstance: {fileID: 8520979864779534836}
+  m_PrefabAsset: {fileID: 0}
