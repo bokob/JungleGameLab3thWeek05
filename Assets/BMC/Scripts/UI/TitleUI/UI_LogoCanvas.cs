@@ -15,6 +15,6 @@ public class UI_LogoCanvas : MonoBehaviour
     // 로고 캔버스 토글
     public void ToggleLogoCanvas()
     {
-        //_playBtnCanvas.enabled = !_playBtnCanvas.enabled;
+        _logoCanvas.enabled = !_logoCanvas.enabled;
     }
 }
