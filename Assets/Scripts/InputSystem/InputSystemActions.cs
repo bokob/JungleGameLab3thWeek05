@@ -135,6 +135,15 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Transform"",
+                    ""type"": ""Button"",
+                    ""id"": ""d0e9c1c4-c2f8-478d-a11c-e94ad89bb111"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -236,6 +245,17 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""836d04f9-15c7-4c13-b987-60016b3a97f4"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Transform"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -826,6 +846,7 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Transform = m_Player.FindAction("Transform", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -924,6 +945,7 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Transform;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -955,6 +977,10 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Interact".
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Transform".
+        /// </summary>
+        public InputAction @Transform => m_Wrapper.m_Player_Transform;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -996,6 +1022,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Transform.started += instance.OnTransform;
+            @Transform.performed += instance.OnTransform;
+            @Transform.canceled += instance.OnTransform;
         }
 
         /// <summary>
@@ -1022,6 +1051,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Transform.started -= instance.OnTransform;
+            @Transform.performed -= instance.OnTransform;
+            @Transform.canceled -= instance.OnTransform;
         }
 
         /// <summary>
@@ -1357,6 +1389,13 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Transform" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTransform(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

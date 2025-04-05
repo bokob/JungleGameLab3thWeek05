@@ -11,6 +11,7 @@ public class InputManager
     InputAction _pointerMoveAction;
     InputAction _attackInputAction;
     InputAction _dashInputAction;
+    InputAction _transformInputAction;
     #endregion
 
     #region 입력값
@@ -18,16 +19,19 @@ public class InputManager
     public Vector2 PointerMoveInput => _pointerMoveInput;
     public bool AttackInput => _attackInput;
     public bool DashInput => _dashInput;
+    public bool TransformInput => _transformInput;
 
     Vector2 _moveInput;
     Vector2 _pointerMoveInput;
     bool _attackInput;
     bool _dashInput;
+    bool _transformInput;
     #endregion
 
     #region Action
     public Action attackAction;
     public Action<Vector2> dashAction;
+    public Action transformAction;
     #endregion
 
     public void Init()
@@ -39,6 +43,7 @@ public class InputManager
         _pointerMoveAction = _inputSystemActions.Player.PointerMove;
         _attackInputAction = _inputSystemActions.Player.Attack;
         _dashInputAction = _inputSystemActions.Player.Dash;
+        _transformInputAction = _inputSystemActions.Player.Transform;
 
         _moveInputAction.performed += OnMove;
         _moveInputAction.canceled += OnMove;
@@ -47,6 +52,8 @@ public class InputManager
         _attackInputAction.canceled += OnAttack;
         _dashInputAction.performed += OnDash;
         _dashInputAction.canceled += OnDash;
+        _transformInputAction.performed += OnTransform;
+        _transformInputAction.canceled += OnTransform;
     }
 
     void OnMove(InputAction.CallbackContext context)
@@ -91,6 +98,19 @@ public class InputManager
         else if(context.canceled)
         {
             _dashInput = false;
+        }
+    }
+
+    void OnTransform(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _transformInput = true;
+            transformAction.Invoke();
+        }
+        else if (context.canceled)
+        {
+            _transformInput = false;
         }
     }
 
