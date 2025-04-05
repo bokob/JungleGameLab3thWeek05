@@ -15,7 +15,9 @@ public class WizardBT_Y : Tree
     [SerializeField] float _testAttackRange = 5f;
     SpriteRenderer _spriteRenderer;
 
-    Canvas canvas1;
+    private Canvas _castingCanvas; // 캐스팅 바 캔버스
+    private Canvas _healthBar;  // 체력 바 캔버스
+
     Transform canvasTransform;
 
     [SerializeField] Transform _target;
@@ -55,13 +57,25 @@ public class WizardBT_Y : Tree
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _status.DieAction += Die;
 
-        canvas1 = GetComponentInChildren<Canvas>();
+        // CastingCanvas 찾기
+        Transform castingCanvasTransform = transform.Find("CastingCanvas");
+        if (castingCanvasTransform != null)
+        {
+            _castingCanvas = castingCanvasTransform.GetComponent<Canvas>();
+        }
+
+            // HealthCanvas 찾기
+            Transform healthCanvasTransform = transform.Find("HealthBar");
+        if (healthCanvasTransform != null)
+        {
+            _healthBar = healthCanvasTransform.GetComponent<Canvas>();
+        }
 
 
 
 
 
-    }
+        }
 
     void Update()
     {
@@ -100,10 +114,17 @@ public class WizardBT_Y : Tree
         Manager.Game.NormalEnemyList.Remove(transform);         // 일반 적 리스트에서 제거
 
         // 캐스팅 바 숨기기
-        if (canvas1 != null)
+        if (_castingCanvas != null)
         {
-            canvas1.enabled = false;
+            _castingCanvas.enabled = false;
             Debug.Log("위자드 사망: 캐스팅 바 숨김");
+        }
+
+        // 체력 바 숨기기
+        if (_healthBar != null)
+        {
+            _healthBar.enabled = false;
+            Debug.Log("위자드 사망: 체력 바 숨김");
         }
     }
     void OnDrawGizmos()
