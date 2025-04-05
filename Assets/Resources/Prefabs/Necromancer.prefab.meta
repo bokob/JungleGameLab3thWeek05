@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Resources/Prefabs/Necromancer.prefab.meta
 guid: 67f7304b66b9b9f4690665d1f6ac9301
-========
-guid: 87bbc9c4b197e3b499a504754f751175
->>>>>>>> main:Assets/Resources/Prefabs/Orc.prefab.meta
-=======
-guid: c0343efe652605e4bb17658697a82caf
->>>>>>> main
 PrefabImporter:
   externalObjects: {}
   userData: 

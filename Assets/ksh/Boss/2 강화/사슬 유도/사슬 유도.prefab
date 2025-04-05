@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 1791564470510794389}
   - component: {fileID: -8811119994133586148}
   - component: {fileID: 6448387677685246470}
+  - component: {fileID: 8727764308667571149}
   - component: {fileID: 1624655015262652589}
   - component: {fileID: 7722941869936881901}
   - component: {fileID: 6936624193029527178}
@@ -290,7 +291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
-  multiply: 0
   owner: {fileID: 0}
   target: {fileID: 0}
   to: {x: 0, y: 0, z: 0}
@@ -350,6 +350,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8727764308667571149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838083026313583278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a914a88f8df1584bbad413bd3950307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  push: 0
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &1624655015262652589
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -459,7 +476,7 @@ MonoBehaviour:
   owner_Dash: 0
   this_looking_target: 0
   this_Potision_to_owner: 0
-  destroy_time: 15
+  destroy_time: 10
   onEnd:
     m_PersistentCalls:
       m_Calls: []

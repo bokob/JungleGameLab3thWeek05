@@ -44,11 +44,7 @@ public class AI : MonoBehaviour
     ActManager am;
     Collider c;
     SpriteRenderer sr;
-<<<<<<< HEAD:Assets/ksh/Script/AI.cs
 
-=======
-    Status status;
->>>>>>> main:Assets/Ksh/Script/AI.cs
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
@@ -56,11 +52,6 @@ public class AI : MonoBehaviour
         c = GetComponentInChildren<Collider>();
         animator = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
-<<<<<<< HEAD:Assets/ksh/Script/AI.cs
-=======
-        status =GetComponentInChildren<Status>();
-       if (Manager.Game!=null) Manager.Game.SpawnedList.Add(transform);
->>>>>>> main:Assets/Ksh/Script/AI.cs
 
         StartCoroutine(Sycle());
     }
@@ -68,17 +59,6 @@ public class AI : MonoBehaviour
 
     void Update()
     {
-        if (status != null&&status.IsDead ==true)
-        {
-            sr.color = Color.grey;
-
-            animator.SetFloat("spd", 0);
-            //  animator.SetTrigger("DieTrigger");
-
-
-            return;    
-        }
-
         target = GetCloseEnemy(gameObject, sight.Radious);
         if (target)
         {
@@ -140,12 +120,7 @@ public class AI : MonoBehaviour
            temp[Random.Range(0, temp.Count - 1)].Try_Act(gameObject,target.transform.position, target);
     }
 
-    private void OnDestroy()
-    {
-
-        Manager.Game.SpawnedList.Remove(transform);
-    }
-
+   
 
     public GameObject GetCloseEnemy(GameObject fr, float r)
     {
@@ -159,23 +134,11 @@ public class AI : MonoBehaviour
         for (int i = 0; i < cs.Length; i++)
         {
             if (cs[i] == null) continue;
-<<<<<<< HEAD:Assets/ksh/Script/AI.cs
             var v = cs[i].GetComponentInParent<Status>(); if (v==null) continue;//공격ㅇ         
             if (v.gameObject == gameObject) continue;
             //if (Info.isDiffer(fr, v.gameObject)==false) continue;//다른 팀
             //var v = cs[i].GetComponentInParent<Life>();
             //if (IsVisible(v.gameObject) == false) continue;
-=======
-            var v = cs[i].GetComponentInParent<Status>(); if (v==null) continue;//공격ㅇ     
-            if (v.gameObject == gameObject) continue;
-
-
-            var info = v.GetComponent<Info>();//ai는 항상info가짐 / 적이 가지면
-            if (info != null) 
-                if (Info.isDiffer(fr, v.gameObject) == false) 
-                    continue;//다른 팀
-
->>>>>>> main:Assets/Ksh/Script/AI.cs
 
             if (o.Contains(v.gameObject)==false)
                 o.Add(v.gameObject);
@@ -236,25 +199,6 @@ public class AI : MonoBehaviour
 }
 
 /*
- * 
-
-
-            //if (Info.isDiffer(fr, v.gameObject)==false) continue;//다른 팀
-            //var v = cs[i].GetComponentInParent<Life>();
-            //if (IsVisible(v.gameObject) == false) continue;
-            var info = v.GetComponent<Info>();
-            var info_target = v.GetComponent<Info>();
-            if (info != null)
-            {
-                if (info.owner != null)//2차생성된 유닛 (소환수)
-                {
-                    if (v.gameObject == info.owner) continue;
-                    if (info_target != null)  //소환수끼리 싸움방지
-                    {
-                        if (Info.isDiffer(fr, v.gameObject) == false) continue;//다른 팀
-                    }
-                }
-            } 
  *          if (target == null)
             {
                 //새로탐색

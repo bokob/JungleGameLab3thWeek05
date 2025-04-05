@@ -20,7 +20,6 @@ public class Acting : MonoBehaviour
     public float this_rotate_Rnd;
     public bool this_rot_up;
     public bool this_parent_to_owner;
-    public bool owner_Set_Trigger;
 
 
     [Header("Update")]
@@ -30,6 +29,8 @@ public class Acting : MonoBehaviour
     public float owner_Dash;
     public float this_looking_target;
     public bool this_Potision_to_owner;
+    public bool this_Potision_to_offset;
+
 
 
     [Header("End")]
@@ -37,11 +38,10 @@ public class Acting : MonoBehaviour
     Info info;
     Vector3 bef;
     Rigidbody2D rb;
-    Collider2D collider;
     Animator animator;
     public UnityEvent onEnd;
     int rnd; //-1 or 1 
-
+    Vector3 offset;
 
 
     void Start()
@@ -51,7 +51,7 @@ public class Acting : MonoBehaviour
 
 
         info = GetComponent<Info>();
-        if (info.owner) {rb = info.owner.GetComponent<Rigidbody2D>(); collider= rb.GetComponentInChildren<Collider2D>(); }    
+        if (info.owner) rb = info.owner.GetComponent<Rigidbody2D>();
         if (info.owner) animator = info.owner.GetComponentInChildren<Animator>();
 
 
@@ -67,20 +67,29 @@ public class Acting : MonoBehaviour
         if (this_rot_up)
         {
             transform.up = Vector3.up;
-            if (info.owner)
-                if (info.owner.transform.position.x > info.target.transform.position.x)
-                    transform.right = -transform.right;
+            Vector3 to = info.to;
+            if(info.target != null) to = info.target.transform.position;
+
+
+            if (info.owner.transform.position.x > to.x)
+                transform.right = -transform.right;
         }
         if (this_parent_to_owner) transform.parent = info.owner.transform;
 
 
 
 
+        if (this_Potision_to_offset)
+        {
+            Vector3 fr = transform.position;
+            Vector3 to = info.owner.transform.position;             
+
+            offset = fr-to;
+        }
 
 
 
-
-        if (info.owner && ani.Length >0) animator.SetTrigger(ani);
+        if (info.owner) animator.SetTrigger(ani);
         if (Char_trail > 0) info.owner.GetComponentInChildren<TrailSprite>().MakeTrail(Char_trail);
     }
     public void Next()
@@ -116,12 +125,12 @@ public class Acting : MonoBehaviour
     {
         if (owner_looking_target > 0)
         {
-            //    Vector3 to = info.target.transform.position;
-            //    Vector3 now = info.owner.transform.position;
-            //    Vector3 dir = to - now; dir.y = 0;
+        //    Vector3 to = info.target.transform.position;
+        //    Vector3 now = info.owner.transform.position;
+        //    Vector3 dir = to - now; dir.y = 0;
 
-            //    Quaternion q = Quaternion.LookRotation(dir);
-            //    info.owner.transform.rotation = Quaternion.Slerp(info.owner.transform.rotation, q, Time.deltaTime * owner_looking_target);
+        //    Quaternion q = Quaternion.LookRotation(dir);
+        //    info.owner.transform.rotation = Quaternion.Slerp(info.owner.transform.rotation, q, Time.deltaTime * owner_looking_target);
         }
 
         if (this_looking_target > 0)
@@ -148,16 +157,14 @@ public class Acting : MonoBehaviour
         if (owner_Dash != 0)
             rb.linearVelocity = transform.up * owner_Dash;
 
-        if (owner_Set_Trigger)
-            collider.isTrigger = true;
+        if(this_Potision_to_offset)
+            transform.position = info.owner.transform.position + offset;
 
-
-
-        if (owner_SideWalk != 0)
+        if (owner_SideWalk !=0)
         {
-            transform.up = (info.target.transform.position - info.owner.transform.position).normalized;
+            transform.up = (info.target.transform.position -info.owner.transform.position ).normalized;         
 
-            info.owner.transform.position += (transform.right * rnd * 2 + transform.up).normalized
+            info.owner.transform.position += (transform.right*rnd*2  +  transform.up).normalized  
                 * owner_SideWalk * Time.deltaTime;
 
             animator.SetFloat("spd", owner_SideWalk);
@@ -168,10 +175,6 @@ public class Acting : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (owner_Set_Trigger)
-            collider.isTrigger = false;
-
-
         if (channel > 0) info.owner.GetComponent<ActManager>().now[channel] = null;
 
         onEnd.Invoke();

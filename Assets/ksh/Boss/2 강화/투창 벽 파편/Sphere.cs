@@ -16,19 +16,11 @@ public class Sphere : MonoBehaviour
         {
             if (v[i] != null)
             {
-                if(v[i].transform.GetComponent<BoxCollider2D>() ==null) 
-                    continue;
-
-
-
-
                 transform.up = Vector2.Reflect(transform.up,   v[i].normal);
-                Debug.Log(v[i].transform.gameObject);
 
 
                 onCollide.Invoke();
                 Destroy(gameObject);
-                break;
 
             }
         }
