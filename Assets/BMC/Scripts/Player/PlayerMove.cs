@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
 
         if (!_playerDash.IsDashing)
         {
-            Debug.Log(Manager.Input.MoveInput);
+            //Debug.Log(Manager.Input.MoveInput);
             if (_moveDir != Vector2.zero)
             {
                 _status.Flip(transform, _moveDir.x);

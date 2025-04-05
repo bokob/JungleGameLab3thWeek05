@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 3424553926833007754}
   - component: {fileID: -5806912326181779603}
   - component: {fileID: 7150843185756970364}
+  - component: {fileID: 8252160214048639213}
   m_Layer: 0
   m_Name: ActingProj
   m_TagString: Untagged
@@ -156,16 +157,23 @@ MonoBehaviour:
   next_time: 0
   next_multi: {x: 0, y: 0}
   channel: 0
+  ani: 
+  Char_trail: 0
   this_pos_to: 0
   this_pos_fwd: 0
-  rotate_Rnd: 0
-  ani: 
+  this_rotate_Rnd: 0
+  this_rot_up: 0
+  this_parent_to_owner: 0
   owner_looking_target: 0
   owner_pos_to_this: 0
+  owner_SideWalk: 0
+  owner_Dash: 0
   this_looking_target: 0
   this_Potision_to_owner: 0
-  owner_Dash: 0
   destroy_time: 0
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-5806912326181779603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +224,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &8252160214048639213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7909999447083184456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a914a88f8df1584bbad413bd3950307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  push: 0
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
