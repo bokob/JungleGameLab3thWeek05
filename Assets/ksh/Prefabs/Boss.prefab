@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2658431983581083680}
   - component: {fileID: 1457194883718135717}
   - component: {fileID: 3873709434461041300}
+  - component: {fileID: 5310870884671946698}
   m_Layer: 0
   m_Name: Martial Hero
   m_TagString: Untagged
@@ -98,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 1011132822255987703}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f6fccd708afd8446b750eec3e30188d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 81eaa6e6d784d5446966299603df5b1f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -110,6 +111,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5310870884671946698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011132822255987703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e0ad5e2f2e0054b94eadefbab25933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time_interval: 0.05
+  time_remaining: 0.3
 --- !u!1001 &2135013678804930777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,6 +133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8678247330121051416, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: _maxHP
+      value: 3000
+      objectReference: {fileID: 0}
     - target: {fileID: 9373257618075697, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -166,10 +185,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8384377105582679863, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
-      propertyPath: OnInst.Array.size
-      value: 6
+    - target: {fileID: 5852290004409143822, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7817233284188087104, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292829692943874966, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 050b0d9bc5e3fdf49b25aa2cfc3011ed, type: 2}
     - target: {fileID: 8384377105582679863, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: 'OnInst.Array.data[0]'
       value: 
@@ -200,8 +227,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5282632284761748794, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2658431983581083680}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9373257618075697, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2923146613847096402}
   m_SourcePrefab: {fileID: 100100000, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+--- !u!1 &2125799408534692072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9373257618075697, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+  m_PrefabInstance: {fileID: 2135013678804930777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2923146613847096402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125799408534692072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9585a8ec52aa304bb737b8c0bad15a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: []
 --- !u!4 &6120033117932578275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5282632284761748794, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}

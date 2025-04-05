@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 
 public class Proj : MonoBehaviour
@@ -34,7 +35,7 @@ public class Proj : MonoBehaviour
             target = GetCloseEnemy(gameObject, 99);
 
 
-        //°Å¸® ¸Ö¾îÁü  
+        //ê±°ë¦¬ ë©€ì–´ì§  
         if (isFly == true)
         {
             if (Vector3.Distance(target.transform.position, transform.position) >= dist_max)
@@ -54,6 +55,14 @@ public class Proj : MonoBehaviour
         }
     }
 
+  
+    void  OnDisable() 
+    {
+        StopAllCoroutines();
+        all = Vector3.zero;
+    }
+
+    
     IEnumerator Break(Vector3 o)
     {
         for (; ; )
@@ -83,17 +92,23 @@ public class Proj : MonoBehaviour
     }
     List<GameObject> GetEnemybyRange(GameObject fr, float r)
     {
-        //ÀûÅ½»ö
+        //ì íƒìƒ‰
         Collider2D[] cs = Physics2D.OverlapCircleAll(fr.transform.position, r);
         List<GameObject> o = new List<GameObject>();
         for (int i = 0; i < cs.Length; i++)
         {
-            var v = cs[i].GetComponentInParent<Info>();
+            if (cs[i] == null) continue;
+            var v = cs[i].GetComponentInParent<Status>(); if (v == null) continue;//           
             if (v.gameObject == gameObject) continue;
+
+
+            if (v.GetComponent<Info>() != null)  //ì´ê±°ì‚¬ìŠ¬ vs ê·¸ë¦¼ìì†Œí™˜ìˆ˜
+           if (Info.isDiffer(fr, v.gameObject) == false) continue;//ë‹¤ë¥¸ íŒ€
+                continue;
+
+
             //var v = cs[i].GetComponentInParent<Life>();
-            //if (v==null) continue;//°ø°İ¤·
-            if (Info.isDiffer(fr, v.gameObject) == false) continue;//´Ù¸¥ ÆÀ
-            //
+            //if (Info.isDiffer(fr, v.gameObject) == false) continue;//ë‹¤ë¥¸ íŒ€
             //if (IsVisible(v.gameObject) == false) continue;
 
             if (o.Contains(v.gameObject) == false)
@@ -112,7 +127,7 @@ public class Proj : MonoBehaviour
         for (int i = 0; i < gos.Count; i++)    //Enemy
         {
             float dist = (gos[i].transform.position - now).sqrMagnitude;
-            if (dist < min)//´õ °¡±î¿î ¾Ö ¹ß°ß
+            if (dist < min)//ë” ê°€ê¹Œìš´ ì•  ë°œê²¬
             {
                 min = dist;
                 close = gos[i];

@@ -1,0 +1,1324 @@
+fileFormatVersion: 2
+guid: 092db17e9ffcefb468fed4f4dd20abec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1747521364710325024
+    second: oTTABV-removebg-preview_0
+  - first:
+      213: 5018587082085464484
+    second: oTTABV-removebg-preview_1
+  - first:
+      213: 9058966820968363846
+    second: oTTABV-removebg-preview_2
+  - first:
+      213: 7048766956394695367
+    second: oTTABV-removebg-preview_3
+  - first:
+      213: -692355309210356123
+    second: oTTABV-removebg-preview_4
+  - first:
+      213: -4523854444021528103
+    second: oTTABV-removebg-preview_5
+  - first:
+      213: -4643938810744509351
+    second: oTTABV-removebg-preview_6
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3988e9e49371b4684c3aa86d533b80
+      internalID: 1115793931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc605d77845912e48a82cbebff32e361
+      internalID: -1923559128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e20da8bcb4c874984c3e433feb56a9
+      internalID: -716710985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3667e3db3fedd2c4ea9efa526dd7c33d
+      internalID: 1183547924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1985b1f08f3c141815ba834ea93391
+      internalID: -1086397374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab833ce316000e6488fb979236b66601
+      internalID: -1247648240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f8e1cd8fdb17848b29a2606708c889
+      internalID: -311454854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c417f6cb2a1a2c5429ce4f59e12433f4
+      internalID: 1923881594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e996278e82e00bb48947eb0118524631
+      internalID: 1459808247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbde0dcb30810843a6d8a34177444d1
+      internalID: 918241208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2db525be2f82244eaf9ac9d43962763
+      internalID: 1234254373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e45f766ddebc34f831e83a9039423d
+      internalID: -822383159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 208
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a9808429979914e8b3fa25e5acd08d
+      internalID: -1898067878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29cd854ea0769541979456ce21140f3
+      internalID: -2015891956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64bc5e3dc5fa43748a172c9030cc15bf
+      internalID: -246900967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7f7e645bf18c6449e9b7e126eca0d6
+      internalID: 1224391283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28357352de04c414c8ba9e35b3a6c428
+      internalID: -194892832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fff96a5886f9594f9125379ec75309b
+      internalID: -999467972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c135d1dc8758cad4f934087704015896
+      internalID: 1562060063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1cd81bf6b972ef4cabe839fa7b47fd7
+      internalID: -1946456167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f224c2781ec7624db2c92081d807723
+      internalID: 1433621242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f802488276358a34ebb85cc949e380b3
+      internalID: 1704067958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b612f6c46b7534d9691373a183fd8f
+      internalID: -1708653084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287f42a1056f92f4286ec9892f3b850a
+      internalID: -1170732750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78933bbf6c570a042b7773707145dbb7
+      internalID: -1389504552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 139
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95222a6a1318e74a952eb50901a6e6b
+      internalID: -1123888265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982a926011dae6141a59690bf09c025e
+      internalID: -66131266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2cc5827001edf4eb4f191ad20fe9bc
+      internalID: 2137495299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c42d20014ecddb4192b833a1c10d7ab
+      internalID: 1903662379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9544748afe1944e9a28e3d4d3ac52b
+      internalID: 884970680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f51e4ce47c82044baffdcef6c280b15
+      internalID: -1643722451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4eb21aace546d4ea7722be16a1d08d
+      internalID: -129408415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2912032950a87c24fa5fa0b55c4ff7c8
+      internalID: -167320103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f40cbb7f776eb4bbd5372381c013bc
+      internalID: -683542402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89112716ce7b6ff49b97733376672227
+      internalID: -148254146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a63d0617726fb41872cd16e9791f65
+      internalID: 493208041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3476fd88da76614e8bacb7192fabb21
+      internalID: 9288341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff326ca1ef18f843a57367f582346f6
+      internalID: -1169746433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 70
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5021e64d76b9357469f30e14965e0c67
+      internalID: 1271122417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb7030f7ab544f499adf735bacf1a25
+      internalID: 1007048037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4312bca4431170440ac09652df39a2fb
+      internalID: -1750938419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a05450a012e9d549999e0cd0d1311c7
+      internalID: 1582489168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06c2dde70b233b458f667f2d6bdc8fc
+      internalID: 1631710617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3390cf4a684ccb4cb511b72f6073bf1
+      internalID: 1818128550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a453155383233c74e9732b6cba662a67
+      internalID: -1042200169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f272fb3e8bbf5c41a961429c23b21f6
+      internalID: -448276227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c880bbb0b88fdaa40a119ae7602875e6
+      internalID: 1454219145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_47
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f27f2cc0695664cb911e3bfdd7ec6a
+      internalID: -971276151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_48
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3813d8e3d44e0994087c0cf8eb824b98
+      internalID: 1982525892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_49
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b4a93386c72e74a96899fcfdb23411
+      internalID: -1395008551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oTTABV-removebg-preview_50
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb9a7eea9a968240916f58de16ce598
+      internalID: -840623258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7fb79ad1013fb814eb3ce043fba43f0c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      oTTABV-removebg-preview_0: 1115793931
+      oTTABV-removebg-preview_1: -1923559128
+      oTTABV-removebg-preview_10: 1234254373
+      oTTABV-removebg-preview_11: -822383159
+      oTTABV-removebg-preview_12: -1898067878
+      oTTABV-removebg-preview_13: -2015891956
+      oTTABV-removebg-preview_14: -246900967
+      oTTABV-removebg-preview_15: 1224391283
+      oTTABV-removebg-preview_16: -194892832
+      oTTABV-removebg-preview_17: -999467972
+      oTTABV-removebg-preview_18: 1562060063
+      oTTABV-removebg-preview_19: -1946456167
+      oTTABV-removebg-preview_2: -716710985
+      oTTABV-removebg-preview_20: 1433621242
+      oTTABV-removebg-preview_21: 1704067958
+      oTTABV-removebg-preview_22: -1708653084
+      oTTABV-removebg-preview_23: -1170732750
+      oTTABV-removebg-preview_24: -1389504552
+      oTTABV-removebg-preview_25: -1123888265
+      oTTABV-removebg-preview_26: -66131266
+      oTTABV-removebg-preview_27: 2137495299
+      oTTABV-removebg-preview_28: 1903662379
+      oTTABV-removebg-preview_29: 884970680
+      oTTABV-removebg-preview_3: 1183547924
+      oTTABV-removebg-preview_30: -1643722451
+      oTTABV-removebg-preview_31: -129408415
+      oTTABV-removebg-preview_32: -167320103
+      oTTABV-removebg-preview_33: -683542402
+      oTTABV-removebg-preview_34: -148254146
+      oTTABV-removebg-preview_35: 493208041
+      oTTABV-removebg-preview_36: 9288341
+      oTTABV-removebg-preview_37: -1169746433
+      oTTABV-removebg-preview_38: 1271122417
+      oTTABV-removebg-preview_39: 1007048037
+      oTTABV-removebg-preview_4: -1086397374
+      oTTABV-removebg-preview_40: -1750938419
+      oTTABV-removebg-preview_41: 1582489168
+      oTTABV-removebg-preview_42: 1631710617
+      oTTABV-removebg-preview_43: 1818128550
+      oTTABV-removebg-preview_44: -1042200169
+      oTTABV-removebg-preview_45: -448276227
+      oTTABV-removebg-preview_46: 1454219145
+      oTTABV-removebg-preview_47: -971276151
+      oTTABV-removebg-preview_48: 1982525892
+      oTTABV-removebg-preview_49: -1395008551
+      oTTABV-removebg-preview_5: -1247648240
+      oTTABV-removebg-preview_50: -840623258
+      oTTABV-removebg-preview_6: -311454854
+      oTTABV-removebg-preview_7: 1923881594
+      oTTABV-removebg-preview_8: 1459808247
+      oTTABV-removebg-preview_9: 918241208
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

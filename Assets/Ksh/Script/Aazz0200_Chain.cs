@@ -11,13 +11,20 @@ public class Aazz0200_Chain : MonoBehaviour
 
     void Update()
     {
-
-
-        if (Vector3.Distance(follow.transform.position, transform.position) > distance)
+        if (follow == null)
         {
-            Vector3 dir = follow.transform.position - transform.position;
-            transform.position = follow.transform.position - dir.normalized * distance;
+            Destroy(gameObject);
+        }
+        else
 
+        {
+            transform.up = follow.transform.position - transform.position;
+            if (Vector3.Distance(follow.transform.position, transform.position) > distance)
+            {
+                Vector3 dir = follow.transform.position - transform.position;
+                transform.position = follow.transform.position - dir.normalized * distance;
+
+            }
         }
     }
 }

@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
+      propertyPath: ani
+      value: att
+      objectReference: {fileID: 0}
+    - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: channel
       value: 1
       objectReference: {fileID: 0}

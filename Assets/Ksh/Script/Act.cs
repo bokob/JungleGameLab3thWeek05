@@ -17,8 +17,8 @@ public class Act : MonoBehaviour
     float charge_ing;
 
     [Space(30)]
-    public float range_max; //√÷¥Î 
-    public float range_min; //√÷th 
+    public float range_max; //ÏµúÎåÄ 
+    public float range_min; //Ïµúth 
     public bool require_target;
 
 
@@ -35,12 +35,12 @@ public class Act : MonoBehaviour
 
     void Update()
     {
-        //================== √Ê¿¸¡ﬂ ==================
+        //================== Ï∂©Ï†ÑÏ§ë ==================
         if (charge_ing < charge_max)
         {
             charge_ing += Time.deltaTime;
 
-            //∞˙√Ê¿¸
+            //Í≥ºÏ∂©Ï†Ñ
             if (charge_ing >= charge_max)
                 charge_ing = charge_max;
         }
@@ -81,7 +81,7 @@ public class Act : MonoBehaviour
 
 
 
-        Vector3 fr = transform.position;
+        Vector3 fr = owner.transform.position;
         GameObject o = Instantiate(next, fr, Quaternion.LookRotation(to - fr));
         o.transform.up = (to - fr).normalized;
         var info = o.GetComponent<Info>();
@@ -102,7 +102,7 @@ public class Act : MonoBehaviour
             acts.now.Insert(channel, this);
  
     [Space(30)]
-    public float cast_time; //√— ¡˝¡ﬂΩ√∞£ 
+    public float cast_time; //Ï¥ù ÏßëÏ§ëÏãúÍ∞Ñ 
     public float str; //
     public string ani;
 
