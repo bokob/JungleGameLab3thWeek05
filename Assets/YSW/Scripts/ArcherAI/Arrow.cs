@@ -17,7 +17,7 @@ public class Arrow : MonoBehaviour
     {
         direction = dir.normalized;
         startPosition = transform.position;
-        Debug.Log("발사 시작 위치: " + startPosition);
+        //Debug.Log("발사 시작 위치: " + startPosition);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
