@@ -34,7 +34,7 @@ public class Affector : MonoBehaviour
         if (hitted.Contains(v.gameObject) == true) return;
 
         var infoTarget = go.GetComponentInParent<Info>();//ai는 항상info가짐 / 적이 가지면
-        if (info!=null && info.owner && infoTarget != null)
+        if (info.owner && infoTarget != null)
             if (Info.isDiffer(info.owner, v.gameObject) == false)
                 return;//다른 팀
 
@@ -68,11 +68,12 @@ public class Affector : MonoBehaviour
                 }
                 else if (v.gameObject.name.Contains("Orc"))
                 {
-                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                    info.owner.GetComponent<Status>().MaxHP += 50;
+                    info.owner.GetComponent<Status>().HP += 50;
                 }
                 else if (v.gameObject.name.Contains("Necromancer"))
                 {
-                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                    info.owner.GetComponentInChildren<Status>().AdditionalLife++;
                 }
             }
         }

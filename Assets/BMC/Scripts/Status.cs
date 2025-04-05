@@ -8,14 +8,16 @@ public class Status : MonoBehaviour
     Collider2D _collider;
 
     [Header("능력치")]
-    public float HP => _hp;
-    public float MaxHP => _maxHP;
+    public float HP { get => _hp; set { _hp = value; } }
+    public float MaxHP { get => _maxHP; set { _maxHP = value; } }
+    public int AdditionalLife { get => _additionalLife; set { _additionalLife = value; } }
     public bool IsDead => _isDead;
     public float MoveSpeed => _moveSpeed;
     [SerializeField] float _hp;
     [SerializeField] float _maxHP = 100f;
     [SerializeField] bool _isDead = false;
     [SerializeField] float _moveSpeed = 1;
+    [SerializeField] int _additionalLife = 0;
 
     public Action DieAction;
 
@@ -61,6 +63,13 @@ public class Status : MonoBehaviour
 
     void Die()
     {
+        if(_additionalLife > 0)
+        {
+            if (_additionalLife > 5) _additionalLife = 5;
+            _hp = _maxHP * _additionalLife * 0.2f;
+            _additionalLife = 0;
+            return;
+        }
         _isDead = true;
         _collider.enabled = false;
         Manager.Game.SpawnedList.Remove(transform);
