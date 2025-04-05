@@ -12,7 +12,8 @@ public class Refelect : MonoBehaviour
         {
             if (v[i] != null)
             {
-                transform.up = Vector2.Reflect(transform.up, v[i].normal);
+                if (v[i].collider.isTrigger== false)
+                 transform.up = Vector2.Reflect(transform.up, v[i].normal);
             }
         }
     }

@@ -34,7 +34,7 @@ public class Affector : MonoBehaviour
         if (hitted.Contains(v.gameObject) == true) return;
 
         var infoTarget = go.GetComponentInParent<Info>();//ai는 항상info가짐 / 적이 가지면
-        if (info.owner && infoTarget != null)
+        if (info !=null&& info.owner && infoTarget != null)
             if (Info.isDiffer(info.owner, v.gameObject) == false)
                 return;//다른 팀
 
@@ -43,40 +43,13 @@ public class Affector : MonoBehaviour
 
         hitted.Add(v.gameObject);
 
+
         v.TakeDamage(damage * info.multiply);
         v.GetComponent<Rigidbody2D>().linearVelocity =
             (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
 
         OnHit.Invoke();
 
-
-        if (info.owner !=null && info.owner.GetComponent<PlayerController>() != null)
-        {
-            if (v.IsDead == true)
-            {
-                if (v.gameObject.name.Contains("Knight"))
-                {
-                    info.owner.GetComponentInChildren<PlayerTransform>().excaliburLevel++;
-                }
-                else if (v.gameObject.name.Contains("Archer"))
-                {
-                    info.owner.GetComponentInChildren<PlayerTransform>().bowLevel++;
-                }
-                else if (v.gameObject.name.Contains("Wizard"))
-                {
-                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
-                }
-                else if (v.gameObject.name.Contains("Orc"))
-                {
-                    info.owner.GetComponent<Status>().MaxHP += 50;
-                    info.owner.GetComponent<Status>().HP += 50;
-                }
-                else if (v.gameObject.name.Contains("Necromancer"))
-                {
-                    info.owner.GetComponentInChildren<Status>().AdditionalLife++;
-                }
-            }
-        }
     }
 
     public void Dest() { Destroy(gameObject); }
