@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5852290004409143822, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -211,10 +215,11 @@ MonoBehaviour:
   ani: 
   Char_trail: 0
   this_pos_to: 0
-  this_pos_fwd: 3
+  this_pos_fwd: 0
   this_rotate_Rnd: 0
   this_rot_up: 1
   this_parent_to_owner: 0
+  owner_Set_Trigger: 0
   owner_looking_target: 0
   owner_pos_to_this: 0
   owner_SideWalk: 0

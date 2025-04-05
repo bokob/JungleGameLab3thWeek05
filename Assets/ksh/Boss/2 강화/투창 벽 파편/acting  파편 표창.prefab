@@ -113,6 +113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "acting  \uD30C\uD3B8 \uD45C\uCC3D"
       objectReference: {fileID: 0}
+    - target: {fileID: 3715979066629101069, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
+      propertyPath: damage
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3891483706071623734, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
       propertyPath: m_Time
       value: 0.05
@@ -127,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4806343739280697343, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
       propertyPath: destroy_time
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4936103646488020555, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
       propertyPath: m_Layer

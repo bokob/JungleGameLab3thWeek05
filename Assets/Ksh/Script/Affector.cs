@@ -44,7 +44,7 @@ public class Affector : MonoBehaviour
         hitted.Add(v.gameObject);
 
 
-        v.TakeDamage(damage);
+        v.TakeDamage(damage * info.multiply);
         v.GetComponent<Rigidbody2D>().linearVelocity =
             (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
 
