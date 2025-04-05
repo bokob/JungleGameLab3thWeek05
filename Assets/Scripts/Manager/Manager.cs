@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     SoundManager _sound = new SoundManager();
     UIManager _ui = new UIManager();
     ResourceManager _resource = new ResourceManager();
+    SceneManagerEX _scene = new SceneManagerEX();
 
     public static GameManager Game => Instance._game;
     public static InputManager Input => Instance._input;
@@ -20,6 +21,7 @@ public class Manager : MonoBehaviour
     public static SoundManager Sound => Instance._sound;
     public static UIManager UI => Instance._ui;
     public static ResourceManager Resource => Instance._resource;
+    public static SceneManagerEX Scene => Instance._scene;
     #endregion
 
     void Awake()
@@ -28,26 +30,27 @@ public class Manager : MonoBehaviour
         {
             _instance = this;
             DontDestroyOnLoad(gameObject);
+            Scene.Init();
         }
         else
         {
             Destroy(gameObject);
         }
-        Init();
     }
 
     // 각 매니저 초기화
     public void Init()
     {
-        Game.Init();
-        Input.Init();
-        Data.Init();
-        Sound.Init();
         UI.Init();
+        Sound.Init();
+        Data.Init();
+        Game.Init();
+        //Input.Init();     // 인게임 시작 시, 초기화
     }
 
     public void OnDestroy()
     {
-        Input.Clear();
+        Scene.Clear();
+        //Input.Clear();    // 인게임 종료 시, 클리어
     }
 }
