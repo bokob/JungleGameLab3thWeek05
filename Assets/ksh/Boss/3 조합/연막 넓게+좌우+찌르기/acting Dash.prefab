@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3715979066629101069, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891483706071623734, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
+      propertyPath: m_Time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891483706071623734, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 82ed7a8704b953941a3bdd16a56cc047, type: 2}
     - target: {fileID: 3891483706071623734, guid: f5b6e25a0d5625744a510add81175bac, type: 3}
       propertyPath: m_Time
       value: 0.2
