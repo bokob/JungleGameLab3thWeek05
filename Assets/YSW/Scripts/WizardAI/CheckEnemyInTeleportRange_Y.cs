@@ -4,7 +4,7 @@ using static Define;
 public class CheckEnemyInTeleportRange_Y : Node
 {
     Transform _transform;
-    float _teleportRange = 1; // 텔레포트 발동 거리 (적이 2유닛 이내일 때)
+    float _teleportRange = 3; // 텔레포트 발동 거리 (적이 2유닛 이내일 때)
 
     public CheckEnemyInTeleportRange_Y(Transform transform)
     {

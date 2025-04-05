@@ -50,10 +50,13 @@ public class Status : MonoBehaviour
     {
         if(_isDead) return;
         _hp = Mathf.Clamp(_hp - damage, 0, _maxHP);
-        _anim.SetTrigger("HitTrigger");
         if (_hp <=0)
         {
             Die();
+        }
+        else
+        {
+            _anim.SetTrigger("HitTrigger");
         }
     }
 

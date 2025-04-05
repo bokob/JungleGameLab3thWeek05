@@ -25,4 +25,10 @@ public class Define
         Necromancer,
         Orc
     }
+
+    public enum  SceneType
+    {
+        TitleScene,
+        InGameScene,
+    }
 }

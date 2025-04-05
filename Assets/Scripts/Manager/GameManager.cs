@@ -23,6 +23,11 @@ public class GameManager
 
     public void Init()
     {
+        Debug.Log("GameManager 생성");
+    }
+
+    public void GameStart()
+    {
         _polygonCollider = GameObject.FindAnyObjectByType<ArenaGround>().GetComponent<PolygonCollider2D>();
         _cameraController = Camera.main.GetComponent<CameraController>();
         SpwanPlayer();
