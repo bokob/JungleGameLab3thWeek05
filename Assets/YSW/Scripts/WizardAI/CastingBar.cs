@@ -5,14 +5,21 @@ public class CastingBar : MonoBehaviour
 {
     private Slider _slider;
 
+    private Canvas _canvas; // 부모 캔버스 참조
+
     void Awake()
     {
-        _slider = GetComponent<Slider>();
-        if (_slider == null)
-        {
-            Debug.LogError("CastingBar에 Slider 컴포넌트가 없습니다!");
-        }
+       
+        // 부모 캔버스 찾기
+        _canvas = GetComponentInParent<Canvas>();
+
         Hide();
+    }
+
+    void Start()
+    {
+
+        
     }
 
     public void UpdateCastingBar(float progress)
@@ -31,11 +38,11 @@ public class CastingBar : MonoBehaviour
 
     public void Show()
     {
-        gameObject.SetActive(true);
+        _canvas.enabled = true;
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        _canvas.enabled = false;
     }
 }

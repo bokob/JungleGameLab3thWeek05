@@ -20,6 +20,8 @@ public class KnightBT : Tree
     Collider2D _collider;
     Animator _anim;
 
+
+
     void Start()
     {
         _anim = GetComponent<Animator>();
@@ -27,6 +29,7 @@ public class KnightBT : Tree
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _status = GetComponent<Status>();
         _status.DieAction += Die;
+
     }
 
     void Update()
@@ -66,6 +69,8 @@ public class KnightBT : Tree
         _spriteRenderer.color = Color.gray;                     // 회색 처리
         transform.Find("Weapon").gameObject.SetActive(false);   // 무기 비활성화
         Manager.Game.NormalEnemyList.Remove(transform);         // 일반 적 리스트에서 제거
+
+       
     }
 
     void OnDrawGizmos()
