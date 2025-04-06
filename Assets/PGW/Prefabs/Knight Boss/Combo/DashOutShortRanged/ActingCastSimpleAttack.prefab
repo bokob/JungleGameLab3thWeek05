@@ -57,6 +57,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
+      propertyPath: next_time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: destroy_time
       value: 0
       objectReference: {fileID: 0}
@@ -97,15 +101,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   next: {fileID: 8787154227182339690, guid: cae79759ce442294693ecbad9c2c23d4, type: 3}
-  next_time: 0.5
+  next_time: 0.7
   next_multi: {x: 0, y: 0}
   channel: 1
   ani: 
+  Char_trail: 0
   this_pos_to: 0
   this_pos_fwd: 0
   this_rotate_Rnd: 0
   this_rot_up: 0
-  Char_trail: 0
+  this_parent_to_owner: 0
+  owner_Set_Trigger: 0
+  this_Potision_to_offset: 0
   owner_looking_target: 0
   owner_pos_to_this: 0
   owner_SideWalk: 0
@@ -129,22 +136,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   next: {fileID: 8787154227182339690, guid: 9d69b090a67b2fc44851d6f11ec43579, type: 3}
-  next_time: 0.7
+  next_time: 0.9
   next_multi: {x: 0, y: 0}
   channel: 1
   ani: 
+  Char_trail: 0
   this_pos_to: 0
   this_pos_fwd: 0
   this_rotate_Rnd: 0
   this_rot_up: 0
-  Char_trail: 0
+  this_parent_to_owner: 0
+  owner_Set_Trigger: 0
+  this_Potision_to_offset: 0
   owner_looking_target: 0
   owner_pos_to_this: 0
   owner_SideWalk: 0
   owner_Dash: 0
   this_looking_target: 0
   this_Potision_to_owner: 1
-  destroy_time: 1.3
+  destroy_time: 1.5
   onEnd:
     m_PersistentCalls:
       m_Calls: []

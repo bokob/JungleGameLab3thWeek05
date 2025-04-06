@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 5454620283790118326}
   - component: {fileID: 5068352445019053035}
   m_Layer: 0
-  m_Name: ActingProjWave 2
+  m_Name: ActingProjWave2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

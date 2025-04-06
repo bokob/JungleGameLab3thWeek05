@@ -57,12 +57,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
+      propertyPath: next_time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: rotate_Rnd
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: destroy_time
-      value: 1.1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 7909999447083184456, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: m_Name
