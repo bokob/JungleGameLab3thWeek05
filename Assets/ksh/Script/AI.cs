@@ -58,9 +58,11 @@ public class AI : MonoBehaviour
 
         StartCoroutine(Sycle());
     }
+    public void SetEnemyList()
+    {
+        if (Manager.Game != null) Manager.Game.NormalEnemyList.Add(transform);}
 
-
-    void Update()
+        void Update()
     {
         if (status != null&&status.IsDead ==true)
         {
