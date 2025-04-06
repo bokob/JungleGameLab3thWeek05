@@ -26,6 +26,12 @@ public class Define
         Orc
     }
 
+    public enum BossMonsterType
+    {
+        Yasuo,
+        //Yone
+    }
+
     public enum  SceneType
     {
         TitleScene,
