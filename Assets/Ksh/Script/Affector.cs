@@ -44,8 +44,12 @@ public class Affector : MonoBehaviour
         hitted.Add(v.gameObject);
 
 
-
+        if(info)
         v.TakeDamage(damage * info.multiply);
+        else 
+            v.TakeDamage(damage);  
+
+
         if (info && info.owner != null && info.owner.GetComponent<PlayerController>() != null)
         {
             if (v.IsDead == true)
