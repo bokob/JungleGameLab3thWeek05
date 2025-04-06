@@ -56,7 +56,6 @@ public class Acting : MonoBehaviour
         Invoke("Next", next_time);
 
 
-
         info = GetComponent<Info>();
         if (info.owner == null)
             return;
