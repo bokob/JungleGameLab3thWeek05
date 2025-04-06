@@ -16,7 +16,7 @@ public class PlayerDash : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _silhouette = GetComponent<Silhouette>();
-        _particlesysetem= Camera.main. GetComponent<ParticleSystem>();
+        _particlesysetem= Camera.main.GetComponentInChildren<ParticleSystem>();
         Manager.Input.dashAction += Dash;
     }
 

@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (_playerMove == null)
+            return;
+
         _playerMove.Move();
     }
 }
