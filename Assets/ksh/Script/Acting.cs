@@ -216,6 +216,14 @@ public class Acting : MonoBehaviour
         transform.up = (transform.right * i *1     + transform.up*1);
 
     }
+    public void Side_Dash(int i)
+    {
+
+        transform.up = (info.target.transform.position - info.owner.transform.position).normalized;
+        transform.up = (transform.right * i * 1);
+
+    }
+
     public void OwnerPushSide(float v)
     {
         rb.linearVelocity = transform.right * rnd * v;

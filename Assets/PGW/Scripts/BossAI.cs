@@ -77,7 +77,7 @@ public class BossAI : MonoBehaviour
             // 행동 핸들러 호출
             if (_behaviorHandler != null)
             {
-                _behaviorHandler.ExecuteBehavior(this);
+                _behaviorHandler.ExecuteBehavior();
             }
         }
         else
@@ -119,13 +119,13 @@ public class BossAI : MonoBehaviour
     }
 
     // Act 실행 함수
-    public void StartAct(string actName)
+    public void StartAct(Act actName)
     {
         if (target == null) return;
 
         foreach(var a in _actManager.possess)
         {
-            if (a != null && a.gameObject.name.Contains(actName))
+            if (a != null && a.gameObject.name.Contains(actName.gameObject.name))
             {
                 Act act = a;
                 if (act == null)
@@ -187,9 +187,11 @@ public class BossAI : MonoBehaviour
             if (cs[i] == null) continue;
             var v = cs[i].GetComponentInParent<Status>(); if (v == null) continue;//공격ㅇ         
             if (v.gameObject == gameObject) continue;
-            //if (Info.isDiffer(fr, v.gameObject)==false) continue;//다른 팀
-            //var v = cs[i].GetComponentInParent<Life>();
-            //if (IsVisible(v.gameObject) == false) continue;
+
+            var info = v.GetComponent<Info>();//ai는 항상info가짐 / 적이 가지면
+            if (info != null)
+                if (Info.isDiffer(fr, v.gameObject) == false)
+                    continue;//다른 팀
 
             if (o.Contains(v.gameObject) == false)
                 o.Add(v.gameObject);
