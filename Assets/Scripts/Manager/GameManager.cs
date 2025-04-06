@@ -156,7 +156,7 @@ public class GameManager
     // 히든 보스 소환
     public void SpawnHiddenBoss()
     {
-        string hiddenBossName = Define.BossMonsterType.Yone.ToString();
+        string hiddenBossName = Define.BossMonsterType.Yasuo.ToString();
         GameObject hiddenBoss = Manager.Resource.Instantiate(hiddenBossName);
         hiddenBoss.GetComponent<Status>().DieAction += Manager.UI.toggleGameClearCanvasAction;
     }
