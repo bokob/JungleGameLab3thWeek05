@@ -19,6 +19,7 @@ public class Status : MonoBehaviour
     [SerializeField] float _moveSpeed = 1;
     [SerializeField] int _additionalLife = 0;
 
+    public Action HitAction;
     public Action DieAction;
 
     void Awake()
@@ -57,6 +58,7 @@ public class Status : MonoBehaviour
         }
         else
         {
+            HitAction?.Invoke();            // 플레이어만 작동
             _anim.SetTrigger("HitTrigger");
         }
     }

@@ -6,7 +6,10 @@ using Random = UnityEngine.Random;
 
 public class GameManager
 {
+    [Header("카메라")]
+    public CameraController CameraController => _cameraController;
     CameraController _cameraController;
+
     [Header("라운드")]
     public int CurrentRound => _currentRound;
     int _currentRound = 0;                    // 현재 라운드
