@@ -56,7 +56,6 @@ public class Acting : MonoBehaviour
         Invoke("Next", next_time);
 
 
-
         info = GetComponent<Info>();
         if (info.owner == null)
             return;
@@ -191,7 +190,7 @@ public class Acting : MonoBehaviour
             info.owner.transform.position += (transform.right * rnd * 2 + transform.up).normalized
                 * owner_SideWalk * Time.deltaTime;
 
-            animator.SetFloat("spd", owner_SideWalk);
+           if(animator) animator.SetFloat("spd", owner_SideWalk);
         }
 
         bef = transform.position;
