@@ -54,13 +54,15 @@ public class AI : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
         status =GetComponentInChildren<Status>();
        if (Manager.Game!=null) Manager.Game.SpawnedList.Add(transform);
-        if (Manager.Game != null) Manager.Game.NormalEnemyList.Add(transform);
+        //if (Manager.Game != null) Manager.Game.NormalEnemyList.Add(transform);
 
         StartCoroutine(Sycle());
     }
+    public void SetEnemyList()
+    {
+        if (Manager.Game != null) Manager.Game.NormalEnemyList.Add(transform);}
 
-
-    void Update()
+        void Update()
     {
         if (status != null&&status.IsDead ==true)
         {

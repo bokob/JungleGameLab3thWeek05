@@ -6,7 +6,10 @@ using Random = UnityEngine.Random;
 
 public class GameManager
 {
+    [Header("카메라")]
+    public CameraController CameraController => _cameraController;
     CameraController _cameraController;
+
     [Header("라운드")]
     public int CurrentRound => _currentRound;
     int _currentRound = 0;                    // 현재 라운드
@@ -153,7 +156,7 @@ public class GameManager
     // 히든 보스 소환
     public void SpawnHiddenBoss()
     {
-        string hiddenBossName = Define.BossMonsterType.Yone.ToString();
+        string hiddenBossName = Define.BossMonsterType.Yasuo.ToString();
         GameObject hiddenBoss = Manager.Resource.Instantiate(hiddenBossName);
         hiddenBoss.GetComponent<Status>().DieAction += Manager.UI.toggleGameClearCanvasAction;
     }
