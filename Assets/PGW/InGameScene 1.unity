@@ -1265,11 +1265,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8336387484813625722, guid: 8f6cc23e3be5bec45b247e04846c97a2, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1329167659}
+    - target: {fileID: 8336387484813625722, guid: 8f6cc23e3be5bec45b247e04846c97a2, type: 3}
+      propertyPath: _evasionAct
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: d6d7181e30f9bd84d9258d32c599c847, type: 3}
+    - target: {fileID: 9210427743756337726, guid: 8f6cc23e3be5bec45b247e04846c97a2, type: 3}
+      propertyPath: OnInst.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210427743756337726, guid: 8f6cc23e3be5bec45b247e04846c97a2, type: 3}
+      propertyPath: 'OnInst.Array.data[12]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: d6d7181e30f9bd84d9258d32c599c847, type: 3}
+    - target: {fileID: 9210427743756337726, guid: 8f6cc23e3be5bec45b247e04846c97a2, type: 3}
+      propertyPath: 'OnInst.Array.data[13]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: 8595007d02db0b24cbaaa1ae4d878b86, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f6cc23e3be5bec45b247e04846c97a2, type: 3}
+--- !u!114 &1329167659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3564713474138986048, guid: 8f6cc23e3be5bec45b247e04846c97a2, type: 3}
+  m_PrefabInstance: {fileID: 1265744344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456738a68319364aa8be2e891db6e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423862972
 GameObject:
   m_ObjectHideFlags: 0
