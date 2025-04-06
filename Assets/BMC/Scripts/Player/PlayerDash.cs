@@ -7,7 +7,7 @@ public class PlayerDash : MonoBehaviour
     float _dashSpeed = 12.5f;
     public bool IsDashing => _isDashing;
     bool _isDashing = false;
-    float _dashCoolTime = 0.75f;
+    float _dashCoolTime = 0.5f;
 
     Silhouette _silhouette;
     Coroutine _dashCoroutine;
@@ -28,16 +28,13 @@ public class PlayerDash : MonoBehaviour
         if(_particlesysetem) _particlesysetem.Play();
         yield return new WaitForSeconds(_dashCoolTime);     // 대시 쿨타임
         _isDashing = false;
-        _silhouette.IsActive = false;                        // 대시 중 실루엣 비활성화
+        _silhouette.IsActive = false;                       // 대시 중 실루엣 비활성화
         _dashCoroutine = null;
     }
 
     public void Dash(Vector2 direction)
     {
         if(_dashCoroutine == null)
-        {
             _dashCoroutine = StartCoroutine(DashCoroutine(direction));
-        }
-        //_rb.linearVelocity = direction * _dashSpeed;
     }
 }
