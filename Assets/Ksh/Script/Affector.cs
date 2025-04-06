@@ -44,7 +44,34 @@ public class Affector : MonoBehaviour
         hitted.Add(v.gameObject);
 
 
+
         v.TakeDamage(damage * info.multiply);
+        if (info && info.owner != null && info.owner.GetComponent<PlayerController>() != null)
+        {
+            if (v.IsDead == true)
+            {
+                if (v.gameObject.name.Contains("Knight"))
+                {
+                    info.owner.GetComponentInChildren<PlayerTransform>().excaliburLevel++;
+                }
+                else if (v.gameObject.name.Contains("Archer"))
+                {
+                    info.owner.GetComponentInChildren<PlayerTransform>().bowLevel++;
+                }
+                else if (v.gameObject.name.Contains("Wizard"))
+                {
+                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                }
+                else if (v.gameObject.name.Contains("Orc"))
+                {
+                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                }
+                else if (v.gameObject.name.Contains("Necromancer"))
+                {
+                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                }
+            }
+        }
         v.GetComponent<Rigidbody2D>().linearVelocity =
             (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
 
