@@ -220,6 +220,7 @@ MonoBehaviour:
   this_rot_up: 1
   this_parent_to_owner: 0
   owner_Set_Trigger: 0
+  this_Potision_to_offset: 0
   owner_looking_target: 0
   owner_pos_to_this: 0
   owner_SideWalk: 0
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125799408534692072}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b64ab80682ed73645a8b48036fbee477, type: 3}
   m_Name: 
