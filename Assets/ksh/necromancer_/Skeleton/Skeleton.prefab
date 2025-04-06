@@ -127,6 +127,10 @@ PrefabInstance:
       value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 1791561722504849558, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: isSummoned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791561722504849558, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: navStopDistance
       value: 1
       objectReference: {fileID: 0}

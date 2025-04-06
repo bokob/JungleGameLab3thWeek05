@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,7 @@ public class AI : MonoBehaviour
     public float sycle_time=0.2f;
 
     public float speed;
+    public bool isSummoned;
     Animator animator;
     NavMeshAgent nav;
     ActManager am;
@@ -55,15 +57,21 @@ public class AI : MonoBehaviour
         status =GetComponentInChildren<Status>();
        if (Manager.Game!=null) Manager.Game.SpawnedList.Add(transform);
         //if (Manager.Game != null) Manager.Game.NormalEnemyList.Add(transform);
+       
 
         StartCoroutine(Sycle());
     }
-    public void SetEnemyList()
-    {
-        if (Manager.Game != null) Manager.Game.NormalEnemyList.Add(transform);}
 
-        void Update()
+    void Update()
     {
+        if (isSummoned)
+        {
+            var inf = GetComponent<Info>();
+            if (inf.owner == null)
+                Destroy(gameObject);
+        }
+
+
         if (status != null&&status.IsDead ==true)
         {
             sr.color = Color.grey;
