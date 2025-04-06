@@ -68,7 +68,7 @@ public class KnightBT : Tree
     {
         _spriteRenderer.color = Color.gray;                     // 회색 처리
         transform.Find("Weapon").gameObject.SetActive(false);   // 무기 비활성화
-        Manager.Game.NormalEnemyList.Remove(transform);         // 일반 적 리스트에서 제거
+        //Manager.Game.NormalEnemyList.Remove(transform);         // 일반 적 리스트에서 제거
 
        
     }

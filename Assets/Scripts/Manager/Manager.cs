@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Manager : MonoBehaviour
@@ -42,18 +43,18 @@ public class Manager : MonoBehaviour
     {
         if (UnityEngine.Input.GetKeyDown(KeyCode.T))
         {
-            Game.SpawnBoss();
+            Game.TrySpawnBoss();
         }
-    }
 
-    // 각 매니저 초기화
-    public void Init()
-    {
-        UI.Init();
-        Sound.Init();
-        Data.Init();
-        Game.Init();
-        //Input.Init();     // 인게임 시작 시, 초기화
+        if (UnityEngine.Input.GetKeyDown(KeyCode.E))
+        {
+            UI.toggleRoundStartCanvasAction?.Invoke();
+        }
+
+        if(UnityEngine.Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log($"현재 남은 일반 몬스터 수: {Game.NormalEnemyList.Count}");
+        }
     }
 
     public void OnDestroy()

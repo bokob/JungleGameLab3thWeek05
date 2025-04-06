@@ -20,8 +20,10 @@ public class PlayerMove : MonoBehaviour
 
     public void Move()
     {
-        _moveDir = Manager.Input.MoveInput.normalized;
+        if(_playerDash == null)
+            return;
 
+        _moveDir = Manager.Input.MoveInput.normalized;
         if (!_playerDash.IsDashing)
         {
             //Debug.Log(Manager.Input.MoveInput);
@@ -34,7 +36,7 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                Debug.Log("안움직임");
+                //Debug.Log("안움직임");
                 _anim.SetBool("IsMove", false);
             }
         }
