@@ -51,12 +51,19 @@ public class Acting : MonoBehaviour
 
     void Start()
     {
+
         if (destroy_time > 0) Destroy(gameObject, destroy_time);
         Invoke("Next", next_time);
 
 
+
         info = GetComponent<Info>();
-        if (info.owner) {rb = info.owner.GetComponent<Rigidbody2D>(); collider= rb.GetComponentInChildren<Collider2D>(); }    
+        if (info.owner == null)
+            return;
+
+
+
+        if (info.owner) { rb = info.owner.GetComponent<Rigidbody2D>(); collider = rb.GetComponentInChildren<Collider2D>(); }
         if (info.owner) animator = info.owner.GetComponentInChildren<Animator>();
 
 
@@ -91,12 +98,11 @@ public class Acting : MonoBehaviour
 
 
 
-
-
-
-        if (info.owner && ani.Length >0) animator.SetTrigger(ani);
+        if (info.owner && ani.Length > 0) animator.SetTrigger(ani);
         if (Char_trail > 0) info.owner.GetComponentInChildren<TrailSprite>().MakeTrail(Char_trail);
     }
+
+
     public void Next()
     {
         if (next == null) return;
@@ -128,6 +134,13 @@ public class Acting : MonoBehaviour
 
     void Update()
     {
+        if (info.owner == null)
+            return;
+
+
+
+
+
         if (owner_looking_target > 0)
         {
             //    Vector3 to = info.target.transform.position;
@@ -190,7 +203,7 @@ public class Acting : MonoBehaviour
             collider.isTrigger = false;
 
 
-        if (channel > 0) info.owner.GetComponent<ActManager>().now[channel] = null;
+        if (channel > 0 && info.owner) info.owner.GetComponent<ActManager>().now[channel] = null;
 
         onEnd.Invoke();
     }
