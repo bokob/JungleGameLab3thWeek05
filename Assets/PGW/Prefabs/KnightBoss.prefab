@@ -189,6 +189,7 @@ MonoBehaviour:
   - {fileID: 3337242846722513975, guid: 9967fd456035ba142a6711c22fa3b31a, type: 3}
   - {fileID: 3337242846722513975, guid: c157dbb028bfa9c46ab26fc4754569bb, type: 3}
   - {fileID: 3337242846722513975, guid: 8595007d02db0b24cbaaa1ae4d878b86, type: 3}
+  - {fileID: 3337242846722513975, guid: d6d7181e30f9bd84d9258d32c599c847, type: 3}
   possess: []
   now: []
 --- !u!114 &784305919541189288
@@ -317,6 +318,8 @@ MonoBehaviour:
   - {fileID: 3337242846722513975, guid: 36e2abbb1899b654da6baf5916bbe69b, type: 3}
   - {fileID: 7102652596823773963, guid: 4fc28f5740b3c3942a8576f9301b3a83, type: 3}
   - {fileID: 3337242846722513975, guid: 80bb371458bf800458eb63ac2fe51a1f, type: 3}
+  _evasionAct: {fileID: 3337242846722513975, guid: d6d7181e30f9bd84d9258d32c599c847, type: 3}
+  boss: {fileID: 3564713474138986048}
 --- !u!114 &2638656367115934073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,3 +336,4 @@ MonoBehaviour:
   _maxHP: 100
   _isDead: 0
   _moveSpeed: 1
+  _additionalLife: 0

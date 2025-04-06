@@ -48,7 +48,7 @@ public class AIBehaviorHandler : MonoBehaviour
         // 조건 만족하는 모든 Act 실행
         if (actsToExecute.Count > 0)
         {
-            //boss.StartPossibleAct(actsToExecute);
+            boss.StartPossibleAct(actsToExecute);
         }
     }
 
