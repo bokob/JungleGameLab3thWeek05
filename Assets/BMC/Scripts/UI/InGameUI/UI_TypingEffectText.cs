@@ -8,7 +8,7 @@ public class UI_TypingEffectText : MonoBehaviour
     TextMeshProUGUI _text;
     string _textContent;
 
-    void Start()
+    void Awake()
     {
         _text = GetComponent<TextMeshProUGUI>();
         _textContent = _text.text;
