@@ -28,8 +28,8 @@ public class Define
 
     public enum BossMonsterType
     {
-        Yasuo,
-        Yone
+        KnightBoss,
+        Yasuo
     }
 
     public enum  SceneType

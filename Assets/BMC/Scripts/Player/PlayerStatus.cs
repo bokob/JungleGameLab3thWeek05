@@ -8,12 +8,11 @@ public class PlayerStatus : MonoBehaviour
     void Start()
     {
         _status = GetComponent<Status>();
+        _status.HitAction += () => { 
+            Manager.UI.setHealthBarAction?.Invoke(_status.HP);
+            Manager.Game.CameraController.ShakeCamera();
+        };
         _status.DieAction += Die;
-    }
-
-    void Update()
-    {
-        Manager.UI.setHealthBarAction?.Invoke(_status.HP);
     }
 
     // 플레이어 사망
