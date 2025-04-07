@@ -163,5 +163,9 @@ public class GameManager
 
     public void Clear()
     {
+        _isExistBoss = false;
+        _spawnedList.Clear();
+        _normalEnemyList.Clear();
+        _currentRound = 0;
     }
 }

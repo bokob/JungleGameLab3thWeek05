@@ -11,9 +11,10 @@ public class InGameScene : BaseScene
         {
             Manager.Game.SpawnEnemy();
         }));
+        Init();
     }
 
-    public override void Init()
+    public void Init()
     {
         Manager.Game.Init();
         Manager.Input.Init();
@@ -24,5 +25,6 @@ public class InGameScene : BaseScene
     {
         Manager.Input.Clear();
         Manager.Game.Clear();
+        Manager.UI.Clear();
     }
 }

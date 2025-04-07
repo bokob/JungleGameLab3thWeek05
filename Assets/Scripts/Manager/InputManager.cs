@@ -116,16 +116,22 @@ public class InputManager
 
     public void Clear()
     {
+        // Action 초기화
+        attackAction = null;
+        dashAction = null;
+        transformAction = null;
+
+        // InputAction 비활성화 및 해제
         _moveInputAction.Disable();
         _pointerMoveAction.Disable();
         _attackInputAction.Disable();
         _dashInputAction.Disable();
-
         _moveInputAction = null;
         _pointerMoveAction = null;
         _attackInputAction = null;
         _dashInputAction = null;
 
+        // InputSystem 비활성화 및 해제
         _inputSystemActions.Disable();
         _inputSystemActions = null;
     }
