@@ -152,7 +152,6 @@ public class BossAI : MonoBehaviour
                 }
             }
         }
-        Debug.LogWarning($"이름이 '{actName}'인 Act를 찾을 수 없거나 조건을 만족하지 않습니다.");
     }
 
     public void StartPossibleAct(List<Act> acts)

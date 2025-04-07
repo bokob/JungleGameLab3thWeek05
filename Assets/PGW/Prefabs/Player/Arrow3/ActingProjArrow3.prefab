@@ -62,7 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7909999447083184456, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
       propertyPath: m_Name
-      value: ActingProj Variant
+      value: ActingProjArrow3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252160214048639213, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
+      propertyPath: damage
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8252160214048639213, guid: 779b60aac28bc7d47b77a9832abf7b22, type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size

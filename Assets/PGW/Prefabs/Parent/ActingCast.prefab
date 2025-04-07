@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
+  multiply: 1
   owner: {fileID: 0}
   target: {fileID: 0}
   to: {x: 0, y: 0, z: 0}
@@ -66,13 +67,15 @@ MonoBehaviour:
   next_time: 0
   next_multi: {x: 0, y: 0}
   channel: 0
-  ani: att
+  ani: 
   Char_trail: 0
   this_pos_to: 0
   this_pos_fwd: 0
   this_rotate_Rnd: 0
   this_rot_up: 0
   this_parent_to_owner: 0
+  owner_Set_Trigger: 0
+  this_Potision_to_offset: 0
   owner_looking_target: 0
   owner_pos_to_this: 0
   owner_SideWalk: 0

@@ -13,6 +13,10 @@ PrefabInstance:
       value: acting Cast 2
       objectReference: {fileID: 0}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next
       value: 
       objectReference: {fileID: 7248084983578011575, guid: 802ae7acc57037445b949ba3b8291f41, type: 3}

@@ -58,6 +58,7 @@ public class Status : MonoBehaviour
         else
         {
             HitAction?.Invoke();            // 플레이어만 작동
+            Debug.Log("Hit");
             _anim.SetTrigger("HitTrigger");
         }
     }
