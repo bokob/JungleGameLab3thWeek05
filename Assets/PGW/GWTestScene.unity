@@ -1497,6 +1497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a115a39ba450de94282b25f5179462f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _followCamera: {fileID: 0}
+  _cinemachineBasicMultiChannelPerlin: {fileID: 0}
 --- !u!1 &1598703139
 GameObject:
   m_ObjectHideFlags: 0
