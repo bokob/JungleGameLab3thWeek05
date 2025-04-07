@@ -19,6 +19,8 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
+        transform.rotation = Quaternion.identity;
+
         if (_status != null)
         {
             UpdateHealthBar();
