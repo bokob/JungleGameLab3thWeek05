@@ -53,17 +53,25 @@ public class HealthRegeneration : MonoBehaviour
     // 재생 효과 시작
     private void StartRegeneration()
     {
-        float amountPerTick = 10f; // 기본 회복량
-        if (_necromancerKillCount == 2)
+        float amountPerTick = 0f; // 기본 회복량
+        if (_necromancerKillCount == 1)
         {
-            amountPerTick = 15f; // 2마리 처치 시 회복량 증가
+            amountPerTick = 5f; // 2마리 처치 시 회복량 증가
+        }
+        else if (_necromancerKillCount >= 2)
+        {
+            amountPerTick = 10; // 3마리 이상 처치 시 최대 회복량
         }
         else if (_necromancerKillCount >= 3)
         {
-            amountPerTick = 20f; // 3마리 이상 처치 시 최대 회복량
+            amountPerTick = 15; // 3마리 이상 처치 시 최대 회복량
+        }
+        else if (_necromancerKillCount >= 4)
+        {
+            amountPerTick = 20; // 3마리 이상 처치 시 최대 회복량
         }
 
-        _regenerationCoroutine = StartCoroutine(RegenerateHP(amountPerTick, 2f));
+        _regenerationCoroutine = StartCoroutine(RegenerateHP(amountPerTick, 5f));
     }
 
     // 재생 효과 재시작
