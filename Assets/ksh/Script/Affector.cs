@@ -86,6 +86,7 @@ public class Affector : MonoBehaviour
                 }
             }
         }
+        if(info.owner)
         v.GetComponent<Rigidbody2D>().linearVelocity =
             (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
 
