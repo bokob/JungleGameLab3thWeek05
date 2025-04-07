@@ -99,9 +99,9 @@ public class HealthRegeneration : MonoBehaviour
             // 체력이 최대치 미만일 때만 회복
             if (_playerStatus.HP < _playerStatus.MaxHP)
             {
-                _playerStatus.TakeDamage(-amountPerTick); // 음수 데미지로 회복
+                _playerStatus.HP = Mathf.Clamp(_playerStatus.HP + amountPerTick, 0, _playerStatus.MaxHP);
                 TriggerPlayHeal();
-                //Debug.Log($"체력 재생: {amountPerTick} 회복, 현재 HP: {_playerStatus.HP}");
+                Debug.Log($"체력 재생: {amountPerTick} 회복, 현재 HP: {_playerStatus.HP}");
             }
 
             yield return new WaitForSeconds(tickInterval);
