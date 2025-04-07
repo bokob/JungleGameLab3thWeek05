@@ -244,12 +244,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
+      propertyPath: next_time
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: Char_trail
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: destroy_time
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: owner_nav_stop
