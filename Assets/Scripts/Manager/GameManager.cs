@@ -100,7 +100,7 @@ public class GameManager
         // 종료 조건
         if (deadEnemy < _spawnNormalEnemyCount)
         {
-            Debug.LogError("보스 소환 조건 미충족");
+            //Debug.LogError("보스 소환 조건 미충족");
             return;
         }
         
