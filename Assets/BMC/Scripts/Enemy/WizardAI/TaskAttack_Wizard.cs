@@ -9,7 +9,7 @@ public class TaskAttack_Wizard : Node
     GameObject _fireballPrefab;
     Staff_Wizard _staffY;
 
-    float _attackCooldown = 0f;     // 공격 후 쿨타임
+    float _attackCooldown = 1f;     // 공격 후 쿨타임
     float _attackCounter = 0f;      // 쿨타임 카운터
     float _castingTime = 2f;        // 캐스팅 시간 (2초)
     float _castingCounter = 0f;     // 캐스팅 진행 카운터
