@@ -35,13 +35,13 @@ public class AffectorInOut : MonoBehaviour
     }
     void CommonOut(GameObject go)
     {
-        var v = go.GetComponentInParent<Status>(); if (v == null) return;
+       // var v = go.GetComponentInParent<Status>(); if (v == null) return;
 
 
-        if (hitted.Contains(v.gameObject) == true)
-            hitted.Remove(v.gameObject);
+        if (hitted.Contains(go.gameObject) == true)
+            hitted.Remove(go.gameObject);
 
-            v.GetComponent<PostProcess_Player>().sight_count -=1;
+        go.GetComponent<PostProcess_Player>().sight_count -=1;
     }
 
 
@@ -64,7 +64,7 @@ public class AffectorInOut : MonoBehaviour
 
         hitted.Add(v.gameObject);
 
-            v.GetComponent<PostProcess_Player>().sight +=1;    
+            v.GetComponent<PostProcess_Player>().sight_count +=1;    
 
 
     }
