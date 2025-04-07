@@ -5,6 +5,7 @@ public class UI_HealthBarCanvas : MonoBehaviour
 {
     Canvas _healthBarCanvas;
     Slider _healthBarSlider;
+    Status _status;
 
     void Start()
     {
@@ -12,6 +13,7 @@ public class UI_HealthBarCanvas : MonoBehaviour
         _healthBarCanvas = GetComponent<Canvas>();
         _healthBarCanvas.worldCamera = Camera.main;
         _healthBarSlider = GetComponentInChildren<Slider>();
+        _status = FindAnyObjectByType<PlayerStatus>().GetComponent<Status>();
     }
 
     void Update()
@@ -21,7 +23,7 @@ public class UI_HealthBarCanvas : MonoBehaviour
 
     public void SetHealthBar(float health)
     {
-        health /= 100f;
+        health /= _status.MaxHP;
         _healthBarSlider.value = health;
     }
 }

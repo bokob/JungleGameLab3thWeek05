@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CastingBar : MonoBehaviour
 {
     private Slider _slider;
 
     private Canvas _canvas; // 부모 캔버스 참조
 
+
     void Awake()
     {
        
         // 부모 캔버스 찾기
         _canvas = GetComponentInParent<Canvas>();
-
+        _slider = GetComponent<Slider>();
         Hide();
     }
 

@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 8306701489985828052}
   - component: {fileID: -6605059578929969512}
   - component: {fileID: 5052914919999593774}
+  - component: {fileID: 7007728882810269963}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -319,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05672d6e827df1849be711844652da5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 4
+  _moveSpeed: 15
   _moveDir: {x: 0, y: 0}
 --- !u!114 &8306701489985828052
 MonoBehaviour:
@@ -365,6 +366,19 @@ MonoBehaviour:
   _idx: 0
   _silhouetteParent: {fileID: 0}
   _silhouetteList: []
+--- !u!114 &7007728882810269963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948359624130779653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe57a1adea12a714bb393a2572cf0dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healingParticle: {fileID: 5347658223564051670, guid: 5389b238fd9502440846dce26c9a3c1f, type: 3}
 --- !u!1 &2397274845854542544
 GameObject:
   m_ObjectHideFlags: 0

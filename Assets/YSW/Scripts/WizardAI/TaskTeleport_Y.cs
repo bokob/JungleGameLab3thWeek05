@@ -53,7 +53,7 @@ public class TaskTeleport_Y : Node
             _delayCounter = _preTeleportDelay;
             _animator.SetBool("IsTeleporting", true); // 텔레포트 시작 애니메이션 재생
 
-            Debug.Log("텔레포트 준비 중...");
+           // Debug.Log("텔레포트 준비 중...");
         }
 
         if (_delayCounter > 0)
@@ -79,7 +79,7 @@ public class TaskTeleport_Y : Node
         // 텔레포트 실행
         _transform.position = clampedPosition;
         _animator.SetBool("IsTeleporting", false); // 텔레포트 시작 애니메이션 재생
-        Debug.Log("텔레포트! 새 위치: " + clampedPosition);
+        //Debug.Log("텔레포트! 새 위치: " + clampedPosition);
 
         // 쿨타임 시작 및 딜레이 초기화
         _teleportCounter = _teleportCooldown;

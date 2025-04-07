@@ -80,7 +80,7 @@ public class InputManager
         if (context.performed)
         {
             _attackInput = true;
-            attackAction.Invoke();
+            attackAction?.Invoke();
         }
         else if (context.canceled)
         {
