@@ -22,7 +22,7 @@ public class GameManager
     List<Transform> _spawnedList = new List<Transform>();       // 소환된 객체 리스트 (플레이어, 적) -> 개인전이므로 가장 가까운 적 탐색용 
     List<Transform> _normalEnemyList = new List<Transform>();   // 일반 몬스터 리스트
     float _minDistance = 2f;                                    // 일반 몬스터 소환될 때 간격
-    int _spawnNormalEnemyCount = 0;                            // 소환할 일반 적 수
+    int _spawnNormalEnemyCount =15;                            // 소환할 일반 적 수
     bool _isExistBoss = false;                                  // 보스 존재 여부
 
     public void Init()
