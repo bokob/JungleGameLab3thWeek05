@@ -26,7 +26,14 @@ public class Affector : MonoBehaviour
         Common(collision.gameObject);
     }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+            
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        
+    }
 
     public void Common(GameObject go)
     {

@@ -4,7 +4,9 @@ using UnityEngine.Rendering.Universal;
 
 public class PostProcess_Player : MonoBehaviour
 {
-    public Volume volume;
+    public int sight_count;
+    public float sight = 0.5f;
+     Volume volume;
     ChromaticAberration  chromaticAberration;
     Vignette vignette;
     Status status;
@@ -32,6 +34,15 @@ public class PostProcess_Player : MonoBehaviour
     {
         if (chromaticAberration != null)
             chromaticAberration.intensity.value = (status.MaxHP-status.HP)/1.5f / status.MaxHP;
-    
+
+        if (vignette != null)
+        {
+            if (sight_count > 0)
+                vignette.intensity.value = sight;
+            else
+                vignette.intensity.value = 0;
+        }
+
+
     }
 }
