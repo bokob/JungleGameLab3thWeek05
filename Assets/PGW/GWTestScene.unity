@@ -2064,6 +2064,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: _approachActs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_approachActs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: bb5695818c7d0554daab162f7998f481, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_approachActs.Array.data[7]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: 7949f68e7c717864b85f513557ce2f1a, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: _notApproachActs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_notApproachActs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: 1be8ff66720efbe4f8485138652302a9, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_notApproachActs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: 36e2abbb1899b654da6baf5916bbe69b, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_notApproachActs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 7102652596823773963, guid: 4fc28f5740b3c3942a8576f9301b3a83, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_notApproachActs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: fcc1de69d23a22a4ab4d5ed3f963a69f, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_notApproachActs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: fcc1de69d23a22a4ab4d5ed3f963a69f, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_notApproachActs.Array.data[7]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: fcc1de69d23a22a4ab4d5ed3f963a69f, type: 3}
+    - target: {fileID: 4323293534423122361, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
+      propertyPath: '_notApproachActs.Array.data[8]'
+      value: 
+      objectReference: {fileID: 3337242846722513975, guid: fcc1de69d23a22a4ab4d5ed3f963a69f, type: 3}
     - target: {fileID: 4595728772583153328, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
       propertyPath: m_Name
       value: KnightBoss

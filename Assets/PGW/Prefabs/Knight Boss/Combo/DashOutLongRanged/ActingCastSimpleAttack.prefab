@@ -160,7 +160,7 @@ MonoBehaviour:
   owner_pos_to_this: 0
   owner_SideWalk: 0
   owner_Dash: 0
-  this_looking_target: 0
+  this_looking_target: 1
   this_Potision_to_owner: 1
   destroy_time: 2.1
   onEnd:
