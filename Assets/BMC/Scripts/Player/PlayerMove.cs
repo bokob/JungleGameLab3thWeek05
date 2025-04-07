@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Move()
     {
-        if(_playerDash == null)
+        if(_playerDash == null || _status.IsDead)
             return;
 
         _moveDir = Manager.Input.MoveInput.normalized;
