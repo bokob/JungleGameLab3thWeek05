@@ -19,6 +19,8 @@ public class PlayerStatus : MonoBehaviour
     // 사망 시 UI를 GameOver로 변경
     void Die()
     {
+        Manager.Input.attackAction = null;
+        transform.Find("Weapon").gameObject.SetActive(false);   // 무기 비활성화
         Manager.UI.toggleGameOverCanvasAction.Invoke();
     }
 }
