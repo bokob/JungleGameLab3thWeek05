@@ -271,6 +271,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1791561722504849558, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791561722504849558, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -320,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5415724575873392519, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: multiply
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5852290004409143822, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: m_IsTrigger
