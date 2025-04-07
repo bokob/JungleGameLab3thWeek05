@@ -310,7 +310,6 @@ MonoBehaviour:
   - {fileID: 3337242846722513975, guid: bb5695818c7d0554daab162f7998f481, type: 3}
   - {fileID: 3337242846722513975, guid: 7949f68e7c717864b85f513557ce2f1a, type: 3}
   _notApproachActs:
-  - {fileID: 3337242846722513975, guid: c157dbb028bfa9c46ab26fc4754569bb, type: 3}
   - {fileID: 3337242846722513975, guid: 4483266d1c7ae6b4e87d9faf9c47cb53, type: 3}
   - {fileID: 3337242846722513975, guid: 1be8ff66720efbe4f8485138652302a9, type: 3}
   - {fileID: 3337242846722513975, guid: 36e2abbb1899b654da6baf5916bbe69b, type: 3}
@@ -333,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 0
-  _maxHP: 1000
+  _maxHP: 800
   _isDead: 0
   _moveSpeed: 1
   _additionalLife: 0
