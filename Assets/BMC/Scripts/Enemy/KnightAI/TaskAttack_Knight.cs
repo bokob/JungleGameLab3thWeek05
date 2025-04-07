@@ -31,7 +31,7 @@ public class TaskAttack_Knight : Node
 
             Vector2 dir = target.position - _transform.position;
             target.GetComponent<Rigidbody2D>().AddForce(dir.normalized * _knockbackForce, ForceMode2D.Impulse);
-            target.GetComponent<Status>().TakeDamage(10f);
+            target.GetComponent<Status>().TakeDamage(5f);
 
             _attackCounter = 0f;
         }

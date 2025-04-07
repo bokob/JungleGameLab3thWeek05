@@ -511,6 +511,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1887496054927229489, guid: 73dba7210d699b245aefea4e970c6b6e, type: 3}
+      propertyPath: _maxHP
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2125799408534692072, guid: 73dba7210d699b245aefea4e970c6b6e, type: 3}
       propertyPath: m_Name
       value: Orc
@@ -562,6 +566,18 @@ PrefabInstance:
     - target: {fileID: 6120033117932578275, guid: 73dba7210d699b245aefea4e970c6b6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235677267537547102, guid: 73dba7210d699b245aefea4e970c6b6e, type: 3}
+      propertyPath: multiply
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246600153275564674, guid: 73dba7210d699b245aefea4e970c6b6e, type: 3}
+      propertyPath: charge_max
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246600153275564674, guid: 73dba7210d699b245aefea4e970c6b6e, type: 3}
+      propertyPath: charge_str
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

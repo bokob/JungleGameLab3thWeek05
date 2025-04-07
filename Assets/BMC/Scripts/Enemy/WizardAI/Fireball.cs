@@ -4,7 +4,7 @@ using System.Collections;
 public class Fireball : MonoBehaviour
 {
     float speed = 6f;         // 속도 증가
-    int damage = 10;
+    int damage = 5;
     Vector2 direction;
     Vector2 startPosition;
     float maxDistance = 10f;

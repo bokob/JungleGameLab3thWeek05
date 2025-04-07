@@ -2068,10 +2068,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 4595728772583153328, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5030436770555759188, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.813013
@@ -2114,23 +2110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5587613101524910678, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5587613101524910678, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7237199546263536555, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7237199546263536555, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7237199546263536555, guid: 7f0f0cb2e8aa8ff4684548006a9ec2ac, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

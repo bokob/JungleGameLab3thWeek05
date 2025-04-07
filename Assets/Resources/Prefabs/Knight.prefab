@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 0
-  _maxHP: 100
+  _maxHP: 150
   _isDead: 0
   _moveSpeed: 0
   _additionalLife: 0

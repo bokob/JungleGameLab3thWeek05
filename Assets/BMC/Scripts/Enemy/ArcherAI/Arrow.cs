@@ -3,7 +3,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     float _speed = 8f;         // 속도 증가
-    int _damage = 10;
+    int _damage = 5;
     Vector2 _direction;
     Vector2 _startPosition;
     float _maxDistance = 10f;
