@@ -19,21 +19,26 @@ public class PostProcess_Player : MonoBehaviour
         volume =Camera.main.GetComponent<Volume>();
 
 
-        if (volume.profile.TryGet(out chromaticAberration))
-        {
-            chromaticAberration.intensity.value = 1f; // 초기 Bloom 강도 설정
-        }
-        if (volume.profile.TryGet(out vignette))
-        {
-            vignette.intensity.value = 0.3f; // 초기 Vignette 강도 설정
-        }
+       if (volume.profile.TryGet(out chromaticAberration))
+       {
+           chromaticAberration.intensity.value = 0f; // 초기 Bloom 강도 설정
+       }
+       if (volume.profile.TryGet(out vignette))
+       {
+           vignette.intensity.value = 0f; // 초기 Vignette 강도 설정
+       }
     }
 
     
     void Update()
     {
         if (chromaticAberration != null)
-            chromaticAberration.intensity.value = (status.MaxHP-status.HP)/1.5f / status.MaxHP;
+        {
+            if(status.HP / status.MaxHP < 0.3f )
+                 chromaticAberration.intensity.value = .5f;
+        
+        
+        }
 
         if (vignette != null)
         {
