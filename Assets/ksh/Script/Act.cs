@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class Act : MonoBehaviour
 {
@@ -88,11 +83,11 @@ public class Act : MonoBehaviour
         info.Init(owner, to, target, this);
     } 
     
-    private void OnDrawGizmos()
-    {
-        UnityEditor.Handles.color = Color.green;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, range_max);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    UnityEditor.Handles.color = Color.green;
+    //    UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, range_max);
+    //}
 }
 
 /*

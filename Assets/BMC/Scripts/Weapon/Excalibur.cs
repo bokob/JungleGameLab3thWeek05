@@ -1,5 +1,3 @@
-using System.Collections;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 // 플레이어 전용 검

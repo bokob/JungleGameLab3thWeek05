@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBB34\uAE30 \uAD50\uCCB4: 1(\uAC80), 2(\uD65C), 3(\uC9C0\uD321\uC774)"
+  m_text: "\uBB34\uAE30 \uAD50\uCCB4: LShitf(\uAC80, \uD65C, \uC9C0\uD321\uC774)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09d39b06599f85b43a20736437cf78fd, type: 2}
   m_sharedMaterial: {fileID: 2904898522898225931, guid: 09d39b06599f85b43a20736437cf78fd, type: 2}
@@ -3169,8 +3169,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278255380
+  m_fontColor: {r: 0.078233, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
