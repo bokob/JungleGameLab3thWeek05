@@ -35,10 +35,11 @@ public class PostProcess_Player : MonoBehaviour
     {
         if (chromaticAberration != null)
         {
-            if(status.HP / status.MaxHP < 0.3f )
-                 chromaticAberration.intensity.value = .5f;
-        
-        
+            if (status.HP / status.MaxHP < 0.3f)
+            { chromaticAberration.intensity.value = .5f; }
+            else
+            { chromaticAberration.intensity.value = 0; }
+
         }
 
         if (vignette != null)
