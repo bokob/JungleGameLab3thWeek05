@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 14, y: 14, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 737870022988010796}
@@ -52,16 +52,25 @@ MonoBehaviour:
   next_time: 0.5
   next_multi: {x: 0, y: 0}
   channel: 0
+  ani: 
+  Char_trail: 0
   this_pos_to: 0
   this_pos_fwd: 0
-  rotate_Rnd: 0
-  ani: 
+  this_rotate_Rnd: 0
+  this_rot_up: 0
+  this_parent_to_owner: 0
+  owner_Set_Trigger: 0
+  this_Potision_to_offset: 0
   owner_looking_target: 0
   owner_pos_to_this: 1
+  owner_SideWalk: 0
+  owner_Dash: 0
   this_looking_target: 0
   this_Potision_to_owner: 0
-  owner_Dash: 0
   destroy_time: 0.5
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1811904027027071060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
+  multiply: 1
   owner: {fileID: 0}
   target: {fileID: 0}
   to: {x: 0, y: 0, z: 0}
@@ -91,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a914a88f8df1584bbad413bd3950307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1
   push: 3
   OnHit:
     m_PersistentCalls:
@@ -131,7 +141,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 7
+  m_Radius: 0.3
 --- !u!1 &7188894677968083902
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737870022988010796}
   - component: {fileID: 2429582107803686318}
+  - component: {fileID: 625307846292332208}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -159,7 +170,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14, y: 14, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1527900129729504456}
@@ -208,7 +219,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 6519535209619281255, guid: 793b855c5e9b6394898f344f7d61f6e3, type: 3}
   m_Color: {r: 1, g: 0.9428997, b: 0.4575472, a: 0.5686275}
   m_FlipX: 0
   m_FlipY: 0
@@ -219,3 +230,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &625307846292332208
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188894677968083902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aadbf4805879bc8408f2d6b75bbf88b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

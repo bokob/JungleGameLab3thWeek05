@@ -51,10 +51,10 @@ PrefabInstance:
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: next
       value: 
-      objectReference: {fileID: 1983110632133443772, guid: 53e430bad3b74c0419b71c31c1cf777d, type: 3}
+      objectReference: {fileID: 1983110632133443772, guid: 3dcc0f6c7ec59ba47b9fd334b52495e5, type: 3}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: channel
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: destroy_time

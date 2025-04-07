@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
-  multiply: 1
+  multiply: 10
   owner: {fileID: 0}
   target: {fileID: 0}
   to: {x: 0, y: 0, z: 0}
