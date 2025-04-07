@@ -3,9 +3,11 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     Status _status;
+    UI_HealthBarCanvas _healthBarCanvas;
 
     void Start()
     {
+        _healthBarCanvas = FindAnyObjectByType<UI_HealthBarCanvas>();
         _status = GetComponent<Status>();
         _status.HitAction += () => { 
             Manager.UI.setHealthBarAction?.Invoke(_status.HP);
@@ -21,5 +23,6 @@ public class PlayerStatus : MonoBehaviour
         Manager.Input.attackAction = null;
         transform.Find("Weapon").gameObject.SetActive(false);   // 무기 비활성화
         Manager.UI.toggleGameOverCanvasAction.Invoke();
+        _healthBarCanvas.SetHealthBar(0);
     }
 }

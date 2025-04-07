@@ -25,6 +25,20 @@ public class AffectorInOut : MonoBehaviour
         Common(collision.gameObject);
     }
 
+
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+           var v = collision.gameObject.GetComponentInParent<Status>(); 
+        if (v == null) return;
+
+        if (v.GetComponent<PostProcess_Player>())
+            v.GetComponent<PostProcess_Player>().sight_count = 1;
+
+    }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         CommonOut(collision.gameObject);
@@ -35,13 +49,21 @@ public class AffectorInOut : MonoBehaviour
     }
     void CommonOut(GameObject go)
     {
-       // var v = go.GetComponentInParent<Status>(); if (v == null) return;
+        var v = go.gameObject.GetComponentInParent<Status>();
+        if (v == null) return;
+
+        if (v.GetComponent<PostProcess_Player>())
+            v.GetComponent<PostProcess_Player>().sight_count = 0;
+
+
+        // var v = go.GetComponentInParent<Status>(); if (v == null) return;
 
 
         if (hitted.Contains(go.gameObject) == true)
             hitted.Remove(go.gameObject);
 
-        go.GetComponent<PostProcess_Player>().sight_count -=1;
+       //if (go.GetComponent<PostProcess_Player>())
+       //go.GetComponent<PostProcess_Player>().sight_count -=1;
     }
 
 
@@ -64,7 +86,8 @@ public class AffectorInOut : MonoBehaviour
 
         hitted.Add(v.gameObject);
 
-            v.GetComponent<PostProcess_Player>().sight_count +=1;    
+       // if (v.GetComponent<PostProcess_Player>())
+       //     v.GetComponent<PostProcess_Player>().sight_count +=1;    
 
 
     }
