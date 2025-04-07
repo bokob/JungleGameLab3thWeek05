@@ -1,23 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightBT : Tree
+public class ArcherBT : Tree
 {
-    static float _moveSpeed = 1f;           // 이동 속도
-    static float _attackRange = 1f;         // 공격 사거리
+    static float _moveSpeed = 5f;        // 이동 속도 (아처는 조금 빠르게 설정)
+    static float _attackRange = 7f;        // 공격 사거리 (아처는 더 긴 사거리)
     static public float MoveSpeed => _moveSpeed;
     static public float AttackRange => _attackRange;
 
-    [SerializeField] float _testAttackRange = 1f;
+    static float _minRange = 3f; // 최소 거리
+    static public float MinRange => _minRange;
+
+    [SerializeField] float _testAttackRange = 7f;
     [SerializeField] Transform _target;
-    [SerializeField] bool _isReadyDash;
-    Status _status;
     SpriteRenderer _spriteRenderer;
+    Status _status;
+
 
     void Start()
     {
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _status = GetComponent<Status>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _status.DieAction += Die;
     }
 
@@ -36,19 +39,19 @@ public class KnightBT : Tree
         {
             new Sequence(new List<Node>
             {
-                new CheckEnemyInAttackRange_Knight(transform),
-                new TaskAttack_Knight(transform),
+            new CheckEnemyTooClose_Archer(transform),
+            new TaskRetreatAndAttack_Archer(transform),
             }),
             new Sequence(new List<Node>
             {
-                new CheckDash_Knight(transform),
-                new TaskDash_Knight(transform),
+                new CheckEnemyInAttackRange_Archer(transform),
+                new TaskAttack_Archer(transform),
             }),
-            new Sequence(new List<Node> 
+            new Sequence(new List<Node>
             {
-                new CheckCloseEnemy_Knight(transform),
-                new TaskGoToTarget_Knight(transform),
-            })
+                new CheckCloseEnemy_Archer(transform),
+                new TaskGoToTarget_Archer(transform),
+            }),
         });
         return root;
     }

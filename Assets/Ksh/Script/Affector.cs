@@ -73,7 +73,16 @@ public class Affector : MonoBehaviour
                 }
                 else if (v.gameObject.name.Contains("Necromancer"))
                 {
-                    info.owner.GetComponent<Status>().AdditionalLife++;
+                    // 네크로맨서 처치 시 체력 재생 효과
+                    HealthRegeneration regen = info.owner.GetComponent<HealthRegeneration>();
+                    if (regen != null)
+                    {
+                        regen.OnNecromancerKilled();
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Affector: 플레이어에 HealthRegeneration 컴포넌트가 없습니다!");
+                    }
                 }
             }
         }

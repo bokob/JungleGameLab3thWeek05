@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Move()
     {
-        if(_playerDash == null)
+        if(_playerDash == null || _status.IsDead)
             return;
 
         _moveDir = Manager.Input.MoveInput.normalized;
@@ -29,7 +29,8 @@ public class PlayerMove : MonoBehaviour
             if (_moveDir != Vector2.zero)
             {
                 _status.Flip(transform, _moveDir.x);
-                _rb.linearVelocity = _moveDir * _moveSpeed;
+                _rb.AddForce(_moveDir * _moveSpeed, ForceMode2D.Force); // AddForce를 사용하여 물리적으로 이동
+                //_rb.linearVelocity = _moveDir * _moveSpeed;
                 //_rb.MovePosition(_rb.position + _moveDir * _moveSpeed * Time.fixedDeltaTime);
                 _anim.SetBool("IsMove", true);
             }

@@ -4,12 +4,14 @@ using UnityEngine.Rendering;
 public class PlayerAttack : MonoBehaviour
 {
     public int currentWeaponIndex = 0;
+    Status _status;
     Excalibur _excalibur;
     WeaponBow _bow;
     WeaponStaff _staff;
 
     void Start()
     {
+        _status = GetComponent<Status>();
         _excalibur = GetComponentInChildren<Excalibur>(true);
         _bow = GetComponentInChildren<WeaponBow>(true);
         _staff = GetComponentInChildren<WeaponStaff>(true);
