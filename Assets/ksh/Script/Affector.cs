@@ -68,11 +68,12 @@ public class Affector : MonoBehaviour
                 }
                 else if (v.gameObject.name.Contains("Orc"))
                 {
-                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                    info.owner.GetComponent<Status>().HP += 50;
+                    info.owner.GetComponent<Status>().MaxHP += 50;
                 }
                 else if (v.gameObject.name.Contains("Necromancer"))
                 {
-                    info.owner.GetComponentInChildren<PlayerTransform>().staffLevel++;
+                    info.owner.GetComponent<Status>().AdditionalLife++;
                 }
             }
         }
