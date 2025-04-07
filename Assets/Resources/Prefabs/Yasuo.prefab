@@ -256,11 +256,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8678247330121051416, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: _hp
-      value: 1500
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: -8678247330121051416, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: _maxHP
-      value: 1500
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: -8678247330121051416, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: _isDead
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9373257618075697, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: m_Name
@@ -324,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5415724575873392519, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: multiply
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5852290004409143822, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: m_IsTrigger

@@ -9,12 +9,14 @@ public class HealthRegeneration : MonoBehaviour
     float _lastHP; // 마지막으로 확인한 체력 값
     bool _isRegenerationActive = false; // 재생 효과가 활성화 중인지 여부
     [SerializeField] ParticleSystem _healingParticle; // 회복 파티클 (private 선언)
+    UI_HealthBarCanvas _healthBarCanvas;
 
     void Start()
     {
         // 플레이어의 Status 컴포넌트 찾기
         _playerStatus = GetComponent<Status>();
         _lastHP = _playerStatus.HP; // 초기 체력 저장
+        _healthBarCanvas = FindAnyObjectByType<UI_HealthBarCanvas>();
     }
 
     void Update()
@@ -100,6 +102,7 @@ public class HealthRegeneration : MonoBehaviour
             if (_playerStatus.HP < _playerStatus.MaxHP)
             {
                 _playerStatus.HP = Mathf.Clamp(_playerStatus.HP + amountPerTick, 0, _playerStatus.MaxHP);
+                _healthBarCanvas.SetHealthBar(_playerStatus.HP);
                 TriggerPlayHeal();
                 Debug.Log($"체력 재생: {amountPerTick} 회복, 현재 HP: {_playerStatus.HP}");
             }
