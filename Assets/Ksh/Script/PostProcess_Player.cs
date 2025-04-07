@@ -5,8 +5,9 @@ using UnityEngine.Rendering.Universal;
 public class PostProcess_Player : MonoBehaviour
 {
     public int sight_count;
-    public float sight = 0.5f;
-     Volume volume;
+    public float sight = 1f;
+    public float sight_to;
+    Volume volume;
     ChromaticAberration  chromaticAberration;
     Vignette vignette;
     Status status;
@@ -43,11 +44,13 @@ public class PostProcess_Player : MonoBehaviour
         if (vignette != null)
         {
             if (sight_count > 0)
-                vignette.intensity.value = sight;
+                sight_to = sight;
             else
-                vignette.intensity.value = 0;
+                sight_to = 0;
         }
 
+
+        vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, sight_to, 3*Time.deltaTime);   
 
     }
 }

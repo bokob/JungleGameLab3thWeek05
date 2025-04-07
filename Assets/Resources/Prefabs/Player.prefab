@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sight_count: 0
-  sight: 0.5
+  sight: 1
 --- !u!1 &2397274845854542544
 GameObject:
   m_ObjectHideFlags: 0
