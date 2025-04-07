@@ -17,6 +17,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
+      propertyPath: owner_Dash
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7367880858106792186, guid: be3b6ba43f01b1e4f85a1a2e72ca8d3d, type: 3}
       propertyPath: destroy_time
       value: 2
       objectReference: {fileID: 0}
