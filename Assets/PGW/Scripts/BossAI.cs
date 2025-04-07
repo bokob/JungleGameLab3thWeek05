@@ -134,7 +134,7 @@ public class BossAI : MonoBehaviour
     // Act 실행 함수
     public void StartAct(Act actName)
     {
-        if (target == null) return;
+        if (target == null|| _status.IsDead) return;
 
         foreach(var a in _actManager.possess)
         {
