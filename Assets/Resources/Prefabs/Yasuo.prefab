@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5415724575873392519, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: multiply
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5852290004409143822, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: m_IsTrigger
