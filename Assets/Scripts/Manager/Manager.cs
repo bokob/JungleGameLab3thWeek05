@@ -60,6 +60,5 @@ public class Manager : MonoBehaviour
     public void OnDestroy()
     {
         Scene.Clear();
-        //Input.Clear();    // 인게임 종료 시, 클리어
     }
 }

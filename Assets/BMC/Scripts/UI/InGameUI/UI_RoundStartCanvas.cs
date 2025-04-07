@@ -7,11 +7,15 @@ public class UI_RoundStartCanvas : MonoBehaviour
     string _textContent;
     float _disappearTime = 2f;
 
+    void Awake()
+    {
+        _roundStartCanvas = GetComponent<Canvas>();
+    }
+
     void Start()
     {
-        Manager.UI.toggleRoundStartCanvasAction += ToggleRoundStartCanvas;
-        _roundStartCanvas = GetComponent<Canvas>();
         _typingEffectText = GetComponentInChildren<UI_TypingEffectText>();
+        Manager.UI.toggleRoundStartCanvasAction += ToggleRoundStartCanvas;
     }
 
     // 라운드 시작 캔버스 토글

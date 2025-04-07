@@ -19,6 +19,7 @@ public class SceneManagerEX
     // 씬 전환될 때 일어나는 이벤트
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.LogError($"현재 씬: {scene.name}");
         BaseScene currentScene = GameObject.FindAnyObjectByType<BaseScene>();
         currentScene.Init();
     }

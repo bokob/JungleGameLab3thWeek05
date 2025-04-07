@@ -19,4 +19,15 @@ public class UIManager
     {
         Debug.Log("UI");
     }
+
+    public void Clear()
+    {
+        toggleTitleBtns = null;
+        toggleHelpPanel = null;
+
+        setHealthBarAction = null;
+        toggleGameClearCanvasAction = null;
+        toggleGameOverCanvasAction = null;
+        toggleRoundStartCanvasAction = null;
+    }
 }
