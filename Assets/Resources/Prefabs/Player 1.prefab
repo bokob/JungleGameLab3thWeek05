@@ -126,9 +126,8 @@ GameObject:
   - component: {fileID: -6605059578929969512}
   - component: {fileID: 5052914919999593774}
   - component: {fileID: 7007728882810269963}
-  - component: {fileID: -8216523412166054508}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,20 +379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healingParticle: {fileID: 5347658223564051670, guid: 5389b238fd9502440846dce26c9a3c1f, type: 3}
---- !u!114 &-8216523412166054508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948359624130779653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1675d210c08ee22499273ead0fe9e8ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sight_count: 0
-  sight: 0.5
 --- !u!1 &2397274845854542544
 GameObject:
   m_ObjectHideFlags: 0
