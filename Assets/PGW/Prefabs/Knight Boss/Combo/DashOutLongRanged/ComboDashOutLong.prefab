@@ -17,6 +17,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7986333621456417764, guid: 77240f9899259d54f8efa539a61e3e3d, type: 3}
     - target: {fileID: 2943398709723662121, guid: b3540951a452b864b9fa96abea0b449f, type: 3}
+      propertyPath: channel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943398709723662121, guid: b3540951a452b864b9fa96abea0b449f, type: 3}
       propertyPath: range_max
       value: 1.5
       objectReference: {fileID: 0}

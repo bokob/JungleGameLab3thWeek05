@@ -57,8 +57,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
+      propertyPath: next_time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: destroy_time
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: this_Potision_to_owner

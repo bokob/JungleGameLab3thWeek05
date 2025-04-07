@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    float _speed = 3f;         // 속도 증가
+    float _speed = 8f;         // 속도 증가
     int _damage = 10;
     Vector2 _direction;
     Vector2 _startPosition;

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Fireball : MonoBehaviour
 {
-    float speed = 1f;         // 속도 증가
+    float speed = 6f;         // 속도 증가
     int damage = 10;
     Vector2 direction;
     Vector2 startPosition;
@@ -53,7 +53,6 @@ public class Fireball : MonoBehaviour
                 enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
               //  Debug.Log("넉백 적용! 힘: " + knockbackForce);
             }
-            Destroy(gameObject);
         }
     }
 

@@ -47,8 +47,8 @@ MonoBehaviour:
   next: {fileID: 6513230558010134710, guid: 4d547581d1717784ab796ec62d28900c, type: 3}
   channel: 1
   str_index: 0
-  charge_str: 3
-  charge_max: 3
+  charge_str: 7
+  charge_max: 7
   range_max: 5
   range_min: 0
   require_target: 0

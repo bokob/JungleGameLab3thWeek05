@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &220921070663156396
+--- !u!1001 &3748417793261954597
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -51,110 +51,25 @@ PrefabInstance:
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: next
       value: 
-      objectReference: {fileID: 8787154227182339690, guid: 53400131dbf564f49963e03274bf4970, type: 3}
+      objectReference: {fileID: 6467442336187815789, guid: adfbe9c77b636eb4e8b38c9c814ec5ad, type: 3}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: channel
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: next_time
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: destroy_time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424553926833007754, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
-      propertyPath: this_Potision_to_owner
-      value: 0
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 7909999447083184456, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
       propertyPath: m_Name
-      value: ActingCastSimpleAttack
+      value: ActingCastDelay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7909999447083184456, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2690345378256312855}
-    - targetCorrespondingSourceObject: {fileID: 7909999447083184456, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 713127617712679727}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
---- !u!1 &7986333621456417764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7909999447083184456, guid: 74810102c6168b74dbb7a1bab623311f, type: 3}
-  m_PrefabInstance: {fileID: 220921070663156396}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2690345378256312855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7986333621456417764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95976849afa05146b948e3aecf183a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  next: {fileID: 8787154227182339690, guid: cae79759ce442294693ecbad9c2c23d4, type: 3}
-  next_time: 0.7
-  next_multi: {x: 0, y: 0}
-  channel: 1
-  ani: 
-  Char_trail: 0
-  this_pos_to: 0
-  this_pos_fwd: 0
-  this_rotate_Rnd: 0
-  this_rot_up: 0
-  this_parent_to_owner: 0
-  owner_Set_Trigger: 0
-  this_Potision_to_offset: 0
-  owner_looking_target: 0
-  owner_pos_to_this: 0
-  owner_SideWalk: 0
-  owner_Dash: 0
-  this_looking_target: 0
-  this_Potision_to_owner: 0
-  destroy_time: 0
-  onEnd:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &713127617712679727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7986333621456417764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95976849afa05146b948e3aecf183a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  next: {fileID: 8787154227182339690, guid: 9d69b090a67b2fc44851d6f11ec43579, type: 3}
-  next_time: 0.9
-  next_multi: {x: 0, y: 0}
-  channel: 1
-  ani: 
-  Char_trail: 0
-  this_pos_to: 0
-  this_pos_fwd: 0
-  this_rotate_Rnd: 0
-  this_rot_up: 0
-  this_parent_to_owner: 0
-  owner_Set_Trigger: 0
-  this_Potision_to_offset: 0
-  owner_looking_target: 0
-  owner_pos_to_this: 0
-  owner_SideWalk: 0
-  owner_Dash: 0
-  this_looking_target: 0
-  this_Potision_to_owner: 1
-  destroy_time: 1.7
-  onEnd:
-    m_PersistentCalls:
-      m_Calls: []
