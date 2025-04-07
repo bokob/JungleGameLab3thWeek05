@@ -578,6 +578,7 @@ MonoBehaviour:
   _maxHP: 100
   _isDead: 0
   _moveSpeed: 1
+  _additionalLife: 0
 --- !u!114 &4313961023451744000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +588,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3126633681760299705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b816c55027bab32408ac9b82705b4934, type: 3}
+  m_Script: {fileID: 11500000, guid: fea990af59db3484c9a335a24b468a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _testAttackRange: 7

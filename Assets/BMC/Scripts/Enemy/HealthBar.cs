@@ -1,30 +1,20 @@
 using UnityEngine;
-
 using UnityEngine.UI;
-public class BossHpUi : MonoBehaviour
+
+public class HealthBar : MonoBehaviour
 {
-    [SerializeField]
-    private Slider hpbar;
+    [SerializeField] private Slider hpbar;
     private Status _status; // Status 컴포넌트 참조
     private Canvas _canvas; // 부모 캔버스 참조
-
+    GameObject target;
     void Start()
     {
-        // Status 컴포넌트 찾기
-        _status = GetComponentInParent<Status>();
-        // 부모 캔버스 찾기
-        _canvas = GetComponentInParent<Canvas>();
-        // 부모 캔버스 찾기
-        hpbar = GetComponentInChildren<Slider>();
+        _status = GetComponentInParent<Status>(); // Status 컴포넌트 찾기
+        _canvas = GetComponentInParent<Canvas>(); // 부모 캔버스 찾기
 
+        UpdateHealthBar(); // 초기 HP 바 설정
 
-        // 초기 HP 바 설정
-        UpdateHealthBar();
-
-
-
-        transform.parent = Camera.main.transform;
-        transform.localPosition = new Vector3(0, 6, 10);
+        target = transform.parent.gameObject;
     }
 
     void Update()
@@ -38,18 +28,16 @@ public class BossHpUi : MonoBehaviour
         if (_status.HP <= 0)
         {
             _canvas.enabled = false;
-
-
         }
+
+        transform.position = target.transform.position;
     }
 
-    private void UpdateHealthBar()
+    void UpdateHealthBar()
     {
         if (hpbar != null && _status != null)
         {
             hpbar.value = _status.HP / _status.MaxHP; // Status의 HP와 MaxHP로 슬라이더 값 계산
         }
-
     }
 }
-
