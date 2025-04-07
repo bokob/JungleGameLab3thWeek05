@@ -225,7 +225,7 @@ public class Acting : MonoBehaviour
     {
 
         transform.up= (info.target.transform.position - info.owner.transform.position).normalized;
-        transform.up = (transform.right * i *1     + transform.up*1);
+        transform.up = (transform.right * i *2     + transform.up*1);
 
     }
     public void Side_Dash(int i)
