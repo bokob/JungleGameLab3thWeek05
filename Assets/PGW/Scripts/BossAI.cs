@@ -8,6 +8,7 @@ public class BossAI : MonoBehaviour
     private ActManager _actManager;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private Status _status;
     public GameObject target;
     public float navStopDistance = 5f;
     public float speed = 5f;
@@ -31,10 +32,22 @@ public class BossAI : MonoBehaviour
         }
         _animator = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _status = GetComponent<Status>();
     }
 
     private void Update()
     {
+        if (_status != null && _status.IsDead == true)
+        {
+            _spriteRenderer.color = Color.grey;
+
+            _animator.SetFloat("spd", 0);
+            //  animator.SetTrigger("DieTrigger");
+
+
+            return;
+        }
+
         GameObject newTarget = GetCloseEnemy(gameObject, _sightRadius);
 
         if (newTarget != _lastTarget)
