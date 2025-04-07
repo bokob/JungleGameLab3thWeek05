@@ -14,7 +14,7 @@ public class Excalibur : MonoBehaviour
     }
     public void Use()
     {
-        var to = Camera.main.ScreenToWorldPoint(Input.mousePosition); to.z = 0;
+        Vector3 to = Camera.main.ScreenToWorldPoint(Input.mousePosition); to.z = 0;
         int swordlevel = GetComponentInParent<PlayerTransform>().excaliburLevel;
         if (swordlevel > swordLevelMax)
             swordlevel = swordLevelMax;

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_BackBtn : MonoBehaviour
+public class UI_HelpPanelBackBtn : MonoBehaviour
 {
     Button _backBtn;
 

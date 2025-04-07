@@ -127,6 +127,10 @@ PrefabInstance:
       value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 1791561722504849558, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+      propertyPath: isSummoned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791561722504849558, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
       propertyPath: navStopDistance
       value: 1
       objectReference: {fileID: 0}
@@ -191,6 +195,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7383309916520358417}
   m_SourcePrefab: {fileID: 100100000, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+--- !u!114 &395736525529299023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1791561722504849558, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
+  m_PrefabInstance: {fileID: 2135013678804930777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125799408534692072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfebe67dda3816b4fb2a30704b6c4dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125799408534692072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9373257618075697, guid: 550dbb76fd009354796b8be1ff108e50, type: 3}
@@ -220,6 +235,7 @@ MonoBehaviour:
   this_rot_up: 1
   this_parent_to_owner: 0
   owner_Set_Trigger: 0
+  this_Potision_to_offset: 0
   owner_looking_target: 0
   owner_pos_to_this: 0
   owner_SideWalk: 0
@@ -242,17 +258,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64ab80682ed73645a8b48036fbee477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 7
+  time: 0
   num: 0
   isRepeat: 0
   isRnd: 0
   OnTime:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2125799408534692072}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 395736525529299023}
+        m_TargetAssemblyTypeName: AI, Assembly-CSharp
+        m_MethodName: SetEnemyList
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

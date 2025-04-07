@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: next
       value: 
-      objectReference: {fileID: 1838083026313583278, guid: 7ec922c06fb218647be38d4dbfcee42d, type: 3}
+      objectReference: {fileID: 1838083026313583278, guid: dd6e2a38f67fc78449a93bc5bd8f4337, type: 3}
     - target: {fileID: 5184055415925233286, guid: 068cd0156eca98d4c9bd24aea595c36b, type: 3}
       propertyPath: multi.x
       value: 3

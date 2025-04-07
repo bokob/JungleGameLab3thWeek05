@@ -34,7 +34,7 @@ public class Affector : MonoBehaviour
         if (hitted.Contains(v.gameObject) == true) return;
 
         var infoTarget = go.GetComponentInParent<Info>();//ai는 항상info가짐 / 적이 가지면
-        if (info!=null && info.owner && infoTarget != null)
+        if (info !=null&& info.owner && infoTarget != null)
             if (Info.isDiffer(info.owner, v.gameObject) == false)
                 return;//다른 팀
 
@@ -43,14 +43,14 @@ public class Affector : MonoBehaviour
 
         hitted.Add(v.gameObject);
 
+
+        if(info)
         v.TakeDamage(damage * info.multiply);
-        v.GetComponent<Rigidbody2D>().linearVelocity =
-            (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
-
-        OnHit.Invoke();
+        else 
+            v.TakeDamage(damage);  
 
 
-        if (info.owner !=null && info.owner.GetComponent<PlayerController>() != null)
+        if (info && info.owner != null && info.owner.GetComponent<PlayerController>() != null)
         {
             if (v.IsDead == true)
             {
@@ -76,6 +76,11 @@ public class Affector : MonoBehaviour
                 }
             }
         }
+        v.GetComponent<Rigidbody2D>().linearVelocity =
+            (v.gameObject.transform.position - info.owner.transform.position).normalized * push;
+
+        OnHit.Invoke();
+
     }
 
     public void Dest() { Destroy(gameObject); }

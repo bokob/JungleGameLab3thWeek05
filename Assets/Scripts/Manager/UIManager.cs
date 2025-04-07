@@ -10,6 +10,9 @@ public class UIManager
 
     #region InGame 씬
     public Action<float> setHealthBarAction;
+    public Action toggleGameClearCanvasAction;
+    public Action toggleGameOverCanvasAction;
+    public Action toggleRoundStartCanvasAction;
     #endregion
 
     public void Init()
