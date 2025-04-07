@@ -12,13 +12,15 @@ public class BossHpUi : MonoBehaviour
     {
         // Status 컴포넌트 찾기
         _status = GetComponentInParent<Status>();
+        // 부모 캔버스 찾기
+        _canvas = GetComponentInParent<Canvas>();
+        // 부모 캔버스 찾기
+        hpbar = GetComponentInChildren<Slider>();
 
 
         // 초기 HP 바 설정
         UpdateHealthBar();
 
-        // 부모 캔버스 찾기
-        _canvas = GetComponentInParent<Canvas>();
 
 
         transform.parent = Camera.main.transform;
